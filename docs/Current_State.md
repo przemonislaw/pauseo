@@ -24,8 +24,8 @@ Home is not a dashboard.
 Home is an emergency screen.
 
 Current Home contains only:
-- Primary CTA: “Mam craving teraz”
-- Secondary action: “Miałem slip”
+- Primary CTA: "Mam craving teraz"
+- Secondary action: "Miałem slip"
 
 Deferred:
 - Daily check-in
@@ -52,16 +52,30 @@ Summary:
 - Check-in, triggers and progress removed from Home.
 - Placeholder views retained.
 
+### docs: capture current state and AI-assisted project lens
+
+Summary:
+- docs/Current_State.md added as required reading before implementation.
+- docs/AI_Assisted_Project_Lens.md added: PMI-CPMAI as learning/governance lens only.
+- CLAUDE.md updated: Current_State.md added to source-of-truth list.
+
+### feat: implement onboarding UI flow without persistence
+
+Summary:
+- OnboardingFlowView.swift replaced with 5 real screens.
+- Welcome, nicotine type, goal mode, main trigger, notifications.
+- All selections held in @State only — no new persistence added.
+- Existing onboardingCompleted flag in AppState unchanged.
+
 ## Next planned feature commit
 
-feat: implement onboarding UI flow without persistence
+feat: implement craving flow UI-only
 
 Scope:
-- Welcome / help during craving
-- Nicotine type
-- Goal mode
-- Main trigger
-- Notification info / defer option
+- Grounding screen
+- Trigger selection
+- Micro-action selection
+- Completion screen
 
 Explicitly out of scope:
 - Persistence
@@ -69,8 +83,6 @@ Explicitly out of scope:
 - SwiftData
 - CoreData
 - UserNotifications
-- Permission request
-- Local notifications
 - Backend
 - Auth
 - Analytics
@@ -78,6 +90,9 @@ Explicitly out of scope:
 - HealthKit
 - New models
 - Medical / NRT guidance
+- Gamification / streaks
+- Timer logic
+- Complex animations
 
 ## Workflow rule
 
