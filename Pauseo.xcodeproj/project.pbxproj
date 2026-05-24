@@ -28,7 +28,7 @@
 		7BFB78FD0DD3A91812E782A1 /* OnboardingFlowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingFlowView.swift; sourceTree = "<group>"; };
 		A8A10524122020C22F4DFC37 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		C16660A65FF2ED157CFC5496 /* DailyCheckInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyCheckInView.swift; sourceTree = "<group>"; };
-		CCD0CD12E5CE3E2EEB8FB937 /* Pauseo.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = Pauseo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CCD0CD12E5CE3E2EEB8FB937 /* Pauseo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pauseo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9CE02D80ADEA97CBD3860E8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DFC7112674C30C5CE71F8497 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		E290BC8A6F17F7A13227D0AB /* CravingFlowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CravingFlowView.swift; sourceTree = "<group>"; };
@@ -163,11 +163,6 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
 				LastUpgradeCheck = 1430;
-				TargetAttributes = {
-					D4840FC8CC912AE2C42FF29E = {
-						DevelopmentTeam = "";
-					};
-				};
 			};
 			buildConfigurationList = 7C7A8A311D1437F323293A14 /* Build configuration list for PBXProject "Pauseo" */;
 			developmentRegion = en;
@@ -228,7 +223,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_ASSET_PATHS = "\"Pauseo/Preview Content\"";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 36WKZ8Q4L5;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
@@ -372,7 +367,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_ASSET_PATHS = "\"Pauseo/Preview Content\"";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 36WKZ8Q4L5;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
