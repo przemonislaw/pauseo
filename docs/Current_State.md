@@ -1,6 +1,6 @@
 # Current State — pauseo.app
 
-Last updated: 2026-05-24
+Last updated: 2026-05-25
 
 ## Product canon
 
@@ -75,31 +75,13 @@ Summary:
 - All state held in @State only — no new persistence added.
 - HomeView already connected via sheet — no changes to HomeView.
 
-## Next planned feature commit
+### feat: implement slip recovery UI-only
 
-feat: implement slip recovery UI-only
-
-Scope:
-- Entry: "Miałem slip"
-- Calm response screen
-- Trigger / situation log
-- Next micro-action
-- Completion / return to Home
-
-Explicitly out of scope:
-- Persistence
-- UserDefaults
-- SwiftData
-- CoreData
-- UserNotifications
-- Backend
-- Auth
-- Analytics
-- AI coach
-- HealthKit
-- New models
-- Medical / NRT guidance
-- Gamification / streaks
+Summary:
+- SlipRecoveryView.swift replaced with 4-screen flow.
+- Shame reduction, context selection, recovery action, completion.
+- All state held in @State only — no new persistence added.
+- HomeView already connected via sheet — no changes to HomeView.
 
 ## Workflow rule
 
