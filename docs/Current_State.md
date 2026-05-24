@@ -67,15 +67,24 @@ Summary:
 - All selections held in @State only — no new persistence added.
 - Existing onboardingCompleted flag in AppState unchanged.
 
+### feat: implement craving flow UI-only
+
+Summary:
+- CravingFlowView.swift replaced with 4-screen flow.
+- Grounding, trigger selection, micro-action selection, completion.
+- All state held in @State only — no new persistence added.
+- HomeView already connected via sheet — no changes to HomeView.
+
 ## Next planned feature commit
 
-feat: implement craving flow UI-only
+feat: implement slip recovery UI-only
 
 Scope:
-- Grounding screen
-- Trigger selection
-- Micro-action selection
-- Completion screen
+- Entry: "Miałem slip"
+- Calm response screen
+- Trigger / situation log
+- Next micro-action
+- Completion / return to Home
 
 Explicitly out of scope:
 - Persistence
@@ -91,8 +100,6 @@ Explicitly out of scope:
 - New models
 - Medical / NRT guidance
 - Gamification / streaks
-- Timer logic
-- Complex animations
 
 ## Workflow rule
 
