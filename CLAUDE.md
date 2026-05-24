@@ -27,9 +27,11 @@ Use the following files as the source of truth:
 3. `docs/Evidence_Base.md`
 4. `docs/UX_Principles.md`
 5. `docs/Backlog_v0.1.md`
-6. `docs/Privacy_Safety.md`
-7. `docs/Architecture_Decisions.md`
-8. `docs/Claude_Workflow.md`
+6. `docs/Current_State.md`
+7. `docs/Privacy_Safety.md`
+8. `docs/Architecture_Decisions.md`
+9. `docs/Claude_Workflow.md`
+ 
 
 If implementation ideas conflict with these files, do not silently proceed. Explain the conflict and propose a documentation update first.
 
