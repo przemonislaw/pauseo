@@ -27,3 +27,19 @@ Pods/
 
 # macOS
 .DS_Store
+.AppleDouble
+
+# Archives and exports
+*.xcarchive
+
+# Secrets / credentials
+.env
+AuthKey_*.p8
+*.p12
+*.mobileprovision
+
+# Carthage (not in use, guard against accidental init)
+Carthage/Build/
+
+# Editor
+.idea/

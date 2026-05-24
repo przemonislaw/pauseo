@@ -348,18 +348,56 @@ Premature architecture may distract from product validation.
 
 ---
 
+# ADR-011 — v0.1 language is Polish only
+
+## Status
+
+Accepted
+
+## Decision
+
+v0.1 ships in Polish only.
+
+Bilingual copy (Polish + English or other languages) is deferred until user validation is complete.
+
+## Rationale
+
+The initial target persona is a Polish-speaking adult.
+
+Shipping one language reduces:
+- copy complexity,
+- translation overhead,
+- UX inconsistency risk,
+- scope creep before validation.
+
+## Consequences
+
+All in-app copy, onboarding, notifications, and UX text in v0.1 should be Polish.
+
+English-language strings are permitted only in:
+- developer-facing code comments (where necessary),
+- internal documentation,
+- code identifiers.
+
+## Revisit when
+
+After v0.1 validation, if there is evidence of demand from users in other language markets.
+
+See `docs/Product_MVP.md` — v0.3 lists bilingual copy as a possible addition.
+
+---
+
 # Open questions
 
 These are intentionally not decided yet:
 
-1. Initial language: Polish only or bilingual from the start?
-2. Exact visual identity and brand system.
-3. Whether to show nicotine-free days in all modes or only quit-now mode.
-4. Whether to include money saved.
-5. Whether to include data export in v0.1.
-6. Whether to support Apple Health later.
-7. Whether to add paid features after validation.
-8. Whether to introduce backend after v0.3.
+1. Exact visual identity and brand system.
+2. Whether to show nicotine-free days in all modes or only quit-now mode.
+3. Whether to include money saved.
+4. Whether to include data export in v0.1.
+5. Whether to support Apple Health later.
+6. Whether to add paid features after validation.
+7. Whether to introduce backend after v0.3.
 
 ## Architecture principle
 

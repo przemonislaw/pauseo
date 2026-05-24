@@ -1,9 +1,3 @@
-
----
-
-## `docs/Product_MVP.md`
-
-```markdown
 # Product MVP — pauseo.app
 
 ## Product name

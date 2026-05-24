@@ -12,9 +12,13 @@ The product is not a medical treatment, not a therapy replacement, and not a med
 
 ## Current status
 
-This repository is in the documentation-first MVP phase.
+This repository is in the **MVP skeleton phase**.
 
-No application code should be created until the core product contract in `/docs` is accepted.
+The repository contains:
+- full product documentation in `/docs`,
+- a minimal SwiftUI placeholder skeleton (screens stubbed, no feature logic implemented).
+
+No feature implementation should happen unless it maps to one explicit backlog item in `docs/Backlog_v0.1.md`.
 
 ## Product thesis
 

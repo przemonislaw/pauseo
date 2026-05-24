@@ -71,3 +71,33 @@ RISKS
 ACCEPTANCE CRITERIA
 
 Do not write code yet.
+```
+
+### Step 4 — Apply the change
+
+Only after the plan is approved:
+
+- Make the smallest change that satisfies the backlog item.
+- Do not touch flows unrelated to the item.
+- Do not add backend, auth, analytics, AI, HealthKit, monetization, medication/NRT guidance, or notification implementation unless explicitly requested.
+- Do not invent scope not present in the backlog item.
+
+## Commit discipline
+
+One backlog item per commit.
+
+Rules:
+- Each commit maps to exactly one backlog item or one documentation change.
+- Do not bundle unrelated screens, flows, or fixes in the same commit.
+- Commit message should reference the backlog item.
+- Do not commit speculative code or "while I'm here" changes.
+
+Prohibited without explicit request:
+- backend, AWS, API calls,
+- authentication, accounts, login,
+- third-party analytics or tracking SDKs,
+- AI, LLM, or chatbot integration,
+- HealthKit or wearable integrations,
+- monetization, paywall, in-app purchase,
+- medication or NRT guidance,
+- remote push notification infrastructure.
