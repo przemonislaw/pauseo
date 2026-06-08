@@ -2,9 +2,11 @@ import SwiftUI
 
 struct CravingFlowView: View {
     @Environment(\.dismiss) private var dismiss
+    @EnvironmentObject private var eventStore: EventStore
     @State private var step: Int = 0
     @State private var selectedTrigger: TriggerCategory? = nil
     @State private var selectedAction: String? = nil
+    @State private var hasSavedCompletionEvent = false
 
     private let microActions = [
         "Wypij wodę",
@@ -45,6 +47,17 @@ struct CravingFlowView: View {
             default:
                 EmptyView()
             }
+        }
+        .onChange(of: step) { _, newStep in
+            guard newStep == 3, !hasSavedCompletionEvent else { return }
+            eventStore.save(CravingEvent(
+                id: UUID(),
+                timestamp: .now,
+                trigger: selectedTrigger?.rawValue,
+                action: selectedAction,
+                completed: true
+            ))
+            hasSavedCompletionEvent = true
         }
     }
 }
@@ -222,4 +235,5 @@ private struct CravingChip: View {
 
 #Preview {
     CravingFlowView()
+        .environmentObject(EventStore())
 }

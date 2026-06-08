@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1A999CEC8E62D486D4A3A4DA /* EventStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A3581E4D2A920EE9DFA4A7 /* EventStore.swift */; };
 		2A2C033BA42E722EA6A47482 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC7112674C30C5CE71F8497 /* AppState.swift */; };
 		53FC802299012F58BBDECED1 /* DailyCheckInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C16660A65FF2ED157CFC5496 /* DailyCheckInView.swift */; };
 		597F53CEE60E3006EB8B8096 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A8A10524122020C22F4DFC37 /* Preview Assets.xcassets */; };
@@ -26,9 +27,10 @@
 		6DB3861C2955CCAD02D7FF3A /* UserPreferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPreferences.swift; sourceTree = "<group>"; };
 		70BA6D6AF8C6758089C6E7CB /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		7BFB78FD0DD3A91812E782A1 /* OnboardingFlowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingFlowView.swift; sourceTree = "<group>"; };
+		88A3581E4D2A920EE9DFA4A7 /* EventStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventStore.swift; sourceTree = "<group>"; };
 		A8A10524122020C22F4DFC37 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		C16660A65FF2ED157CFC5496 /* DailyCheckInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyCheckInView.swift; sourceTree = "<group>"; };
-		CCD0CD12E5CE3E2EEB8FB937 /* Pauseo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pauseo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CCD0CD12E5CE3E2EEB8FB937 /* Pauseo.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = Pauseo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9CE02D80ADEA97CBD3860E8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DFC7112674C30C5CE71F8497 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		E290BC8A6F17F7A13227D0AB /* CravingFlowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CravingFlowView.swift; sourceTree = "<group>"; };
@@ -47,6 +49,7 @@
 		1780C9FA172FCB5B2DD9364C /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				88A3581E4D2A920EE9DFA4A7 /* EventStore.swift */,
 				6DB3861C2955CCAD02D7FF3A /* UserPreferences.swift */,
 			);
 			path = Models;
@@ -163,6 +166,11 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
 				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					D4840FC8CC912AE2C42FF29E = {
+						DevelopmentTeam = 36WKZ8Q4L5;
+					};
+				};
 			};
 			buildConfigurationList = 7C7A8A311D1437F323293A14 /* Build configuration list for PBXProject "Pauseo" */;
 			developmentRegion = en;
@@ -203,6 +211,7 @@
 				2A2C033BA42E722EA6A47482 /* AppState.swift in Sources */,
 				D50D11789608F75DE20D0F42 /* CravingFlowView.swift in Sources */,
 				53FC802299012F58BBDECED1 /* DailyCheckInView.swift in Sources */,
+				1A999CEC8E62D486D4A3A4DA /* EventStore.swift in Sources */,
 				69AC407ADB0BBCF54809EDE4 /* HomeView.swift in Sources */,
 				A894D4FADB0735E6E4F6255C /* OnboardingFlowView.swift in Sources */,
 				E85FA8FB4D691B29716C93F3 /* PauseoApp.swift in Sources */,

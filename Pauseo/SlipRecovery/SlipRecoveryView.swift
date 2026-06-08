@@ -2,9 +2,11 @@ import SwiftUI
 
 struct SlipRecoveryView: View {
     @Environment(\.dismiss) private var dismiss
+    @EnvironmentObject private var eventStore: EventStore
     @State private var step: Int = 0
     @State private var selectedContext: String? = nil
     @State private var selectedAction: String? = nil
+    @State private var hasSavedCompletionEvent = false
 
     var body: some View {
         VStack(spacing: 0) {
@@ -37,6 +39,17 @@ struct SlipRecoveryView: View {
             default:
                 EmptyView()
             }
+        }
+        .onChange(of: step) { _, newStep in
+            guard newStep == 3, !hasSavedCompletionEvent else { return }
+            eventStore.save(SlipEvent(
+                id: UUID(),
+                timestamp: .now,
+                context: selectedContext,
+                recoveryAction: selectedAction,
+                completed: true
+            ))
+            hasSavedCompletionEvent = true
         }
     }
 }
@@ -221,4 +234,5 @@ private struct SlipChip: View {
 
 #Preview {
     SlipRecoveryView()
+        .environmentObject(EventStore())
 }
