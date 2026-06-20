@@ -16,6 +16,7 @@
 		A894D4FADB0735E6E4F6255C /* OnboardingFlowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BFB78FD0DD3A91812E782A1 /* OnboardingFlowView.swift */; };
 		CDBA404F1E98EE8395C32031 /* UserPreferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DB3861C2955CCAD02D7FF3A /* UserPreferences.swift */; };
 		D50D11789608F75DE20D0F42 /* CravingFlowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E290BC8A6F17F7A13227D0AB /* CravingFlowView.swift */; };
+		DC72F2D35A0C500144C942C3 /* PrivacySafetyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CBCE5EC5C809633EA59BF2 /* PrivacySafetyView.swift */; };
 		E85FA8FB4D691B29716C93F3 /* PauseoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F53D3422675A82C5AD0DF236 /* PauseoApp.swift */; };
 		F72B9A1E6D59EE543CFD13AD /* SlipRecoveryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427188AA912E0887F47DFCD4 /* SlipRecoveryView.swift */; };
 		F90638FB6DB7818CCC66B9F8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D9CE02D80ADEA97CBD3860E8 /* Assets.xcassets */; };
@@ -28,6 +29,7 @@
 		70BA6D6AF8C6758089C6E7CB /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		7BFB78FD0DD3A91812E782A1 /* OnboardingFlowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingFlowView.swift; sourceTree = "<group>"; };
 		88A3581E4D2A920EE9DFA4A7 /* EventStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventStore.swift; sourceTree = "<group>"; };
+		A5CBCE5EC5C809633EA59BF2 /* PrivacySafetyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacySafetyView.swift; sourceTree = "<group>"; };
 		A8A10524122020C22F4DFC37 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		C16660A65FF2ED157CFC5496 /* DailyCheckInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyCheckInView.swift; sourceTree = "<group>"; };
 		CCD0CD12E5CE3E2EEB8FB937 /* Pauseo.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = Pauseo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -61,6 +63,14 @@
 				E290BC8A6F17F7A13227D0AB /* CravingFlowView.swift */,
 			);
 			path = CravingFlow;
+			sourceTree = "<group>";
+		};
+		455E92ECF9F3AEA8334328A7 /* Privacy */ = {
+			isa = PBXGroup;
+			children = (
+				A5CBCE5EC5C809633EA59BF2 /* PrivacySafetyView.swift */,
+			);
+			path = Privacy;
 			sourceTree = "<group>";
 		};
 		626481AF810DF5B0A9BB4CE2 /* Home */ = {
@@ -107,6 +117,7 @@
 				1780C9FA172FCB5B2DD9364C /* Models */,
 				92CCAC3495A9FD8A3B3E3119 /* Onboarding */,
 				878AFBF81FD99EA642AB3458 /* Preview Content */,
+				455E92ECF9F3AEA8334328A7 /* Privacy */,
 				6FCD2742652DB5637BE75B01 /* Progress */,
 				E2AE37DB220C94EFFE75709A /* SlipRecovery */,
 			);
@@ -215,6 +226,7 @@
 				69AC407ADB0BBCF54809EDE4 /* HomeView.swift in Sources */,
 				A894D4FADB0735E6E4F6255C /* OnboardingFlowView.swift in Sources */,
 				E85FA8FB4D691B29716C93F3 /* PauseoApp.swift in Sources */,
+				DC72F2D35A0C500144C942C3 /* PrivacySafetyView.swift in Sources */,
 				8CB7A8BB90CF4F11D24C94E0 /* ProgressView.swift in Sources */,
 				F72B9A1E6D59EE543CFD13AD /* SlipRecoveryView.swift in Sources */,
 				CDBA404F1E98EE8395C32031 /* UserPreferences.swift in Sources */,
