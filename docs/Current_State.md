@@ -1,6 +1,6 @@
 # Current State — pauseo.app
 
-Last updated: 2026-05-25
+Last updated: 2026-06-21
 
 ## Product canon
 
@@ -27,7 +27,28 @@ Current Home contains only:
 - Primary CTA: "Mam craving teraz"
 - Secondary action: "Miałem slip"
 
-Deferred:
+## Local persistence state
+
+`EventStore` now persists completed craving and slip events locally.
+
+- Storage: UserDefaults JSON only — no backend, no SwiftData, no CoreData.
+- Stored events are **not displayed to the user yet** — no UI reads from EventStore.
+- Progress view and trigger intelligence UI remain deferred and are not implemented.
+- Daily check-in remains deferred and is not implemented.
+
+## Recommended next product step
+
+**Privacy & Safety screen.**
+
+Because local behavioral events (craving and slip records) are now being stored on device, users need to know:
+- what data is stored,
+- that it stays on their device,
+- how to delete it.
+
+This should be implemented before adding any new event types or analytics-adjacent features.
+
+## Deferred
+
 - Daily check-in
 - Trigger screen
 - Progress dashboard
@@ -82,6 +103,15 @@ Summary:
 - Shame reduction, context selection, recovery action, completion.
 - All state held in @State only — no new persistence added.
 - HomeView already connected via sheet — no changes to HomeView.
+
+### feat: add local persistence for craving and slip events
+
+Summary:
+- EventStore.swift added: local ObservableObject store managing craving and slip event arrays.
+- CravingEvent and SlipEvent structs added: Codable, stored as JSON in UserDefaults.
+- CravingFlowView and SlipRecoveryView updated to call EventStore on completion.
+- Persistence is local-only UserDefaults JSON — no backend, no SwiftData, no CoreData.
+- Stored events are not yet displayed in any UI view.
 
 ## Workflow rule
 
