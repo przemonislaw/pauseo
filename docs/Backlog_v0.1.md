@@ -341,6 +341,8 @@ Acceptance criteria:
 
 ### P0 — Privacy explanation screen
 
+**Status: implemented** — `PrivacySafetyView`, accessible from HomeView as a tertiary sheet ("Prywatność i dane"). Access from onboarding and settings is deferred, not implemented.
+
 Explain:
 - data stored locally,
 - no account in MVP,
@@ -355,6 +357,8 @@ Acceptance criteria:
 - Consistent with `docs/Privacy_Safety.md`.
 
 ### P0 — Medical boundary copy
+
+**Status: implemented** — medical disclaimer present in `PrivacySafetyView`.
 
 Required statement:
 
@@ -407,6 +411,6 @@ Before v0.1 is considered complete:
 - [ ] No backend exists.
 - [ ] No medical advice exists.
 - [ ] No medication/NRT dosing exists.
-- [ ] Privacy copy is present.
+- [x] Privacy copy is present.
 - [ ] UX copy follows `docs/UX_Principles.md`.
 - [ ] Claude Code changes are consistent with `CLAUDE.md`.

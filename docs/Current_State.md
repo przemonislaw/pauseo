@@ -26,26 +26,41 @@ Home is an emergency screen.
 Current Home contains only:
 - Primary CTA: "Mam craving teraz"
 - Secondary action: "Miałem slip"
+- Tertiary link: "Prywatność i dane" (opens PrivacySafetyView as a sheet)
 
 ## Local persistence state
 
 `EventStore` now persists completed craving and slip events locally.
 
 - Storage: UserDefaults JSON only — no backend, no SwiftData, no CoreData.
-- Stored events are **not displayed to the user yet** — no UI reads from EventStore.
+- Stored events are not shown as history, statistics, or charts — no progress/trigger intelligence UI exists yet.
+- `EventStore.deleteAll()` is accessible from PrivacySafetyView — users can delete all local data.
 - Progress view and trigger intelligence UI remain deferred and are not implemented.
 - Daily check-in remains deferred and is not implemented.
 
-## Recommended next product step
+## Privacy & Safety screen
 
-**Privacy & Safety screen.**
+**Implemented.**
 
-Because local behavioral events (craving and slip records) are now being stored on device, users need to know:
-- what data is stored,
-- that it stays on their device,
-- how to delete it.
+`PrivacySafetyView` is accessible from HomeView as a tertiary sheet ("Prywatność i dane").
 
-This should be implemented before adding any new event types or analytics-adjacent features.
+It covers:
+- what is stored locally (craving events, slip events),
+- that there is no account and no backend,
+- how to delete all local data (`EventStore.deleteAll()`),
+- a medical disclaimer consistent with `docs/Privacy_Safety.md`.
+
+It does not show statistics, event history, trigger insights, charts, or dashboard content.
+
+## Recommended next step
+
+No feature is locked as the next step. A manual QA pass and v0.1 checkpoint should happen before committing to new scope.
+
+Candidates after QA:
+- Progress / top trigger summary — EventStore has data but no UI reads it yet.
+- Daily check-in — P1 in backlog, not yet started.
+
+Do not start Progress or trigger intelligence without an explicit product decision. Those features carry dashboard risk.
 
 ## Deferred
 
@@ -112,6 +127,21 @@ Summary:
 - CravingFlowView and SlipRecoveryView updated to call EventStore on completion.
 - Persistence is local-only UserDefaults JSON — no backend, no SwiftData, no CoreData.
 - Stored events are not yet displayed in any UI view.
+
+### feat: add privacy and safety screen
+
+Summary:
+- PrivacySafetyView.swift added: explains local storage, no account/backend, delete option, medical disclaimer.
+- EventStore.deleteAll() added: clears both in-memory arrays and removes both UserDefaults keys.
+- HomeView updated: tertiary "Prywatność i dane" button opens PrivacySafetyView as a sheet.
+- No statistics, event history, charts, or trigger insights on this screen.
+
+### chore: regenerate project.pbxproj after adding PrivacySafetyView
+
+Summary:
+- xcodegen generate run after adding Pauseo/Privacy/PrivacySafetyView.swift.
+- New group, file reference, and build file added for PrivacySafetyView.swift.
+- No other project changes.
 
 ## Workflow rule
 
