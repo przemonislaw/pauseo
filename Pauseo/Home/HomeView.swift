@@ -3,6 +3,7 @@ import SwiftUI
 struct HomeView: View {
     @State private var showingCravingFlow = false
     @State private var showingSlipRecovery = false
+    @State private var showingPrivacy = false
 
     var body: some View {
         VStack(spacing: 0) {
@@ -31,11 +32,17 @@ struct HomeView: View {
 
             SecondaryActionButton(title: "Miałem slip") { showingSlipRecovery = true }
 
+            Button("Prywatność i dane") { showingPrivacy = true }
+                .font(.caption2)
+                .foregroundStyle(.tertiary)
+                .padding(.top, 8)
+
             Spacer()
         }
         .padding()
         .sheet(isPresented: $showingCravingFlow) { CravingFlowView() }
         .sheet(isPresented: $showingSlipRecovery) { SlipRecoveryView() }
+        .sheet(isPresented: $showingPrivacy) { PrivacySafetyView() }
     }
 }
 

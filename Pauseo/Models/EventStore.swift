@@ -46,6 +46,13 @@ final class EventStore: ObservableObject {
         }
     }
 
+    func deleteAll() {
+        cravingEvents = []
+        slipEvents = []
+        UserDefaults.standard.removeObject(forKey: cravingKey)
+        UserDefaults.standard.removeObject(forKey: slipKey)
+    }
+
     private func decoded<T: Decodable>(_ type: T.Type, forKey key: String) -> T? {
         guard let data = UserDefaults.standard.data(forKey: key) else { return nil }
         return try? JSONDecoder().decode(type, from: data)
