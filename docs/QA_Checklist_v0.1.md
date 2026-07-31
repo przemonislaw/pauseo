@@ -177,6 +177,35 @@ Pass
 
 ---
 
+## 14. Guided 2-minute craving loop with support cards
+
+This section is new and unchecked. Do not mark it Pass without running it on a physical device — VoiceOver and Reduce Motion behaviour cannot be trusted from code review or simulator alone.
+
+- [ ] After the micro-action step, the invitation screen reads "Zostań ze mną jeszcze 2 minuty?" (not 3 minutes).
+- [ ] Accepting the invitation starts a round that lasts about 120 seconds, not 180.
+- [ ] During the round, one short support card is shown at a time; a new card appears roughly every 10 seconds.
+- [ ] No card repeats within a single round.
+- [ ] Consecutive cards are not visibly all from the same category (spot-check a few transitions).
+- [ ] The countdown, progress bar, and "Kończę na teraz" remain visible and usable throughout the round.
+- [ ] No card claims that the craving will disappear or that a technique removes it.
+- [ ] No card contains medication, NRT, or medical-treatment guidance.
+- [ ] Background the app mid-round and return — the round does not restart, and the card shown matches the actual elapsed time (not the card that was showing when backgrounded).
+- [ ] Force-quit mid-round and relaunch — no crash, no duplicate `CravingEvent` created for that session.
+- [ ] Complete a round fully (2 minutes) and confirm the outcome question appears with the same three options as before.
+- [ ] Trigger a second round (choose "Odłożyłem/am decyzję") — button reads "Daję sobie jeszcze 2 minuty", and the card order/selection differs noticeably from round 1 where possible.
+- [ ] Enable **Reduce Motion** in device Accessibility settings — confirm card changes show no animated/sliding transition.
+- [ ] Enable **VoiceOver** and let a round run — confirm the app does not automatically announce each new card and does not force VoiceOver focus to move; confirm the currently visible card can still be read by manually swiping to it.
+- [ ] Full round works in airplane mode (no network calls).
+- [ ] Delete-all in PrivacySafetyView still clears craving events created via this flow.
+- [ ] Existing craving/slip events created before this change still load without error.
+- [ ] Dev-time only: temporarily rename or corrupt `support_cards.json`, rebuild, and confirm the app does not crash and still shows a small set of fallback cards, then restore the real file.
+
+Tester:
+Date:
+Build/commit tested:
+
+---
+
 ## Sign-off
 
 - [x] All sections above reviewed.

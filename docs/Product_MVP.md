@@ -363,7 +363,7 @@ Options:
 
 ### Step 4: Outcome
 
-After the micro-action, the user may continue into a short guided 3-minute engagement sequence before this question appears.
+After the micro-action, the user may continue into a short guided 2-minute engagement sequence, with a rotating local support card shown every ~10 seconds, before this question appears.
 
 Question:
 
