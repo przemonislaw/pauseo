@@ -1,0 +1,107 @@
+[
+  {
+    "id": "norm-multiple-attempts",
+    "category": "normalization",
+    "text": "Wiele osób potrzebuje kilku prób, zanim odstawienie się utrzyma. Kolejna próba nie oznacza zaczynania od zera.",
+    "sourceLabel": null,
+    "sourceURL": null
+  },
+  {
+    "id": "norm-not-weakness",
+    "category": "normalization",
+    "text": "To, że ten moment jest trudny, nie znaczy, że robisz coś źle. Głód nikotynowy to częsta reakcja organizmu, nie oznaka słabości.",
+    "sourceLabel": null,
+    "sourceURL": null
+  },
+  {
+    "id": "perspective-intensity-varies",
+    "category": "perspective",
+    "text": "Głód nikotynowy często zmienia swoją intensywność. Możesz przez chwilę obserwować, co dzieje się z nim teraz.",
+    "sourceLabel": null,
+    "sourceURL": null
+  },
+  {
+    "id": "fact-craving-duration",
+    "category": "fact",
+    "text": "Głód nikotynowy często trwa kilka minut, choć jego przebieg jest różny u różnych osób.",
+    "sourceLabel": "NHS",
+    "sourceURL": "https://www.nhs.uk/better-health/quit-smoking/staying-smoke-free/understand-your-smoking-triggers-and-cravings/"
+  },
+  {
+    "id": "fact-nicotine-timing",
+    "category": "fact",
+    "text": "Po ograniczeniu nikotyny głód może pojawiać się w różnych momentach i z różną intensywnością.",
+    "sourceLabel": "National Cancer Institute",
+    "sourceURL": "https://www.cancer.gov/about-cancer/causes-prevention/risk/tobacco/withdrawal-fact-sheet"
+  },
+  {
+    "id": "fact-smoking-body-response",
+    "category": "fact",
+    "text": "Po odstawieniu papierosów organizm zaczyna reagować na brak dalszej ekspozycji na dym.",
+    "sourceLabel": "NHS",
+    "sourceURL": "https://www.nhs.uk/better-health/quit-smoking/"
+  },
+  {
+    "id": "body-heart-rate",
+    "category": "bodyEffect",
+    "text": "Tętno i ciśnienie krwi zaczynają się obniżać już w krótkim czasie po zaprzestaniu palenia.",
+    "sourceLabel": "NHS",
+    "sourceURL": "https://www.nhs.uk/better-health/quit-smoking/"
+  },
+  {
+    "id": "body-taste-smell",
+    "category": "bodyEffect",
+    "text": "Po odstawieniu papierosów zmysł smaku i węchu może zacząć się poprawiać w ciągu pierwszych dni.",
+    "sourceLabel": "NHS",
+    "sourceURL": "https://www.nhs.uk/better-health/quit-smoking/"
+  },
+  {
+    "id": "body-carbon-monoxide",
+    "category": "bodyEffect",
+    "text": "Po odstawieniu papierosów poziom tlenku węgla we krwi zaczyna spadać.",
+    "sourceLabel": "NHS",
+    "sourceURL": "https://www.nhs.uk/better-health/quit-smoking/"
+  },
+  {
+    "id": "action-change-position",
+    "category": "action",
+    "text": "Zmień teraz pozycję ciała — wstań, usiądź inaczej albo zrób kilka kroków.",
+    "sourceLabel": null,
+    "sourceURL": null
+  },
+  {
+    "id": "action-drink-water",
+    "category": "action",
+    "text": "Pij wodę małymi łykami, skupiając się na samym piciu.",
+    "sourceLabel": null,
+    "sourceURL": null
+  },
+  {
+    "id": "action-relax-hands",
+    "category": "action",
+    "text": "Na chwilę rozluźnij dłonie i ramiona. Zauważ, czy coś się zmienia.",
+    "sourceLabel": null,
+    "sourceURL": null
+  },
+  {
+    "id": "perspective-one-decision",
+    "category": "perspective",
+    "text": "Nie musisz teraz decydować o całym dniu. Wystarczy decyzja na najbliższe kilkadziesiąt sekund.",
+    "sourceLabel": null,
+    "sourceURL": null
+  },
+  {
+    "id": "perspective-postpone-step",
+    "category": "perspective",
+    "text": "Odłożenie decyzji o kilka minut to już konkretny krok, nawet jeśli później zapalisz.",
+    "sourceLabel": null,
+    "sourceURL": null
+  },
+  {
+    "id": "perspective-impulse-changes",
+    "category": "perspective",
+    "text": "Natężenie tego impulsu może się zmieniać. Możesz jeszcze chwilę obserwować, co dzieje się teraz.",
+    "sourceLabel": null,
+    "sourceURL": null
+  }
+]

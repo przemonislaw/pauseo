@@ -15,6 +15,8 @@ struct CravingFlowView: View {
     @State private var guidedLoopCompletedFlag = false
     @State private var guidedLoopOutcome: GuidedLoopOutcome? = nil
     @State private var guidedLoopSecondRoundStarted = false
+    @State private var guidedLoopDurationSeconds: Int? = nil
+    @State private var round1ShownCardIDs: Set<String> = []
 
     private let microActions = [
         "Wypij wodę",
@@ -72,9 +74,13 @@ struct CravingFlowView: View {
                 onDecline: finishFlow
             )
         case .guidedLoop(let round):
-            GuidedLoopStep(onRoundFinished: { completedFully in
-                finishRound(round: round, completedFully: completedFully)
-            })
+            GuidedLoopStep(
+                usedCardIDs: round == 1 ? [] : round1ShownCardIDs,
+                onRoundFinished: { completedFully, shownCardIDs in
+                    if round == 1 { round1ShownCardIDs = shownCardIDs }
+                    finishRound(round: round, completedFully: completedFully)
+                }
+            )
             .id(round)
         case .outcome(let round):
             OutcomeStep(onSelect: { outcome in
@@ -94,6 +100,7 @@ struct CravingFlowView: View {
 
     private func startGuidedLoop(round: Int) {
         guidedLoopStarted = true
+        guidedLoopDurationSeconds = 120
         if round == 2 { guidedLoopSecondRoundStarted = true }
         phase = .guidedLoop(round: round)
         persistEvent(completed: false)
@@ -130,7 +137,8 @@ struct CravingFlowView: View {
             guidedLoopStarted: guidedLoopStarted,
             guidedLoopCompleted: guidedLoopCompletedFlag,
             guidedLoopOutcome: guidedLoopOutcome,
-            guidedLoopSecondRoundStarted: guidedLoopSecondRoundStarted
+            guidedLoopSecondRoundStarted: guidedLoopSecondRoundStarted,
+            guidedLoopDurationSeconds: guidedLoopDurationSeconds
         ))
     }
 }
@@ -273,7 +281,7 @@ private struct InvitationStep: View {
         VStack(spacing: 0) {
             Spacer()
             VStack(spacing: 16) {
-                Text("Zostań ze mną jeszcze 3 minuty?")
+                Text("Zostań ze mną jeszcze 2 minuty?")
                     .font(.largeTitle)
                     .fontWeight(.bold)
                     .multilineTextAlignment(.center)
@@ -302,24 +310,26 @@ private struct InvitationStep: View {
 // MARK: - Guided Loop
 
 private struct GuidedLoopStep: View {
-    let onRoundFinished: (_ completedFully: Bool) -> Void
+    let onRoundFinished: (_ completedFully: Bool, _ shownCardIDs: Set<String>) -> Void
 
-    private let totalDuration: TimeInterval = 180
-    private let stagePrompts: [(title: String, subtitle: String)] = [
-        ("Oddychaj powoli. Wdech na 4, wydech na 6.", "Craving jest falą. Zostań z nią przez chwilę."),
-        ("Poczuj stopy na podłodze. Rozluźnij ramiona.", "Nie musisz nic rozwiązywać. Tylko bądź tutaj."),
-        ("Craving nie musi prowadzić decyzji. Możesz jeszcze poczekać.", "Zostały ostatnie sekundy.")
-    ]
+    private let totalDuration: TimeInterval = 120
+    private let cardInterval: TimeInterval = 10
+    private let cardSequence: [SupportCard]
 
     @State private var startDate = Date()
     @State private var hasFinished = false
+
+    init(usedCardIDs: Set<String>, onRoundFinished: @escaping (_ completedFully: Bool, _ shownCardIDs: Set<String>) -> Void) {
+        self.onRoundFinished = onRoundFinished
+        self.cardSequence = SupportCardLibrary.buildSequence(excluding: usedCardIDs, slotCount: 12)
+    }
 
     var body: some View {
         TimelineView(.periodic(from: startDate, by: 1)) { context in
             let elapsed = min(context.date.timeIntervalSince(startDate), totalDuration)
             let remaining = max(totalDuration - elapsed, 0)
-            let stageIndex = min(Int(elapsed / 60), stagePrompts.count - 1)
             let isDone = elapsed >= totalDuration
+            let card = currentCard(elapsed: elapsed)
 
             VStack(spacing: 0) {
                 Spacer()
@@ -334,17 +344,14 @@ private struct GuidedLoopStep: View {
                     .padding(.horizontal, 48)
                     .padding(.bottom, 32)
 
-                VStack(spacing: 12) {
-                    Text(stagePrompts[stageIndex].title)
+                if let card {
+                    Text(card.text)
                         .font(.title2)
                         .fontWeight(.semibold)
                         .multilineTextAlignment(.center)
-                    Text(stagePrompts[stageIndex].subtitle)
-                        .font(.body)
-                        .foregroundStyle(.secondary)
-                        .multilineTextAlignment(.center)
+                        .padding(.horizontal, 32)
+                        .accessibilityAddTraits(.updatesFrequently)
                 }
-                .padding(.horizontal, 32)
 
                 Spacer()
 
@@ -362,10 +369,16 @@ private struct GuidedLoopStep: View {
         }
     }
 
+    private func currentCard(elapsed: TimeInterval) -> SupportCard? {
+        guard !cardSequence.isEmpty else { return nil }
+        let index = min(Int(elapsed / cardInterval), cardSequence.count - 1)
+        return cardSequence[index]
+    }
+
     private func finish(completedFully: Bool) {
         guard !hasFinished else { return }
         hasFinished = true
-        onRoundFinished(completedFully)
+        onRoundFinished(completedFully, Set(cardSequence.map(\.id)))
     }
 
     private func timeString(_ interval: TimeInterval) -> String {
@@ -423,7 +436,7 @@ private struct SecondRoundOfferStep: View {
             .padding(.horizontal, 32)
             Spacer()
             VStack(spacing: 12) {
-                Button("Daję sobie jeszcze 3 minuty", action: onAccept)
+                Button("Daję sobie jeszcze 2 minuty", action: onAccept)
                     .buttonStyle(.borderedProminent)
                     .controlSize(.large)
                     .tint(.indigo)

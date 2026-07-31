@@ -16,6 +16,7 @@ struct CravingEvent: Codable, Identifiable {
     let guidedLoopCompleted: Bool?
     let guidedLoopOutcome: GuidedLoopOutcome?
     let guidedLoopSecondRoundStarted: Bool?
+    let guidedLoopDurationSeconds: Int?
 
     init(
         id: UUID,
@@ -26,7 +27,8 @@ struct CravingEvent: Codable, Identifiable {
         guidedLoopStarted: Bool? = nil,
         guidedLoopCompleted: Bool? = nil,
         guidedLoopOutcome: GuidedLoopOutcome? = nil,
-        guidedLoopSecondRoundStarted: Bool? = nil
+        guidedLoopSecondRoundStarted: Bool? = nil,
+        guidedLoopDurationSeconds: Int? = nil
     ) {
         self.id = id
         self.timestamp = timestamp
@@ -37,6 +39,7 @@ struct CravingEvent: Codable, Identifiable {
         self.guidedLoopCompleted = guidedLoopCompleted
         self.guidedLoopOutcome = guidedLoopOutcome
         self.guidedLoopSecondRoundStarted = guidedLoopSecondRoundStarted
+        self.guidedLoopDurationSeconds = guidedLoopDurationSeconds
     }
 }
 
