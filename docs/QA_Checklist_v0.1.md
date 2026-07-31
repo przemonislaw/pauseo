@@ -156,24 +156,24 @@ Pass
 
 ## 13. Guided 3-minute craving loop
 
-- [ ] After completing the micro-action step ("Zrobię to"), the invitation screen "Zostań ze mną jeszcze 3 minuty?" appears before the closing screen.
-- [ ] Declining the invitation ("Kończę na teraz") goes straight to the existing neutral closing screen — same copy as before this feature.
-- [ ] Accepting the invitation shows one instruction at a time with a visible countdown/progress bar, no list of techniques.
-- [ ] The full sequence runs for about 3 minutes and auto-advances without requiring taps between stages.
-- [ ] Backgrounding the app during the loop and returning keeps the countdown accurate (not paused/reset).
-- [ ] "Kończę na teraz" is visible and works at any point during the loop, exiting to the outcome question.
-- [ ] After a round (full 3 minutes or early exit), the outcome question "Co się teraz dzieje?" appears with exactly three options: "Nie zapaliłem/am", "Odłożyłem/am decyzję", "Zapaliłem/am".
-- [ ] The second-round offer ("Daję sobie jeszcze 3 minuty" / "Kończę na teraz") appears only when the first outcome selected was "Odłożyłem/am decyzję".
-- [ ] The second-round offer does not appear after "Nie zapaliłem/am" or "Zapaliłem/am".
-- [ ] Accepting the second-round offer repeats the same 3-minute guided sequence; after its outcome question, no further round is offered.
-- [ ] Every ending (declined invitation, or any outcome/round combination) shows the same neutral closing screen — no praise or shame language that varies by outcome.
-- [ ] No instruction or supportive text claims that breathing or any single action removes the craving.
-- [ ] Complete one full session (with a second round) and relaunch the app — confirm no crash and existing craving/slip events from before this feature are still readable.
-- [ ] Force-quit the app mid-loop (after the invitation was accepted) and relaunch — confirm no crash and no duplicate craving events were created for that session.
-- [ ] Full sequence works in airplane mode (no network calls).
-- [ ] Delete-all in PrivacySafetyView still clears craving events created via this flow.
+- [x] After completing the micro-action step ("Zrobię to"), the invitation screen "Zostań ze mną jeszcze 3 minuty?" appears before the closing screen.
+- [x] Declining the invitation ("Kończę na teraz") goes straight to the existing neutral closing screen — same copy as before this feature.
+- [x] Accepting the invitation shows one instruction at a time with a visible countdown/progress bar, no list of techniques.
+- [x] The full sequence runs for about 3 minutes and auto-advances without requiring taps between stages.
+- [x] Backgrounding the app during the loop and returning keeps the countdown accurate (not paused/reset).
+- [x] "Kończę na teraz" is visible and works at any point during the loop, exiting to the outcome question.
+- [x] After a round (full 3 minutes or early exit), the outcome question "Co się teraz dzieje?" appears with exactly three options: "Nie zapaliłem/am", "Odłożyłem/am decyzję", "Zapaliłem/am".
+- [x] The second-round offer ("Daję sobie jeszcze 3 minuty" / "Kończę na teraz") appears only when the first outcome selected was "Odłożyłem/am decyzję".
+- [x] The second-round offer does not appear after "Nie zapaliłem/am" or "Zapaliłem/am".
+- [x] Accepting the second-round offer repeats the same 3-minute guided sequence; after its outcome question, no further round is offered.
+- [x] Every ending (declined invitation, or any outcome/round combination) shows the same neutral closing screen — no praise or shame language that varies by outcome.
+- [x] No instruction or supportive text claims that breathing or any single action removes the craving.
+- [x] Complete one full session (with a second round) and relaunch the app — confirm no crash and existing craving/slip events from before this feature are still readable.
+- [x] Force-quit the app mid-loop (after the invitation was accepted) and relaunch — confirm no crash and no duplicate craving events were created for that session.
+- [x] Full sequence works in airplane mode (no network calls).
+- [x] Delete-all in PrivacySafetyView still clears craving events created via this flow.
 
-Pass / Issues found:
+Pass
 
 ---
 
