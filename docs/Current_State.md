@@ -37,6 +37,21 @@ Current Home contains only:
 - `EventStore.deleteAll()` is accessible from PrivacySafetyView — users can delete all local data.
 - Progress view and trigger intelligence UI remain deferred and are not implemented.
 - Daily check-in remains deferred and is not implemented.
+- `EventStore.upsert(_:)` allows a `CravingEvent` to be created once and updated in place by `id` as the craving flow progresses. This exists so that abandoning the guided 3-minute loop mid-session (e.g. swiping the sheet away) still leaves an accurate partial record instead of no record at all.
+
+## Guided 3-minute craving loop
+
+**Implemented.**
+
+After the micro-action step in `CravingFlowView`, the user is invited to stay for a guided 3-minute sequence ("Zostań ze mną jeszcze 3 minuty") instead of the flow ending immediately.
+
+- One instruction is shown at a time, with a visible countdown/progress bar (3 auto-advancing 60-second stages, wall-clock based so backgrounding the app does not desync the timer).
+- The user can decline the invitation or exit the loop early at any point via a low-emphasis "Kończę na teraz" control — never gated or hidden.
+- After a round (finished fully or exited early), the user is asked one outcome question: "Nie zapaliłem/am" / "Odłożyłem/am decyzję" / "Zapaliłem/am".
+- A second round is offered only when the first round's outcome is "Odłożyłem/am decyzję", and at most once. After the second round, the outcome question is shown again with no further round offered.
+- Every path ends on the same existing, neutral `CompletionStep` — copy does not vary by outcome.
+- `CravingEvent` gained four optional fields to record this without a new persistence key: `guidedLoopStarted`, `guidedLoopCompleted` (true if at least one round ran the full 3 minutes), `guidedLoopOutcome` (most recent outcome), `guidedLoopSecondRoundStarted`. Old stored events decode unaffected since the new fields are optional.
+- No summaries, history, or statistics are shown anywhere — this only preserves evidence for later product decisions, per the same rule as existing craving/slip events.
 
 ## Privacy & Safety screen
 

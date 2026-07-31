@@ -363,16 +363,16 @@ Options:
 
 ### Step 4: Outcome
 
+After the micro-action, the user may continue into a short guided 3-minute engagement sequence before this question appears.
+
 Question:
 
-> “Co się stało?”
+> “Co się teraz dzieje?”
 
 Options:
-- Przeszło
-- Jest słabszy
-- Nadal mocny
-- Użyłem nikotyny
-- Pominę
+- Nie zapaliłem/am
+- Odłożyłem/am decyzję
+- Zapaliłem/am
 
 ### Step 5: Close
 
