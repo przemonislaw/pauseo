@@ -84,6 +84,24 @@ Full PL/EN localization, per ADR-011's update, covers onboarding, Home, the full
 - No account, backend, sync, remote content, or in-app language-switcher setting was added. Language selection is the standard iOS per-app mechanism (Settings → Pauseo → Language).
 - Verified: `xcodegen generate`, Debug and Release builds (iOS Simulator destination) both succeed with no new warnings; the built app bundle contains `en.lproj/Localizable.strings` and `pl.lproj/Localizable.strings` (111 keys each); a Simulator smoke test confirmed the app actually renders in Polish and English depending on the device language and falls back correctly. Full manual QA (real device, all flows, both languages, accessibility, VoiceOver, Reduce Motion, language switching, fallback) has passed — see `docs/QA_Checklist_v0.1.md` section 15.
 
+## Release readiness (Phase 2, in progress)
+
+Goal: first Internal TestFlight build. No application feature work — this is packaging/signing/compliance only.
+
+Done:
+- App ID `app.pauseo` registered in Apple Developer Portal; app record created in App Store Connect ("Pauseo", primary language Polish).
+- `DEVELOPMENT_TEAM` corrected to `5T4Z65558R` (the previous value, `36WKZ8Q4L5`, matched no locally available certificate); `CODE_SIGN_STYLE: Automatic` pinned in `project.yml` so it survives `xcodegen generate`. Verified working in Xcode's Signing & Capabilities (automatic profile + certificate resolved).
+- `TARGETED_DEVICE_FAMILY` set to `1` (iPhone only) — see ADR-012.
+- `Pauseo/PrivacyInfo.xcprivacy` added, declaring the app's `UserDefaults` usage; `ITSAppUsesNonExemptEncryption: false` set — see ADR-013.
+- Verified: `xcodegen generate` plus Debug and Release builds (Simulator destination) succeed with no new warnings after all of the above.
+
+Still pending before an Internal TestFlight build can be uploaded:
+- App icon (`Pauseo/Assets.xcassets/AppIcon.appiconset` currently has no image file — Contents.json slot only).
+- An actual Archive + upload, which requires Xcode signed into the Apple ID for team `5T4Z65558R` (confirmed working in the Xcode GUI; this cannot be done from an unattended/headless shell in this environment — `xcodebuild archive` here fails with "No Account for Team" since no Apple ID session exists outside the interactive Xcode app).
+- Export-compliance and any other build-specific prompts in App Store Connect once a build is uploaded.
+
+Out of scope for Internal TestFlight (confirmed from App Store Connect's own UI): the "iOS App Version" distribution page (description, keywords, screenshots, promotional text, support/marketing URLs) is for the public App Store listing, not required to test via Internal TestFlight.
+
 ## Recommended next step
 
 No feature is locked as the next step. A manual QA pass and v0.1 checkpoint should happen before committing to new scope.

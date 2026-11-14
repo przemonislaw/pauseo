@@ -396,6 +396,56 @@ Not applicable for PL/EN — this is now shipped. A future ADR would be needed o
 
 ---
 
+# ADR-012 — iPhone-only distribution for v0.1
+
+## Status
+
+Accepted
+
+## Decision
+
+`TARGETED_DEVICE_FAMILY` is set to `1` (iPhone only). iPad is not a supported device family in v0.1.
+
+## Rationale
+
+The product is designed and tested exclusively for iPhone-sized, one-handed, in-the-moment use (`docs/Product_MVP.md`, `docs/UX_Principles.md`). No screen has an iPad-adapted layout, and no QA pass (`docs/QA_Checklist_v0.1.md`) has run on iPad. Including iPad in the device family without adapting for it also fails Apple's App Store binary validation unless the app either supports all interface orientations on iPad or declares `UIRequiresFullScreen` — confirmed locally as a build warning ("All interface orientations must be supported unless the app requires full screen") during a Release archive while iPad was still included.
+
+## Consequences
+
+- The app is not installable on iPad from TestFlight or the App Store.
+- No iPad-specific layout work is needed for v0.1.
+
+## Revisit when
+
+A future product decision explicitly scopes iPad support, with layout adaptation and QA to match.
+
+---
+
+# ADR-013 — Privacy Manifest and export compliance for distribution
+
+## Status
+
+Accepted
+
+## Decision
+
+`Pauseo/PrivacyInfo.xcprivacy` declares `NSPrivacyAccessedAPICategoryUserDefaults` with reason `CA92.1` ("access info exclusive to the app itself"), `NSPrivacyTracking: false`, an empty `NSPrivacyTrackingDomains`, and an empty `NSPrivacyCollectedDataTypes`. `Info.plist` sets `ITSAppUsesNonExemptEncryption: false`.
+
+## Rationale
+
+Apple requires every App Store Connect upload (as of May 1, 2024) to declare an approved reason for any "Required Reason API" usage, or the upload is rejected (ITMS-91053). `EventStore` and `AppState` use `UserDefaults`/`@AppStorage` for local-only storage exclusive to this app (no App Group, no MDM), matching reason `CA92.1` exactly. The app makes no network calls and uses no third-party SDKs, so `NSPrivacyTracking` is `false` and no data-collection types are declared. `ITSAppUsesNonExemptEncryption: false` reflects that the app uses no encryption beyond what the OS provides by default, avoiding the export-compliance prompt on every build upload.
+
+## Consequences
+
+- Any new required-reason API usage added later (e.g. file timestamps, disk space) needs its own declaration in `PrivacyInfo.xcprivacy` before the next upload.
+- If the app ever adds network calls, tracking, or a third-party SDK, this ADR and the manifest must be revisited together with `docs/Privacy_Safety.md`.
+
+## Revisit when
+
+Before any change that adds network access, a third-party SDK, additional UserDefaults usage outside the app's own container, or any form of tracking.
+
+---
+
 # Open questions
 
 These are intentionally not decided yet:

@@ -17,6 +17,7 @@
 		8CB7A8BB90CF4F11D24C94E0 /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444E414A7622EF89E1F795F6 /* ProgressView.swift */; };
 		9C69517212E9C02B10776849 /* SupportCardLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 981CAD1BF4D19BFE2E5CB17E /* SupportCardLibrary.swift */; };
 		A894D4FADB0735E6E4F6255C /* OnboardingFlowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BFB78FD0DD3A91812E782A1 /* OnboardingFlowView.swift */; };
+		C06F173A92FCC7CC3583C3F1 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 8332CF9C59F99C12AE8BCB6B /* PrivacyInfo.xcprivacy */; };
 		CDBA404F1E98EE8395C32031 /* UserPreferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DB3861C2955CCAD02D7FF3A /* UserPreferences.swift */; };
 		D50D11789608F75DE20D0F42 /* CravingFlowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E290BC8A6F17F7A13227D0AB /* CravingFlowView.swift */; };
 		DC72F2D35A0C500144C942C3 /* PrivacySafetyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CBCE5EC5C809633EA59BF2 /* PrivacySafetyView.swift */; };
@@ -34,6 +35,7 @@
 		6DB3861C2955CCAD02D7FF3A /* UserPreferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPreferences.swift; sourceTree = "<group>"; };
 		70BA6D6AF8C6758089C6E7CB /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		7BFB78FD0DD3A91812E782A1 /* OnboardingFlowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingFlowView.swift; sourceTree = "<group>"; };
+		8332CF9C59F99C12AE8BCB6B /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		83E2BBE75670D95095B9A89E /* SupportCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupportCard.swift; sourceTree = "<group>"; };
 		88A3581E4D2A920EE9DFA4A7 /* EventStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventStore.swift; sourceTree = "<group>"; };
 		981CAD1BF4D19BFE2E5CB17E /* SupportCardLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupportCardLibrary.swift; sourceTree = "<group>"; };
@@ -122,6 +124,7 @@
 				1A0C2FD1475917E0E3A0FDC4 /* Info.plist */,
 				EEB3EC034AA4E5B419162B86 /* Localizable.xcstrings */,
 				F53D3422675A82C5AD0DF236 /* PauseoApp.swift */,
+				8332CF9C59F99C12AE8BCB6B /* PrivacyInfo.xcprivacy */,
 				2C5EF1C82618B8661319A078 /* CravingFlow */,
 				065D3CF6077595A59275FA4C /* DailyCheckIn */,
 				626481AF810DF5B0A9BB4CE2 /* Home */,
@@ -234,6 +237,7 @@
 				F90638FB6DB7818CCC66B9F8 /* Assets.xcassets in Resources */,
 				F2646A9745E0527D21378CB5 /* Localizable.xcstrings in Resources */,
 				597F53CEE60E3006EB8B8096 /* Preview Assets.xcassets in Resources */,
+				C06F173A92FCC7CC3583C3F1 /* PrivacyInfo.xcprivacy in Resources */,
 				0A1E9FE533A2B26EB3483BBB /* support_cards.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -287,7 +291,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_VERSION = 5.9;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -433,7 +437,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 5.9;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

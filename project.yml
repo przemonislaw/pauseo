@@ -37,6 +37,7 @@ targets:
         MARKETING_VERSION: "0.1.0"
         DEVELOPMENT_TEAM: "5T4Z65558R"
         CODE_SIGN_STYLE: Automatic
+        TARGETED_DEVICE_FAMILY: "1"
       configs:
         Debug:
           DEBUG_INFORMATION_FORMAT: dwarf
@@ -48,3 +49,4 @@ targets:
       path: Pauseo/Info.plist
       properties:
         CFBundleLocalizations: [en, pl]
+        ITSAppUsesNonExemptEncryption: false
