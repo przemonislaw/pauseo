@@ -7,18 +7,18 @@ struct DailyCheckInView: View {
         VStack(spacing: 24) {
             Spacer()
 
-            Text("Dzienny check-in")
+            Text("Daily check-in")
                 .font(.title2)
                 .fontWeight(.bold)
 
-            Text("Placeholder — Epic 7\nTu pojawi się szybki check-in (< 30 sekund).")
+            Text("Placeholder — Epic 7\nA quick check-in (< 30 seconds) will go here.")
                 .font(.body)
                 .foregroundStyle(.secondary)
                 .multilineTextAlignment(.center)
 
             Spacer()
 
-            Button("Zamknij") { dismiss() }
+            Button("Close") { dismiss() }
                 .buttonStyle(.bordered)
         }
         .padding()

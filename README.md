@@ -12,11 +12,12 @@ The product is not a medical treatment, not a therapy replacement, and not a med
 
 ## Current status
 
-This repository is in the **MVP skeleton phase**.
+This repository is in **active v0.1 MVP implementation**, built incrementally against `docs/Backlog_v0.1.md`.
 
 The repository contains:
 - full product documentation in `/docs`,
-- a minimal SwiftUI placeholder skeleton (screens stubbed, no feature logic implemented).
+- a working SwiftUI app covering onboarding, Home, the craving flow (including a guided 2-minute support-card loop), slip recovery, local persistence, the Privacy & Safety screen, and full PL/EN localization.
+- `DailyCheckInView` and `AppProgressView` remain disconnected placeholders — see `docs/Current_State.md`.
 
 No feature implementation should happen unless it maps to one explicit backlog item in `docs/Backlog_v0.1.md`.
 

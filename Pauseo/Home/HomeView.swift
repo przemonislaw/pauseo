@@ -10,11 +10,11 @@ struct HomeView: View {
             Spacer()
 
             VStack(spacing: 12) {
-                Text("Co teraz?")
+                Text("What now?")
                     .font(.largeTitle)
                     .fontWeight(.bold)
 
-                Text("Nie musisz ogarniać całego dnia.\nWybierz jedną małą akcję.")
+                Text("You don't have to handle the whole day.\nChoose one small action.")
                     .font(.body)
                     .foregroundStyle(.secondary)
                     .multilineTextAlignment(.center)
@@ -22,7 +22,7 @@ struct HomeView: View {
 
             Spacer()
 
-            Button("Mam craving teraz") {
+            Button("I'm having a craving") {
                 showingCravingFlow = true
             }
             .buttonStyle(.borderedProminent)
@@ -30,9 +30,9 @@ struct HomeView: View {
             .tint(.indigo)
             .padding(.bottom, 32)
 
-            SecondaryActionButton(title: "Miałem slip") { showingSlipRecovery = true }
+            SecondaryActionButton(title: "I've had a slip") { showingSlipRecovery = true }
 
-            Button("Prywatność i dane") { showingPrivacy = true }
+            Button("Privacy and data") { showingPrivacy = true }
                 .font(.caption2)
                 .foregroundStyle(.tertiary)
                 .padding(.top, 8)
@@ -52,7 +52,7 @@ private struct SecondaryActionButton: View {
 
     var body: some View {
         Button(action: action) {
-            Text(title)
+            Text(LocalizedStringKey(title))
                 .font(.caption)
                 .multilineTextAlignment(.center)
                 .frame(maxWidth: .infinity)

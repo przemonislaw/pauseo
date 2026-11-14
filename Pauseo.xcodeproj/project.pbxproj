@@ -21,11 +21,13 @@
 		D50D11789608F75DE20D0F42 /* CravingFlowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E290BC8A6F17F7A13227D0AB /* CravingFlowView.swift */; };
 		DC72F2D35A0C500144C942C3 /* PrivacySafetyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CBCE5EC5C809633EA59BF2 /* PrivacySafetyView.swift */; };
 		E85FA8FB4D691B29716C93F3 /* PauseoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F53D3422675A82C5AD0DF236 /* PauseoApp.swift */; };
+		F2646A9745E0527D21378CB5 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = EEB3EC034AA4E5B419162B86 /* Localizable.xcstrings */; };
 		F72B9A1E6D59EE543CFD13AD /* SlipRecoveryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427188AA912E0887F47DFCD4 /* SlipRecoveryView.swift */; };
 		F90638FB6DB7818CCC66B9F8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D9CE02D80ADEA97CBD3860E8 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1A0C2FD1475917E0E3A0FDC4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		427188AA912E0887F47DFCD4 /* SlipRecoveryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlipRecoveryView.swift; sourceTree = "<group>"; };
 		43B969851362975C4A09B128 /* support_cards.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = support_cards.json; sourceTree = "<group>"; };
 		444E414A7622EF89E1F795F6 /* ProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
@@ -42,6 +44,7 @@
 		D9CE02D80ADEA97CBD3860E8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DFC7112674C30C5CE71F8497 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		E290BC8A6F17F7A13227D0AB /* CravingFlowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CravingFlowView.swift; sourceTree = "<group>"; };
+		EEB3EC034AA4E5B419162B86 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		F53D3422675A82C5AD0DF236 /* PauseoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PauseoApp.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -116,6 +119,8 @@
 			children = (
 				DFC7112674C30C5CE71F8497 /* AppState.swift */,
 				D9CE02D80ADEA97CBD3860E8 /* Assets.xcassets */,
+				1A0C2FD1475917E0E3A0FDC4 /* Info.plist */,
+				EEB3EC034AA4E5B419162B86 /* Localizable.xcstrings */,
 				F53D3422675A82C5AD0DF236 /* PauseoApp.swift */,
 				2C5EF1C82618B8661319A078 /* CravingFlow */,
 				065D3CF6077595A59275FA4C /* DailyCheckIn */,
@@ -206,6 +211,7 @@
 			knownRegions = (
 				Base,
 				en,
+				pl,
 			);
 			mainGroup = 76636A30D4FD8984DFC079F6;
 			minimizedProjectReferenceProxies = 1;
@@ -225,6 +231,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F90638FB6DB7818CCC66B9F8 /* Assets.xcassets in Resources */,
+				F2646A9745E0527D21378CB5 /* Localizable.xcstrings in Resources */,
 				597F53CEE60E3006EB8B8096 /* Preview Assets.xcassets in Resources */,
 				0A1E9FE533A2B26EB3483BBB /* support_cards.json in Resources */,
 			);
@@ -266,6 +273,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"Pauseo/Preview Content\"";
 				DEVELOPMENT_TEAM = 36WKZ8Q4L5;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Pauseo/Info.plist;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -410,6 +418,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"Pauseo/Preview Content\"";
 				DEVELOPMENT_TEAM = 36WKZ8Q4L5;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Pauseo/Info.plist;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (

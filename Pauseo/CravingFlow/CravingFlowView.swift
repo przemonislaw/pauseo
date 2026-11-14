@@ -33,7 +33,7 @@ struct CravingFlowView: View {
                     Button(action: { step -= 1 }) {
                         HStack(spacing: 4) {
                             Image(systemName: "chevron.left")
-                            Text("Wstecz")
+                            Text("Back")
                         }
                         .font(.subheadline)
                         .foregroundStyle(.secondary)
@@ -160,18 +160,18 @@ private struct GroundingStep: View {
         VStack(spacing: 0) {
             Spacer()
             VStack(spacing: 16) {
-                Text("Zatrzymaj się na chwilę.")
+                Text("Pause for a moment.")
                     .font(.largeTitle)
                     .fontWeight(.bold)
                     .multilineTextAlignment(.center)
-                Text("Nie musisz teraz rozwiązywać wszystkiego. Wybierz jedną małą akcję na najbliższą minutę.")
+                Text("You don't have to solve everything right now. Choose one small action for the next minute.")
                     .font(.body)
                     .foregroundStyle(.secondary)
                     .multilineTextAlignment(.center)
             }
             .padding(.horizontal, 32)
             Spacer()
-            Button("Pomóż mi teraz", action: onNext)
+            Button("Help me now", action: onNext)
                 .buttonStyle(.borderedProminent)
                 .controlSize(.large)
                 .tint(.indigo)
@@ -189,7 +189,7 @@ private struct TriggerStep: View {
 
     var body: some View {
         VStack(spacing: 0) {
-            Text("Co odpaliło craving?")
+            Text("What triggered the craving?")
                 .font(.title2)
                 .fontWeight(.semibold)
                 .multilineTextAlignment(.center)
@@ -197,7 +197,7 @@ private struct TriggerStep: View {
                 .padding(.top, 24)
                 .padding(.bottom, 8)
 
-            Text("Możesz pominąć.")
+            Text("You can skip this.")
                 .font(.caption)
                 .foregroundStyle(.tertiary)
                 .padding(.bottom, 16)
@@ -215,7 +215,7 @@ private struct TriggerStep: View {
                 .padding(.horizontal)
             }
 
-            Button("Dalej", action: onNext)
+            Button("Next", action: onNext)
                 .buttonStyle(.borderedProminent)
                 .controlSize(.large)
                 .tint(.indigo)
@@ -235,7 +235,7 @@ private struct MicroActionStep: View {
 
     var body: some View {
         VStack(spacing: 0) {
-            Text("Wybierz jedną małą akcję.")
+            Text("Choose one small action.")
                 .font(.title2)
                 .fontWeight(.semibold)
                 .multilineTextAlignment(.center)
@@ -243,7 +243,7 @@ private struct MicroActionStep: View {
                 .padding(.top, 24)
                 .padding(.bottom, 8)
 
-            Text("Na najbliższą minutę.")
+            Text("For the next minute.")
                 .font(.caption)
                 .foregroundStyle(.tertiary)
                 .padding(.bottom, 16)
@@ -261,7 +261,7 @@ private struct MicroActionStep: View {
 
             Spacer()
 
-            Button("Zrobię to", action: onNext)
+            Button("I'll do it", action: onNext)
                 .buttonStyle(.borderedProminent)
                 .controlSize(.large)
                 .tint(.indigo)
@@ -281,11 +281,11 @@ private struct InvitationStep: View {
         VStack(spacing: 0) {
             Spacer()
             VStack(spacing: 16) {
-                Text("Zostań ze mną jeszcze 2 minuty?")
+                Text("Stay with me for 2 more minutes?")
                     .font(.largeTitle)
                     .fontWeight(.bold)
                     .multilineTextAlignment(.center)
-                Text("Możesz poczekać ze mną, zanim podejmiesz decyzję. Bez presji — możesz też zakończyć teraz.")
+                Text("You can stay with me before deciding. No pressure — you can also end now.")
                     .font(.body)
                     .foregroundStyle(.secondary)
                     .multilineTextAlignment(.center)
@@ -293,11 +293,11 @@ private struct InvitationStep: View {
             .padding(.horizontal, 32)
             Spacer()
             VStack(spacing: 12) {
-                Button("Zostań ze mną", action: onAccept)
+                Button("Stay with me", action: onAccept)
                     .buttonStyle(.borderedProminent)
                     .controlSize(.large)
                     .tint(.indigo)
-                Button("Kończę na teraz", action: onDecline)
+                Button("I'm done for now", action: onDecline)
                     .font(.footnote)
                     .foregroundStyle(.secondary)
             }
@@ -345,7 +345,7 @@ private struct GuidedLoopStep: View {
                     .padding(.bottom, 32)
 
                 if let card {
-                    Text(card.text)
+                    Text(LocalizedStringKey(card.text))
                         .font(.title2)
                         .fontWeight(.semibold)
                         .multilineTextAlignment(.center)
@@ -355,7 +355,7 @@ private struct GuidedLoopStep: View {
 
                 Spacer()
 
-                Button("Kończę na teraz") {
+                Button("I'm done for now") {
                     finish(completedFully: false)
                 }
                 .font(.footnote)
@@ -395,16 +395,16 @@ private struct OutcomeStep: View {
     var body: some View {
         VStack(spacing: 0) {
             Spacer()
-            Text("Co się teraz dzieje?")
+            Text("What's happening now?")
                 .font(.title2)
                 .fontWeight(.semibold)
                 .multilineTextAlignment(.center)
                 .padding(.horizontal, 32)
             Spacer()
             VStack(spacing: 10) {
-                Button("Nie zapaliłem/am") { onSelect(.didNotSmoke) }
-                Button("Odłożyłem/am decyzję") { onSelect(.postponed) }
-                Button("Zapaliłem/am") { onSelect(.smoked) }
+                Button("I didn't smoke") { onSelect(.didNotSmoke) }
+                Button("I've put off the decision") { onSelect(.postponed) }
+                Button("I smoked") { onSelect(.smoked) }
             }
             .buttonStyle(.bordered)
             .controlSize(.large)
@@ -424,11 +424,11 @@ private struct SecondRoundOfferStep: View {
         VStack(spacing: 0) {
             Spacer()
             VStack(spacing: 16) {
-                Text("Nadal potrzebujesz wsparcia?")
+                Text("Still need support?")
                     .font(.title2)
                     .fontWeight(.semibold)
                     .multilineTextAlignment(.center)
-                Text("Możesz zostać jeszcze chwilę.")
+                Text("You can stay a little longer.")
                     .font(.body)
                     .foregroundStyle(.secondary)
                     .multilineTextAlignment(.center)
@@ -436,11 +436,11 @@ private struct SecondRoundOfferStep: View {
             .padding(.horizontal, 32)
             Spacer()
             VStack(spacing: 12) {
-                Button("Daję sobie jeszcze 2 minuty", action: onAccept)
+                Button("I'll take 2 more minutes", action: onAccept)
                     .buttonStyle(.borderedProminent)
                     .controlSize(.large)
                     .tint(.indigo)
-                Button("Kończę na teraz", action: onDecline)
+                Button("I'm done for now", action: onDecline)
                     .font(.footnote)
                     .foregroundStyle(.secondary)
             }
@@ -459,18 +459,18 @@ private struct CompletionStep: View {
         VStack(spacing: 0) {
             Spacer()
             VStack(spacing: 16) {
-                Text("Dobra. Jedna mała akcja wystarczy na teraz.")
+                Text("Good. One small action is enough for now.")
                     .font(.largeTitle)
                     .fontWeight(.bold)
                     .multilineTextAlignment(.center)
-                Text("Jeśli craving wróci, możesz odpalić ten flow jeszcze raz.")
+                Text("If the craving comes back, you can start this flow again.")
                     .font(.body)
                     .foregroundStyle(.secondary)
                     .multilineTextAlignment(.center)
             }
             .padding(.horizontal, 32)
             Spacer()
-            Button("Wróć do Home", action: onDismiss)
+            Button("Back to home", action: onDismiss)
                 .buttonStyle(.borderedProminent)
                 .controlSize(.large)
                 .tint(.indigo)
@@ -489,7 +489,7 @@ private struct CravingChip: View {
 
     var body: some View {
         Button(action: action) {
-            Text(title)
+            Text(LocalizedStringKey(title))
                 .font(.callout)
                 .padding(.vertical, 12)
                 .frame(maxWidth: .infinity)

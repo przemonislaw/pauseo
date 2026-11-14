@@ -215,7 +215,7 @@ Do not build in MVP:
 7. Clinician portal.
 8. Paid subscription mechanics.
 9. Full content library.
-10. Multi-language expansion beyond the initial implementation language.
+10. Multi-language expansion beyond Polish and English.
 11. Deep personalization engine.
 12. App Store monetization experiments.
 13. Gamified badge economy.
@@ -590,9 +590,10 @@ Goal: test whether users keep returning and find the app useful.
 Possible additions:
 - lightweight paywall experiment,
 - App Store polish,
-- bilingual copy,
 - structured user feedback,
 - optional content cards,
 - more robust local analytics.
+
+Bilingual (PL/EN) copy already shipped in v0.1 Phase 1 — see `docs/Architecture_Decisions.md` ADR-011.
 
 Backend remains a separate decision, not default.

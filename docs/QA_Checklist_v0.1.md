@@ -208,6 +208,43 @@ Pass
 
 ---
 
+## 15. PL/EN localization
+
+Not a new feature — verifies that the existing flows from sections 1–14 render correctly in both Polish and English, that data compatibility is preserved, and that language fallback works. Run the full sequence below **once with the device language set to Polish, and once set to English.**
+
+- [x] Complete the full onboarding flow (all 5 screens, every option in each selection step) and confirm every title, option label, and button is in the active language with no missing keys and no mixed-language text.
+- [x] Home shows exactly the three actions from section 1, all in the active language.
+- [x] Complete the craving flow: grounding → trigger selection (all options) → micro-action selection (all options) → completion, confirming every screen is in the active language.
+- [x] Decline the guided-loop invitation ("I'm done for now" / "Kończę na teraz") and confirm it goes straight to the same neutral closing screen as before, in the active language.
+- [x] Accept the guided-loop invitation and let a full 120-second round run, confirming the countdown, progress bar, and "I'm done for now" control are in the active language.
+- [x] Exit the guided loop early via "I'm done for now" and confirm the outcome question appears correctly.
+- [x] Trigger all three outcomes in turn ("I didn't smoke" / "I've put off the decision" / "I smoked") across repeated runs, confirming each option reads correctly and the save values are unaffected (see data-compatibility checks below).
+- [x] After choosing "I've put off the decision", confirm the second-round offer appears ("I'll take 2 more minutes" / "I'm done for now") — and not after the other two outcomes — and that it is offered at most once.
+- [x] During guided-loop rounds, observe enough card rotations to see all 15 bundled support cards at least once across both language runs; confirm each card's text is fully translated, with no leftover Polish in the English run or vice versa.
+- [x] Dev-time only: temporarily rename/corrupt `support_cards.json`, rebuild, and confirm all 5 fallback cards render correctly in the active language, then restore the real file.
+- [x] Complete the slip recovery flow (shame-reduction → context selection, all options → recovery action, all options → completion), confirming every screen is in the active language.
+- [x] Open Privacy & Safety from Home; confirm all section titles, body text (including the corrected "Where your data is" / "Gdzie są dane" copy), the medical disclaimer, and the delete button are in the active language.
+- [x] Trigger "Delete all local data" and confirm both the alert title/message and both alert buttons (Delete/Cancel or Usuń/Anuluj) are in the active language; confirm both choosing to delete and choosing to cancel behave correctly.
+- [x] Repeat the above on a small-screen device/simulator and with the largest Dynamic Type accessibility size — confirm no text is clipped or truncated in either language.
+- [x] Enable VoiceOver and navigate through onboarding, the craving flow, and Privacy & Safety — confirm every label is read in the active language, the guided-loop timer is announced correctly, and a new support card is not force-announced on every rotation (same behavior as section 14).
+- [x] Enable Reduce Motion and confirm card-text changes during the guided loop still show no animated transition in either language.
+- [x] Put the device in airplane mode and confirm the full app (onboarding through delete-data) still works with no network calls, in both languages.
+- [x] Background the app mid-guided-loop and return; confirm the round does not restart and the language does not change.
+- [x] Force-quit the app and relaunch in each language; confirm no crash and no duplicate `CravingEvent`.
+- [x] **Data-compatibility check:** with the device language set to English, complete one craving flow and one slip flow; relaunch with the device language set back to Polish and confirm no crash. (The underlying stored `trigger`/`action`/`context`/`recoveryAction` values are Polish regardless of display language by design — this step only confirms the app does not crash or corrupt data across a language switch, not that stored values change.)
+- [x] **Existing-data check:** confirm craving/slip events created before this localization change (if any are still present on the test device) still load without error after switching the device language.
+- [x] Switch device language Polish → English → Polish (via Settings → Pauseo → Language, or device-wide Settings → General → Language & Region) without reinstalling, relaunching the app after each switch, and confirm the UI fully matches the new language each time with nothing stuck in the previous language.
+- [x] Set the device to a third, unsupported language (e.g. German) and confirm the app falls back to English with no missing keys and no crash.
+- [x] Spot-check for missing keys or mixed languages: no raw catalog key, no untranslated literal, and no screen mixing Polish and English in the same run.
+
+Tester: Abelard
+Date: 14.11.2026
+Build/commit tested: Phase 1 PL/EN localization (pre-commit working tree, based on 38b7de0)
+
+Pass
+
+---
+
 ## Sign-off
 
 - [x] All sections above reviewed.

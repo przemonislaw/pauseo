@@ -14,7 +14,7 @@ struct OnboardingFlowView: View {
                     Button(action: { step -= 1 }) {
                         HStack(spacing: 4) {
                             Image(systemName: "chevron.left")
-                            Text("Wstecz")
+                            Text("Back")
                         }
                         .font(.subheadline)
                         .foregroundStyle(.secondary)
@@ -53,18 +53,18 @@ private struct WelcomeStep: View {
         VStack(spacing: 0) {
             Spacer()
             VStack(spacing: 16) {
-                Text("Pomoc na moment cravingu.")
+                Text("Support when a craving hits.")
                     .font(.largeTitle)
                     .fontWeight(.bold)
                     .multilineTextAlignment(.center)
-                Text("pauseo pomaga wybrać jedną małą akcję, gdy pojawia się głód nikotynowy.")
+                Text("pauseo helps you choose one small action when a nicotine craving hits.")
                     .font(.body)
                     .foregroundStyle(.secondary)
                     .multilineTextAlignment(.center)
             }
             .padding(.horizontal, 32)
             Spacer()
-            Button("Zacznij spokojnie", action: onNext)
+            Button("Let's begin", action: onNext)
                 .buttonStyle(.borderedProminent)
                 .controlSize(.large)
                 .tint(.indigo)
@@ -82,7 +82,7 @@ private struct NicotineTypeStep: View {
 
     var body: some View {
         SelectionStep(
-            title: "Z czego korzystasz?",
+            title: "What do you use?",
             options: NicotineType.allCases,
             selection: $selection,
             onNext: onNext
@@ -98,7 +98,7 @@ private struct GoalModeStep: View {
 
     var body: some View {
         SelectionStep(
-            title: "Co jest Twoim celem?",
+            title: "What's your goal?",
             options: GoalMode.allCases,
             selection: $selection,
             onNext: onNext
@@ -114,7 +114,7 @@ private struct TriggerStep: View {
 
     var body: some View {
         SelectionStep(
-            title: "Co najczęściej odpala craving?",
+            title: "What usually triggers your cravings?",
             options: TriggerCategory.allCases,
             selection: $selection,
             onNext: onNext
@@ -131,11 +131,11 @@ private struct NotificationsStep: View {
         VStack(spacing: 0) {
             Spacer()
             VStack(spacing: 16) {
-                Text("Przypomnienia później.")
+                Text("Reminders later.")
                     .font(.largeTitle)
                     .fontWeight(.bold)
                     .multilineTextAlignment(.center)
-                Text("Na razie zaczniemy bez ustawiania powiadomień. Najważniejsze jest, żeby pomoc była pod ręką, gdy pojawi się craving.")
+                Text("For now we'll start without setting up notifications. What matters most is having support ready when a craving hits.")
                     .font(.body)
                     .foregroundStyle(.secondary)
                     .multilineTextAlignment(.center)
@@ -143,11 +143,11 @@ private struct NotificationsStep: View {
             .padding(.horizontal, 32)
             Spacer()
             VStack(spacing: 12) {
-                Button("Przejdź do aplikacji", action: onComplete)
+                Button("Go to the app", action: onComplete)
                     .buttonStyle(.borderedProminent)
                     .controlSize(.large)
                     .tint(.indigo)
-                Button("Nie teraz", action: onComplete)
+                Button("Not now", action: onComplete)
                     .buttonStyle(.bordered)
                     .controlSize(.large)
                     .tint(.indigo)
@@ -169,7 +169,7 @@ private struct SelectionStep<T: RawRepresentable & CaseIterable & Hashable>: Vie
 
     var body: some View {
         VStack(spacing: 0) {
-            Text(title)
+            Text(LocalizedStringKey(title))
                 .font(.title2)
                 .fontWeight(.semibold)
                 .multilineTextAlignment(.center)
@@ -190,7 +190,7 @@ private struct SelectionStep<T: RawRepresentable & CaseIterable & Hashable>: Vie
                 .padding(.horizontal)
             }
 
-            Button("Dalej", action: onNext)
+            Button("Next", action: onNext)
                 .buttonStyle(.borderedProminent)
                 .controlSize(.large)
                 .tint(.indigo)
@@ -210,7 +210,7 @@ private struct OptionChip: View {
 
     var body: some View {
         Button(action: action) {
-            Text(title)
+            Text(LocalizedStringKey(title))
                 .font(.callout)
                 .padding(.vertical, 12)
                 .frame(maxWidth: .infinity)

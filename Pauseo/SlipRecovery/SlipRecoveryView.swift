@@ -15,7 +15,7 @@ struct SlipRecoveryView: View {
                     Button(action: { step -= 1 }) {
                         HStack(spacing: 4) {
                             Image(systemName: "chevron.left")
-                            Text("Wstecz")
+                            Text("Back")
                         }
                         .font(.subheadline)
                         .foregroundStyle(.secondary)
@@ -63,18 +63,18 @@ private struct ShameReductionStep: View {
         VStack(spacing: 0) {
             Spacer()
             VStack(spacing: 16) {
-                Text("To był slip, nie koniec.")
+                Text("A slip doesn't mean it's over.")
                     .font(.largeTitle)
                     .fontWeight(.bold)
                     .multilineTextAlignment(.center)
-                Text("Nie musisz zaczynać od zera. Wystarczy wrócić do jednej małej decyzji teraz.")
+                Text("You don't have to start from zero. Just come back to one small decision now.")
                     .font(.body)
                     .foregroundStyle(.secondary)
                     .multilineTextAlignment(.center)
             }
             .padding(.horizontal, 32)
             Spacer()
-            Button("Idziemy dalej", action: onNext)
+            Button("Let's continue", action: onNext)
                 .buttonStyle(.borderedProminent)
                 .controlSize(.large)
                 .tint(.indigo)
@@ -97,7 +97,7 @@ private struct ContextStep: View {
 
     var body: some View {
         VStack(spacing: 0) {
-            Text("Co było najbliżej tego momentu?")
+            Text("What was going on at the time?")
                 .font(.title2)
                 .fontWeight(.semibold)
                 .multilineTextAlignment(.center)
@@ -105,7 +105,7 @@ private struct ContextStep: View {
                 .padding(.top, 24)
                 .padding(.bottom, 8)
 
-            Text("Możesz pominąć.")
+            Text("You can skip this.")
                 .font(.caption)
                 .foregroundStyle(.tertiary)
                 .padding(.bottom, 16)
@@ -123,7 +123,7 @@ private struct ContextStep: View {
                 .padding(.horizontal)
             }
 
-            Button("Dalej", action: onNext)
+            Button("Next", action: onNext)
                 .buttonStyle(.borderedProminent)
                 .controlSize(.large)
                 .tint(.indigo)
@@ -150,7 +150,7 @@ private struct RecoveryActionStep: View {
 
     var body: some View {
         VStack(spacing: 0) {
-            Text("Co zrobisz teraz?")
+            Text("What will you do now?")
                 .font(.title2)
                 .fontWeight(.semibold)
                 .multilineTextAlignment(.center)
@@ -171,7 +171,7 @@ private struct RecoveryActionStep: View {
 
             Spacer()
 
-            Button("Idę dalej", action: onNext)
+            Button("Continue", action: onNext)
                 .buttonStyle(.borderedProminent)
                 .controlSize(.large)
                 .tint(.indigo)
@@ -190,18 +190,18 @@ private struct SlipCompletionStep: View {
         VStack(spacing: 0) {
             Spacer()
             VStack(spacing: 16) {
-                Text("Wracasz na tor.")
+                Text("You're getting back on track.")
                     .font(.largeTitle)
                     .fontWeight(.bold)
                     .multilineTextAlignment(.center)
-                Text("Najważniejsza jest następna decyzja, nie idealna historia.")
+                Text("Your next decision matters more than a perfect record.")
                     .font(.body)
                     .foregroundStyle(.secondary)
                     .multilineTextAlignment(.center)
             }
             .padding(.horizontal, 32)
             Spacer()
-            Button("Wróć do Home", action: onDismiss)
+            Button("Back to home", action: onDismiss)
                 .buttonStyle(.borderedProminent)
                 .controlSize(.large)
                 .tint(.indigo)
@@ -220,7 +220,7 @@ private struct SlipChip: View {
 
     var body: some View {
         Button(action: action) {
-            Text(title)
+            Text(LocalizedStringKey(title))
                 .font(.callout)
                 .padding(.vertical, 12)
                 .frame(maxWidth: .infinity)

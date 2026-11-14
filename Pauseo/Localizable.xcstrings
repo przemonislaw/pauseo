@@ -1,0 +1,1858 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "A slip doesn't mean it's over." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "A slip doesn't mean it's over."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "To był slip, nie koniec."
+          }
+        }
+      }
+    },
+    "Alkohol" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Alcohol"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Alkohol"
+          }
+        }
+      }
+    },
+    "All craving and slip events will be permanently deleted. This cannot be undone." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "All craving and slip events will be permanently deleted. This cannot be undone."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wszystkie zdarzenia cravingów i slipów zostaną trwale usunięte. Tej operacji nie można cofnąć."
+          }
+        }
+      }
+    },
+    "Back" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Back"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wstecz"
+          }
+        }
+      }
+    },
+    "Back to home" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Back to home"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wróć do Home"
+          }
+        }
+      }
+    },
+    "Cancel" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cancel"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Anuluj"
+          }
+        }
+      }
+    },
+    "Choose one small action." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Choose one small action."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wybierz jedną małą akcję."
+          }
+        }
+      }
+    },
+    "Close" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Close"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zamknij"
+          }
+        }
+      }
+    },
+    "Continue" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Continue"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Idę dalej"
+          }
+        }
+      }
+    },
+    "Craving events" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Craving events"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zdarzenia cravingów"
+          }
+        }
+      }
+    },
+    "Daily check-in" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Daily check-in"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dzienny check-in"
+          }
+        }
+      }
+    },
+    "Delete" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Delete"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Usuń"
+          }
+        }
+      }
+    },
+    "Delete all data?" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Delete all data?"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Usuń wszystkie dane?"
+          }
+        }
+      }
+    },
+    "Delete all local data" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Delete all local data"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Usuń wszystkie dane lokalne"
+          }
+        }
+      }
+    },
+    "Delete data" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Delete data"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Usuń dane"
+          }
+        }
+      }
+    },
+    "Done" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Done"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gotowe"
+          }
+        }
+      }
+    },
+    "Emocje" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Emotions"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Emocje"
+          }
+        }
+      }
+    },
+    "For now we'll start without setting up notifications. What matters most is having support ready when a craving hits." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "For now we'll start without setting up notifications. What matters most is having support ready when a craving hits."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Na razie zaczniemy bez ustawiania powiadomień. Najważniejsze jest, żeby pomoc była pod ręką, gdy pojawi się craving."
+          }
+        }
+      }
+    },
+    "For the next minute." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "For the next minute."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Na najbliższą minutę."
+          }
+        }
+      }
+    },
+    "Głód nikotynowy często trwa kilka minut, choć jego przebieg jest różny u różnych osób." : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "A nicotine craving often lasts a few minutes, though it varies from person to person."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Głód nikotynowy często trwa kilka minut, choć jego przebieg jest różny u różnych osób."
+          }
+        }
+      }
+    },
+    "Głód nikotynowy często zmienia swoją intensywność. Możesz przez chwilę obserwować, co dzieje się z nim teraz." : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nicotine cravings often change in intensity. You can take a moment to notice what's happening with it right now."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Głód nikotynowy często zmienia swoją intensywność. Możesz przez chwilę obserwować, co dzieje się z nim teraz."
+          }
+        }
+      }
+    },
+    "Go to the app" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Go to the app"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Przejdź do aplikacji"
+          }
+        }
+      }
+    },
+    "Good. One small action is enough for now." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Good. One small action is enough for now."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dobra. Jedna mała akcja wystarczy na teraz."
+          }
+        }
+      }
+    },
+    "Help me now" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Help me now"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pomóż mi teraz"
+          }
+        }
+      }
+    },
+    "I didn't smoke" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "I didn't smoke"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nie zapaliłem/am"
+          }
+        }
+      }
+    },
+    "I smoked" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "I smoked"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zapaliłem/am"
+          }
+        }
+      }
+    },
+    "I'll do it" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "I'll do it"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zrobię to"
+          }
+        }
+      }
+    },
+    "I'll take 2 more minutes" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "I'll take 2 more minutes"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Daję sobie jeszcze 2 minuty"
+          }
+        }
+      }
+    },
+    "I'm done for now" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "I'm done for now"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kończę na teraz"
+          }
+        }
+      }
+    },
+    "I'm having a craving" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "I'm having a craving"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mam craving teraz"
+          }
+        }
+      }
+    },
+    "I've had a slip" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "I've had a slip"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Miałem slip"
+          }
+        }
+      }
+    },
+    "I've put off the decision" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "I've put off the decision"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Odłożyłem/am decyzję"
+          }
+        }
+      }
+    },
+    "If the craving comes back, you can start this flow again." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "If the craving comes back, you can start this flow again."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jeśli craving wróci, możesz odpalić ten flow jeszcze raz."
+          }
+        }
+      }
+    },
+    "Inne" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Other"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Inne"
+          }
+        }
+      }
+    },
+    "Jazda autem" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Driving"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jazda autem"
+          }
+        }
+      }
+    },
+    "Jeszcze nie wiem" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Not sure yet"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jeszcze nie wiem"
+          }
+        }
+      }
+    },
+    "Let's begin" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Let's begin"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zacznij spokojnie"
+          }
+        }
+      }
+    },
+    "Let's continue" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Let's continue"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Idziemy dalej"
+          }
+        }
+      }
+    },
+    "Medical information" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Medical information"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Informacja medyczna"
+          }
+        }
+      }
+    },
+    "Mieszane" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mixed"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mieszane"
+          }
+        }
+      }
+    },
+    "Na chwilę rozluźnij dłonie i ramiona. Zauważ, czy coś się zmienia." : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "For a moment, relax your hands and shoulders. Notice if anything changes."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Na chwilę rozluźnij dłonie i ramiona. Zauważ, czy coś się zmienia."
+          }
+        }
+      }
+    },
+    "Napisz do kogoś" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Message someone"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Napisz do kogoś"
+          }
+        }
+      }
+    },
+    "Natężenie tego impulsu może się zmieniać. Możesz jeszcze chwilę obserwować, co dzieje się teraz." : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The intensity of this urge can change. You can keep observing what's happening for a bit longer."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Natężenie tego impulsu może się zmieniać. Możesz jeszcze chwilę obserwować, co dzieje się teraz."
+          }
+        }
+      }
+    },
+    "Next" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Next"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dalej"
+          }
+        }
+      }
+    },
+    "Nie musisz teraz decydować o całym dniu. Wystarczy decyzja na najbliższe kilkadziesiąt sekund." : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "You don't have to decide about the whole day right now. Just decide for the next few dozen seconds."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nie musisz teraz decydować o całym dniu. Wystarczy decyzja na najbliższe kilkadziesiąt sekund."
+          }
+        }
+      }
+    },
+    "Nikotyna" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nicotine"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nikotyna"
+          }
+        }
+      }
+    },
+    "Not now" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Not now"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nie teraz"
+          }
+        }
+      }
+    },
+    "Nuda" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Boredom"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nuda"
+          }
+        }
+      }
+    },
+    "Odłóż nikotynę poza zasięg" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Put your nicotine out of reach"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Odłóż nikotynę poza zasięg"
+          }
+        }
+      }
+    },
+    "Odłożenie decyzji o kilka minut to już konkretny krok, nawet jeśli później zapalisz." : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Postponing the decision by a few minutes is already a real step, even if you smoke later."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Odłożenie decyzji o kilka minut to już konkretny krok, nawet jeśli później zapalisz."
+          }
+        }
+      }
+    },
+    "Ograniczam" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Reducing"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ograniczam"
+          }
+        }
+      }
+    },
+    "Papierosy" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cigarettes"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Papierosy"
+          }
+        }
+      }
+    },
+    "Pause for a moment." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pause for a moment."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zatrzymaj się na chwilę."
+          }
+        }
+      }
+    },
+    "pauseo helps you choose one small action when a nicotine craving hits." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "pauseo helps you choose one small action when a nicotine craving hits."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "pauseo pomaga wybrać jedną małą akcję, gdy pojawia się głód nikotynowy."
+          }
+        }
+      }
+    },
+    "pauseo.app supports building habits and recognizing triggers. It does not replace advice from a doctor, therapist, or pharmacist. If you're considering medication, nicotine replacement therapy, or have strong withdrawal symptoms, consult a qualified professional." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "pauseo.app supports building habits and recognizing triggers. It does not replace advice from a doctor, therapist, or pharmacist. If you're considering medication, nicotine replacement therapy, or have strong withdrawal symptoms, consult a qualified professional."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "pauseo.app wspiera budowanie nawyków i rozpoznawanie triggerów. Nie zastępuje porady lekarza, terapeuty ani farmaceuty. Jeśli rozważasz leki, nikotynową terapię zastępczą albo masz silne objawy odstawienia, skonsultuj się ze specjalistą."
+          }
+        }
+      }
+    },
+    "Pij wodę małymi łykami, skupiając się na samym piciu." : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Drink water in small sips, focusing on the act of drinking."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pij wodę małymi łykami, skupiając się na samym piciu."
+          }
+        }
+      }
+    },
+    "Placeholder — Epic 7\nA quick check-in (< 30 seconds) will go here." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Placeholder — Epic 7\nA quick check-in (< 30 seconds) will go here."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Placeholder — Epic 7\nTu pojawi się szybki check-in (< 30 sekund)."
+          }
+        }
+      }
+    },
+    "Placeholder — Epic 8\nA summary of triggers and cravings will go here." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Placeholder — Epic 8\nA summary of triggers and cravings will go here."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Placeholder — Epic 8\nTu pojawi się podsumowanie triggerów i cravingów."
+          }
+        }
+      }
+    },
+    "Po jedzeniu" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "After a meal"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Po jedzeniu"
+          }
+        }
+      }
+    },
+    "Po odstawieniu papierosów organizm zaczyna reagować na brak dalszej ekspozycji na dym." : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "After quitting cigarettes, your body starts responding to the absence of further smoke exposure."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Po odstawieniu papierosów organizm zaczyna reagować na brak dalszej ekspozycji na dym."
+          }
+        }
+      }
+    },
+    "Po odstawieniu papierosów poziom tlenku węgla we krwi zaczyna spadać." : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "After quitting cigarettes, carbon monoxide levels in your blood start to drop."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Po odstawieniu papierosów poziom tlenku węgla we krwi zaczyna spadać."
+          }
+        }
+      }
+    },
+    "Po odstawieniu papierosów zmysł smaku i węchu może zacząć się poprawiać w ciągu pierwszych dni." : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "After quitting cigarettes, your sense of taste and smell can start to improve within the first few days."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Po odstawieniu papierosów zmysł smaku i węchu może zacząć się poprawiać w ciągu pierwszych dni."
+          }
+        }
+      }
+    },
+    "Po ograniczeniu nikotyny głód może pojawiać się w różnych momentach i z różną intensywnością." : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "After cutting back on nicotine, cravings can appear at different times and with different intensity."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Po ograniczeniu nikotyny głód może pojawiać się w różnych momentach i z różną intensywnością."
+          }
+        }
+      }
+    },
+    "Praca" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Work"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Praca"
+          }
+        }
+      }
+    },
+    "Privacy and data" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Privacy and data"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Prywatność i dane"
+          }
+        }
+      }
+    },
+    "Przygotowuję się" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Preparing"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Przygotowuję się"
+          }
+        }
+      }
+    },
+    "Rano" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Morning"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rano"
+          }
+        }
+      }
+    },
+    "Reminders later." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Reminders later."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Przypomnienia później."
+          }
+        }
+      }
+    },
+    "Rzucam teraz" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quitting now"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rzucam teraz"
+          }
+        }
+      }
+    },
+    "Slip events" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Slip events"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zdarzenia slipów"
+          }
+        }
+      }
+    },
+    "Stay with me" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Stay with me"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zostań ze mną"
+          }
+        }
+      }
+    },
+    "Stay with me for 2 more minutes?" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Stay with me for 2 more minutes?"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zostań ze mną jeszcze 2 minuty?"
+          }
+        }
+      }
+    },
+    "Still need support?" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Still need support?"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nadal potrzebujesz wsparcia?"
+          }
+        }
+      }
+    },
+    "Stres" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Stress"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Stres"
+          }
+        }
+      }
+    },
+    "Support when a craving hits." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Support when a craving hits."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pomoc na moment cravingu."
+          }
+        }
+      }
+    },
+    "Tętno i ciśnienie krwi zaczynają się obniżać już w krótkim czasie po zaprzestaniu palenia." : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Heart rate and blood pressure start to drop within a short time after you stop smoking."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tętno i ciśnienie krwi zaczynają się obniżać już w krótkim czasie po zaprzestaniu palenia."
+          }
+        }
+      }
+    },
+    "To, że ten moment jest trudny, nie znaczy, że robisz coś źle." : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "This moment being hard doesn't mean you're doing something wrong."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "To, że ten moment jest trudny, nie znaczy, że robisz coś źle."
+          }
+        }
+      }
+    },
+    "To, że ten moment jest trudny, nie znaczy, że robisz coś źle. Głód nikotynowy to częsta reakcja organizmu, nie oznaka słabości." : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "This moment being hard doesn't mean you're doing something wrong. Nicotine craving is a common body response, not a sign of weakness."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "To, że ten moment jest trudny, nie znaczy, że robisz coś źle. Głód nikotynowy to częsta reakcja organizmu, nie oznaka słabości."
+          }
+        }
+      }
+    },
+    "Towarzystwo" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Social situation"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Towarzystwo"
+          }
+        }
+      }
+    },
+    "Vape" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vape"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vape"
+          }
+        }
+      }
+    },
+    "We store your data locally on your device. There is no account or syncing through pauseo." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "We store your data locally on your device. There is no account or syncing through pauseo."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dane przechowujemy lokalnie na urządzeniu. Nie ma konta ani synchronizacji przez pauseo."
+          }
+        }
+      }
+    },
+    "Weź 5 spokojnych oddechów" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Take 5 slow breaths"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Weź 5 spokojnych oddechów"
+          }
+        }
+      }
+    },
+    "What are you learning?" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What are you learning?"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Czego się uczysz?"
+          }
+        }
+      }
+    },
+    "What do you use?" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What do you use?"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Z czego korzystasz?"
+          }
+        }
+      }
+    },
+    "What now?" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What now?"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Co teraz?"
+          }
+        }
+      }
+    },
+    "What triggered the craving?" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What triggered the craving?"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Co odpaliło craving?"
+          }
+        }
+      }
+    },
+    "What usually triggers your cravings?" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What usually triggers your cravings?"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Co najczęściej odpala craving?"
+          }
+        }
+      }
+    },
+    "What was going on at the time?" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What was going on at the time?"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Co było najbliżej tego momentu?"
+          }
+        }
+      }
+    },
+    "What we store" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What we store"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Co zapisujemy"
+          }
+        }
+      }
+    },
+    "What will you do now?" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What will you do now?"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Co zrobisz teraz?"
+          }
+        }
+      }
+    },
+    "What's happening now?" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What's happening now?"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Co się teraz dzieje?"
+          }
+        }
+      }
+    },
+    "What's your goal?" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What's your goal?"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Co jest Twoim celem?"
+          }
+        }
+      }
+    },
+    "Where your data is" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Where your data is"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gdzie są dane"
+          }
+        }
+      }
+    },
+    "Wiele osób potrzebuje kilku prób, zanim odstawienie się utrzyma. Kolejna próba nie oznacza zaczynania od zera." : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Many people need a few tries before quitting sticks. Trying again doesn't mean starting from zero."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wiele osób potrzebuje kilku prób, zanim odstawienie się utrzyma. Kolejna próba nie oznacza zaczynania od zera."
+          }
+        }
+      }
+    },
+    "Wolę nie podawać" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Prefer not to say"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wolę nie podawać"
+          }
+        }
+      }
+    },
+    "Wyjdź na 2 minuty" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Step outside for 2 minutes"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wyjdź na 2 minuty"
+          }
+        }
+      }
+    },
+    "Wypij wodę" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Drink water"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wypij wodę"
+          }
+        }
+      }
+    },
+    "You can delete all local data at any time." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "You can delete all local data at any time."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Możesz usunąć wszystkie lokalne dane w dowolnym momencie."
+          }
+        }
+      }
+    },
+    "You can skip this." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "You can skip this."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Możesz pominąć."
+          }
+        }
+      }
+    },
+    "You can stay a little longer." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "You can stay a little longer."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Możesz zostać jeszcze chwilę."
+          }
+        }
+      }
+    },
+    "You can stay with me before deciding. No pressure — you can also end now." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "You can stay with me before deciding. No pressure — you can also end now."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Możesz poczekać ze mną, zanim podejmiesz decyzję. Bez presji — możesz też zakończyć teraz."
+          }
+        }
+      }
+    },
+    "You don't have to handle the whole day.\nChoose one small action." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "You don't have to handle the whole day.\nChoose one small action."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nie musisz ogarniać całego dnia.\nWybierz jedną małą akcję."
+          }
+        }
+      }
+    },
+    "You don't have to solve everything right now. Choose one small action for the next minute." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "You don't have to solve everything right now. Choose one small action for the next minute."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nie musisz teraz rozwiązywać wszystkiego. Wybierz jedną małą akcję na najbliższą minutę."
+          }
+        }
+      }
+    },
+    "You don't have to start from zero. Just come back to one small decision now." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "You don't have to start from zero. Just come back to one small decision now."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nie musisz zaczynać od zera. Wystarczy wrócić do jednej małej decyzji teraz."
+          }
+        }
+      }
+    },
+    "You're getting back on track." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "You're getting back on track."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wracasz na tor."
+          }
+        }
+      }
+    },
+    "Your data is stored locally on this device. You don't create an account, and nothing is sent to a server." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Your data is stored locally on this device. You don't create an account, and nothing is sent to a server."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Twoje dane są przechowywane lokalnie na urządzeniu. Nie tworzysz konta i nie wysyłamy niczego na serwer."
+          }
+        }
+      }
+    },
+    "Your next decision matters more than a perfect record." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Your next decision matters more than a perfect record."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Najważniejsza jest następna decyzja, nie idealna historia."
+          }
+        }
+      }
+    },
+    "Zacznij od następnej godziny" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Start again from the next hour"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zacznij od następnej godziny"
+          }
+        }
+      }
+    },
+    "Zajmij ręce" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Keep your hands busy"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zajmij ręce"
+          }
+        }
+      }
+    },
+    "Zmęczenie" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tiredness"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zmęczenie"
+          }
+        }
+      }
+    },
+    "Zmień teraz pozycję ciała — wstań, usiądź inaczej albo zrób kilka kroków." : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Change your body position now — stand up, sit differently, or take a few steps."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zmień teraz pozycję ciała — wstań, usiądź inaczej albo zrób kilka kroków."
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}

@@ -352,13 +352,13 @@ Premature architecture may distract from product validation.
 
 ## Status
 
-Accepted
+Superseded — see "Update" below.
 
 ## Decision
 
-v0.1 ships in Polish only.
+v0.1 originally shipped in Polish only.
 
-Bilingual copy (Polish + English or other languages) is deferred until user validation is complete.
+Bilingual copy (Polish + English or other languages) was deferred until user validation was complete.
 
 ## Rationale
 
@@ -370,20 +370,29 @@ Shipping one language reduces:
 - UX inconsistency risk,
 - scope creep before validation.
 
-## Consequences
+## Consequences (original)
 
 All in-app copy, onboarding, notifications, and UX text in v0.1 should be Polish.
 
-English-language strings are permitted only in:
+English-language strings were permitted only in:
 - developer-facing code comments (where necessary),
 - internal documentation,
 - code identifiers.
 
+## Update — Phase 1 PL/EN (approved)
+
+Full PL/EN localization is now approved, explicit scope and has been implemented.
+
+What changed:
+- All user-facing copy (onboarding, Home, craving flow, slip recovery, guided loop, support cards and their fallback, Privacy & Safety, and the disconnected DailyCheckIn/Progress placeholders) is now available in Polish and English via a native String Catalog (`Pauseo/Localizable.xcstrings`), source language English, fallback to English for unsupported device languages.
+- Enum `rawValue`s (`NicotineType`, `GoalMode`, `TriggerCategory`), the literal micro-action/context/recovery-action arrays, and `support_cards.json` card text remain unchanged Polish values — they are stored data, not just presentation. Only the on-screen presentation of these values is localized (looked up dynamically against the same catalog), so existing and newly created events keep writing the same Polish strings regardless of device language.
+- No account, backend, sync, or settings-level language picker was added. Language selection uses only the standard iOS per-app language mechanism (Settings → Pauseo → Language).
+
+See `docs/Current_State.md` for implementation detail and `docs/QA_Checklist_v0.1.md` section 15 for the pending physical-device PL/EN QA pass.
+
 ## Revisit when
 
-After v0.1 validation, if there is evidence of demand from users in other language markets.
-
-See `docs/Product_MVP.md` — v0.3 lists bilingual copy as a possible addition.
+Not applicable for PL/EN — this is now shipped. A future ADR would be needed only if additional languages beyond Polish/English are considered.
 
 ---
 

@@ -55,7 +55,7 @@ After the micro-action step in `CravingFlowView`, the user is invited to stay fo
 - Every path ends on the same existing, neutral `CompletionStep` — copy does not vary by outcome.
 - `CravingEvent` gained five optional fields to record this without a new persistence key: `guidedLoopStarted`, `guidedLoopCompleted` (true if at least one round ran the full 2 minutes), `guidedLoopOutcome` (most recent outcome), `guidedLoopSecondRoundStarted`, `guidedLoopDurationSeconds` (saved as `120` when a round starts). Old stored events decode unaffected since the new fields are optional.
 - No summaries, history, or statistics are shown anywhere — this only preserves evidence for later product decisions, per the same rule as existing craving/slip events.
-- Card text changes with no explicit animation/transition, so Reduce Motion needs no special handling. The visible card carries `.accessibilityAddTraits(.updatesFrequently)` so VoiceOver does not auto-announce it every ~10 seconds, but this has not yet been verified on a physical device (see `docs/QA_Checklist_v0.1.md` section 14).
+- Card text changes with no explicit animation/transition, so Reduce Motion needs no special handling. The visible card carries `.accessibilityAddTraits(.updatesFrequently)` so VoiceOver does not auto-announce it every ~10 seconds. This has been verified on a physical device, including VoiceOver and Reduce Motion behaviour (see `docs/QA_Checklist_v0.1.md` section 14, Pass).
 
 ## Privacy & Safety screen
 
@@ -70,6 +70,19 @@ It covers:
 - a medical disclaimer consistent with `docs/Privacy_Safety.md`.
 
 It does not show statistics, event history, trigger insights, charts, or dashboard content.
+
+## PL/EN localization
+
+**Implemented. Verified on a physical device in both Polish and English — see `docs/QA_Checklist_v0.1.md` section 15 (Pass).**
+
+Full PL/EN localization, per ADR-011's update, covers onboarding, Home, the full craving flow (including the guided loop invitation/outcome/second-round copy and all support cards), slip recovery, Privacy & Safety (including the delete-data alert), and the disconnected `DailyCheckInView`/`AppProgressView` placeholders.
+
+- Mechanism: a single native String Catalog, `Pauseo/Localizable.xcstrings`, source language English, with full English and Polish translations. `project.yml` sets `options.developmentLanguage: en` and declares `CFBundleLocalizations: [en, pl]` on the target's generated Info.plist (xcodegen does not infer this automatically from the catalog alone — without it the device/simulator language override is ignored and the app always renders in English). Unsupported device languages fall back to English, matching the catalog's source language.
+- Static, non-data UI copy (titles, instructions, buttons, alerts) was changed from Polish literals to English literals in the Swift source — these English strings are the catalog keys, with Polish translations added in the catalog.
+- Data-backed strings — `NicotineType`/`GoalMode`/`TriggerCategory` `rawValue`s, the literal micro-action/context/recovery-action option arrays in `CravingFlowView` and `SlipRecoveryView`, and `support_cards.json` card `text` — were **not** changed. They remain the exact Polish values already used as stored data (`CravingEvent.trigger`/`.action`, `SlipEvent.context`/`.recoveryAction`). Their on-screen presentation is localized separately, by wrapping the stored Polish string in `LocalizedStringKey(...)` at the display call site (e.g. the shared `OptionChip`/`CravingChip`/`SlipChip` views, and the guided-loop card `Text`), which performs a runtime catalog lookup keyed by that Polish text. This means a craving logged while the device is set to English still writes the same Polish trigger/action string as before — only the label shown to the user differs.
+- `support_cards.json` itself is unchanged in structure and still ships one file with 15 Polish-language cards; only the `body-heart-rate` card's `sourceLabel`/`sourceURL` were corrected to WHO's smoking-cessation health-benefits page (per approved scope), since the NHS homepage it previously cited does not specifically support the heart-rate/blood-pressure claim. Card `sourceLabel`/`sourceURL` are still not rendered anywhere in the UI.
+- No account, backend, sync, remote content, or in-app language-switcher setting was added. Language selection is the standard iOS per-app mechanism (Settings → Pauseo → Language).
+- Verified: `xcodegen generate`, Debug and Release builds (iOS Simulator destination) both succeed with no new warnings; the built app bundle contains `en.lproj/Localizable.strings` and `pl.lproj/Localizable.strings` (111 keys each); a Simulator smoke test confirmed the app actually renders in Polish and English depending on the device language and falls back correctly. Full manual QA (real device, all flows, both languages, accessibility, VoiceOver, Reduce Motion, language switching, fallback) has passed — see `docs/QA_Checklist_v0.1.md` section 15.
 
 ## Recommended next step
 

@@ -5,6 +5,7 @@ options:
   deploymentTarget:
     iOS: "17.0"
   createIntermediateGroups: true
+  developmentLanguage: en
 
 schemes:
   Pauseo:
@@ -42,3 +43,7 @@ targets:
         Release:
           DEBUG_INFORMATION_FORMAT: "dwarf-with-dsym"
           SWIFT_OPTIMIZATION_LEVEL: "-Owholemodule"
+    info:
+      path: Pauseo/Info.plist
+      properties:
+        CFBundleLocalizations: [en, pl]

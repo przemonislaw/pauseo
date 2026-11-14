@@ -45,8 +45,8 @@
     "id": "body-heart-rate",
     "category": "bodyEffect",
     "text": "Tętno i ciśnienie krwi zaczynają się obniżać już w krótkim czasie po zaprzestaniu palenia.",
-    "sourceLabel": "NHS",
-    "sourceURL": "https://www.nhs.uk/better-health/quit-smoking/"
+    "sourceLabel": "WHO",
+    "sourceURL": "https://www.who.int/news-room/questions-and-answers/item/tobacco-health-benefits-of-smoking-cessation"
   },
   {
     "id": "body-taste-smell",

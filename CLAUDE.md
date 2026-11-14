@@ -37,9 +37,9 @@ If implementation ideas conflict with these files, do not silently proceed. Expl
 
 ## Current stage
 
-The project is in MVP discovery and documentation-first setup.
+The project has moved from documentation-only discovery into active v0.1 MVP implementation (see `docs/Current_State.md` for the current feature list, including PL/EN localization).
 
-Do not create application code unless the user explicitly asks for implementation.
+Only make application code changes that map to explicit, approved scope — a backlog item in `docs/Backlog_v0.1.md`, or a scope the user has explicitly approved in the current conversation.
 
 Do not design backend infrastructure unless explicitly requested.
 

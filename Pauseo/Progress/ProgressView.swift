@@ -7,18 +7,18 @@ struct AppProgressView: View {
         VStack(spacing: 24) {
             Spacer()
 
-            Text("Czego się uczysz?")
+            Text("What are you learning?")
                 .font(.title2)
                 .fontWeight(.bold)
 
-            Text("Placeholder — Epic 8\nTu pojawi się podsumowanie triggerów i cravingów.")
+            Text("Placeholder — Epic 8\nA summary of triggers and cravings will go here.")
                 .font(.body)
                 .foregroundStyle(.secondary)
                 .multilineTextAlignment(.center)
 
             Spacer()
 
-            Button("Zamknij") { dismiss() }
+            Button("Close") { dismiss() }
                 .buttonStyle(.bordered)
         }
         .padding()

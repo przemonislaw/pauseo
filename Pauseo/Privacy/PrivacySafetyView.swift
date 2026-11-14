@@ -9,24 +9,24 @@ struct PrivacySafetyView: View {
         NavigationStack {
             ScrollView {
                 VStack(alignment: .leading, spacing: 32) {
-                    infoSection(title: "Co zapisujemy") {
-                        Text("Twoje dane są przechowywane lokalnie na urządzeniu. Nie tworzysz konta i nie wysyłamy niczego na serwer.")
+                    infoSection(title: "What we store") {
+                        Text("Your data is stored locally on this device. You don't create an account, and nothing is sent to a server.")
                             .foregroundStyle(.secondary)
                         VStack(alignment: .leading, spacing: 8) {
-                            row("Zdarzenia cravingów")
-                            row("Zdarzenia slipów")
+                            row("Craving events")
+                            row("Slip events")
                         }
                     }
 
-                    infoSection(title: "Gdzie są dane") {
-                        Text("Dane zostają wyłącznie na tym urządzeniu. Brak konta. Brak synchronizacji. Brak kopii w chmurze.")
+                    infoSection(title: "Where your data is") {
+                        Text("We store your data locally on your device. There is no account or syncing through pauseo.")
                             .foregroundStyle(.secondary)
                     }
 
-                    infoSection(title: "Usuń dane") {
-                        Text("Możesz usunąć wszystkie lokalne dane w dowolnym momencie.")
+                    infoSection(title: "Delete data") {
+                        Text("You can delete all local data at any time.")
                             .foregroundStyle(.secondary)
-                        Button("Usuń wszystkie dane lokalne", role: .destructive) {
+                        Button("Delete all local data", role: .destructive) {
                             showingDeleteConfirmation = true
                         }
                         .frame(maxWidth: .infinity)
@@ -34,26 +34,26 @@ struct PrivacySafetyView: View {
                         .controlSize(.regular)
                     }
 
-                    infoSection(title: "Informacja medyczna") {
-                        Text("pauseo.app wspiera budowanie nawyków i rozpoznawanie triggerów. Nie zastępuje porady lekarza, terapeuty ani farmaceuty. Jeśli rozważasz leki, nikotynową terapię zastępczą albo masz silne objawy odstawienia, skonsultuj się ze specjalistą.")
+                    infoSection(title: "Medical information") {
+                        Text("pauseo.app supports building habits and recognizing triggers. It does not replace advice from a doctor, therapist, or pharmacist. If you're considering medication, nicotine replacement therapy, or have strong withdrawal symptoms, consult a qualified professional.")
                             .font(.footnote)
                             .foregroundStyle(.secondary)
                     }
                 }
                 .padding()
             }
-            .navigationTitle("Prywatność i dane")
+            .navigationTitle("Privacy and data")
             .navigationBarTitleDisplayMode(.large)
             .toolbar {
                 ToolbarItem(placement: .confirmationAction) {
-                    Button("Gotowe") { dismiss() }
+                    Button("Done") { dismiss() }
                 }
             }
-            .alert("Usuń wszystkie dane?", isPresented: $showingDeleteConfirmation) {
-                Button("Usuń", role: .destructive) { eventStore.deleteAll() }
-                Button("Anuluj", role: .cancel) {}
+            .alert("Delete all data?", isPresented: $showingDeleteConfirmation) {
+                Button("Delete", role: .destructive) { eventStore.deleteAll() }
+                Button("Cancel", role: .cancel) {}
             } message: {
-                Text("Wszystkie zdarzenia cravingów i slipów zostaną trwale usunięte. Tej operacji nie można cofnąć.")
+                Text("All craving and slip events will be permanently deleted. This cannot be undone.")
             }
         }
     }
@@ -64,14 +64,14 @@ struct PrivacySafetyView: View {
         @ViewBuilder content: () -> Content
     ) -> some View {
         VStack(alignment: .leading, spacing: 12) {
-            Text(title)
+            Text(LocalizedStringKey(title))
                 .font(.headline)
             content()
         }
     }
 
     private func row(_ text: String) -> some View {
-        Label(text, systemImage: "iphone")
+        Label(LocalizedStringKey(text), systemImage: "iphone")
             .font(.subheadline)
             .foregroundStyle(.secondary)
     }
