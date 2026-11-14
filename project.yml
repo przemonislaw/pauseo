@@ -35,7 +35,8 @@ targets:
         DEVELOPMENT_ASSET_PATHS: "\"Pauseo/Preview Content\""
         CURRENT_PROJECT_VERSION: 1
         MARKETING_VERSION: "0.1.0"
-        DEVELOPMENT_TEAM: "36WKZ8Q4L5"
+        DEVELOPMENT_TEAM: "5T4Z65558R"
+        CODE_SIGN_STYLE: Automatic
       configs:
         Debug:
           DEBUG_INFORMATION_FORMAT: dwarf
