@@ -57,6 +57,17 @@ After the micro-action step in `CravingFlowView`, the user is invited to stay fo
 - No summaries, history, or statistics are shown anywhere — this only preserves evidence for later product decisions, per the same rule as existing craving/slip events.
 - Card text changes with no explicit animation/transition, so Reduce Motion needs no special handling. The visible card carries `.accessibilityAddTraits(.updatesFrequently)` so VoiceOver does not auto-announce it every ~10 seconds. This has been verified on a physical device, including VoiceOver and Reduce Motion behaviour (see `docs/QA_Checklist_v0.1.md` section 14, Pass).
 
+## Visual system
+
+**Implemented.**
+
+A visual design pass (warm ivory background, deep indigo primary action color, selection chips with a checkmark in addition to color fill) was designed and reviewed in a Stitch MCP project ("pauseo — iOS MVP"), then applied to the real screens: Home, Onboarding, CravingFlow, SlipRecovery, Privacy.
+
+- `Pauseo/DesignSystem/Colors.swift` defines adaptive color tokens (`pauseoBackground`, `pauseoPrimary`, `pauseoTextPrimary`, `pauseoTextSecondary`, `pauseoSurface`, `pauseoBorder`, `pauseoNeutralAction`). Light mode uses the reviewed palette; dark mode intentionally reproduces the exact system colors the app used before this file existed (no dark mode was designed or reviewed).
+- Selection chips (`OptionChip`/`CravingChip`/`SlipChip`) now show a checkmark on the selected option, not just a color fill, per `docs/UX_Principles.md`'s "no interaction dependent only on color" accessibility principle.
+- Progress/DailyCheckIn placeholders were left untouched (disconnected, out of scope per the same rule as elsewhere in this file).
+- Verified: `xcodegen generate`, Debug and Release builds (Simulator) succeed with no new warnings; Home screen visually confirmed on an iOS Simulator in both light and dark mode. The chip/checkmark screens were verified by code review against the approved Stitch mockups, not a live on-device screenshot — this environment has no UI-tap automation (no idb/XCUITest harness) to navigate there non-interactively.
+
 ## Privacy & Safety screen
 
 **Implemented.**
