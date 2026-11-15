@@ -28,6 +28,7 @@ struct HomeView: View {
             .buttonStyle(.borderedProminent)
             .controlSize(.large)
             .tint(.pauseoPrimary)
+            .buttonBorderShape(.roundedRectangle(radius: 10))
             .padding(.bottom, 32)
 
             SecondaryActionButton(title: "I've had a slip") { showingSlipRecovery = true }
@@ -35,7 +36,7 @@ struct HomeView: View {
             Button("Privacy and data") { showingPrivacy = true }
                 .font(.caption2)
                 .foregroundStyle(.tertiary)
-                .padding(.top, 8)
+                .padding(.top, 24)
 
             Spacer()
         }
@@ -61,6 +62,7 @@ private struct SecondaryActionButton: View {
         .buttonStyle(.bordered)
         .controlSize(.small)
         .tint(.pauseoNeutralAction)
+        .buttonBorderShape(.roundedRectangle(radius: 10))
     }
 }
 

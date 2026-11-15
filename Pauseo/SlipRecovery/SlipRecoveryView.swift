@@ -20,6 +20,7 @@ struct SlipRecoveryView: View {
                         .font(.subheadline)
                         .foregroundStyle(.secondary)
                     }
+                    .buttonStyle(.plain)
                 }
                 Spacer()
             }
@@ -79,6 +80,7 @@ private struct ShameReductionStep: View {
                 .buttonStyle(.borderedProminent)
                 .controlSize(.large)
                 .tint(.pauseoPrimary)
+                .buttonBorderShape(.roundedRectangle(radius: 10))
                 .padding(.horizontal)
                 .padding(.bottom, 40)
         }
@@ -128,6 +130,7 @@ private struct ContextStep: View {
                 .buttonStyle(.borderedProminent)
                 .controlSize(.large)
                 .tint(.pauseoPrimary)
+                .buttonBorderShape(.roundedRectangle(radius: 10))
                 .padding(.horizontal)
                 .padding(.top, 16)
                 .padding(.bottom, 40)
@@ -176,6 +179,7 @@ private struct RecoveryActionStep: View {
                 .buttonStyle(.borderedProminent)
                 .controlSize(.large)
                 .tint(.pauseoPrimary)
+                .buttonBorderShape(.roundedRectangle(radius: 10))
                 .padding(.horizontal)
                 .padding(.bottom, 40)
         }
@@ -206,6 +210,7 @@ private struct SlipCompletionStep: View {
                 .buttonStyle(.borderedProminent)
                 .controlSize(.large)
                 .tint(.pauseoPrimary)
+                .buttonBorderShape(.roundedRectangle(radius: 10))
                 .padding(.horizontal)
                 .padding(.bottom, 40)
         }

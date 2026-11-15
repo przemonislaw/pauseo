@@ -32,6 +32,7 @@ struct PrivacySafetyView: View {
                         .frame(maxWidth: .infinity)
                         .buttonStyle(.bordered)
                         .controlSize(.regular)
+                        .buttonBorderShape(.roundedRectangle(radius: 10))
                     }
 
                     infoSection(title: "Medical information") {

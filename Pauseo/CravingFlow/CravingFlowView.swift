@@ -38,6 +38,7 @@ struct CravingFlowView: View {
                         .font(.subheadline)
                         .foregroundStyle(.secondary)
                     }
+                    .buttonStyle(.plain)
                 }
                 Spacer()
             }
@@ -176,6 +177,7 @@ private struct GroundingStep: View {
                 .buttonStyle(.borderedProminent)
                 .controlSize(.large)
                 .tint(.pauseoPrimary)
+                .buttonBorderShape(.roundedRectangle(radius: 10))
                 .padding(.horizontal)
                 .padding(.bottom, 40)
         }
@@ -220,6 +222,7 @@ private struct TriggerStep: View {
                 .buttonStyle(.borderedProminent)
                 .controlSize(.large)
                 .tint(.pauseoPrimary)
+                .buttonBorderShape(.roundedRectangle(radius: 10))
                 .padding(.horizontal)
                 .padding(.top, 16)
                 .padding(.bottom, 40)
@@ -266,6 +269,7 @@ private struct MicroActionStep: View {
                 .buttonStyle(.borderedProminent)
                 .controlSize(.large)
                 .tint(.pauseoPrimary)
+                .buttonBorderShape(.roundedRectangle(radius: 10))
                 .padding(.horizontal)
                 .padding(.bottom, 40)
         }
@@ -298,6 +302,7 @@ private struct InvitationStep: View {
                     .buttonStyle(.borderedProminent)
                     .controlSize(.large)
                     .tint(.pauseoPrimary)
+                .buttonBorderShape(.roundedRectangle(radius: 10))
                 Button("I'm done for now", action: onDecline)
                     .font(.footnote)
                     .foregroundStyle(.secondary)
@@ -342,6 +347,7 @@ private struct GuidedLoopStep: View {
 
                 ProgressView(value: elapsed, total: totalDuration)
                     .tint(.pauseoPrimary)
+                .buttonBorderShape(.roundedRectangle(radius: 10))
                     .padding(.horizontal, 48)
                     .padding(.bottom, 32)
 
@@ -410,6 +416,7 @@ private struct OutcomeStep: View {
             .buttonStyle(.bordered)
             .controlSize(.large)
             .tint(.pauseoNeutralAction)
+            .buttonBorderShape(.roundedRectangle(radius: 10))
             .padding(.horizontal)
             .padding(.bottom, 40)
         }
@@ -442,6 +449,7 @@ private struct SecondRoundOfferStep: View {
                     .buttonStyle(.borderedProminent)
                     .controlSize(.large)
                     .tint(.pauseoPrimary)
+                .buttonBorderShape(.roundedRectangle(radius: 10))
                 Button("I'm done for now", action: onDecline)
                     .font(.footnote)
                     .foregroundStyle(.secondary)
@@ -476,6 +484,7 @@ private struct CompletionStep: View {
                 .buttonStyle(.borderedProminent)
                 .controlSize(.large)
                 .tint(.pauseoPrimary)
+                .buttonBorderShape(.roundedRectangle(radius: 10))
                 .padding(.horizontal)
                 .padding(.bottom, 40)
         }

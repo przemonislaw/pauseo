@@ -19,6 +19,7 @@ struct OnboardingFlowView: View {
                         .font(.subheadline)
                         .foregroundStyle(.secondary)
                     }
+                    .buttonStyle(.plain)
                 }
                 Spacer()
             }
@@ -69,6 +70,7 @@ private struct WelcomeStep: View {
                 .buttonStyle(.borderedProminent)
                 .controlSize(.large)
                 .tint(.pauseoPrimary)
+                .buttonBorderShape(.roundedRectangle(radius: 10))
                 .padding(.horizontal)
                 .padding(.bottom, 40)
         }
@@ -148,10 +150,12 @@ private struct NotificationsStep: View {
                     .buttonStyle(.borderedProminent)
                     .controlSize(.large)
                     .tint(.pauseoPrimary)
+                .buttonBorderShape(.roundedRectangle(radius: 10))
                 Button("Not now", action: onComplete)
                     .buttonStyle(.bordered)
                     .controlSize(.large)
                     .tint(.pauseoPrimary)
+                .buttonBorderShape(.roundedRectangle(radius: 10))
             }
             .padding(.horizontal)
             .padding(.bottom, 40)
@@ -195,6 +199,7 @@ private struct SelectionStep<T: RawRepresentable & CaseIterable & Hashable>: Vie
                 .buttonStyle(.borderedProminent)
                 .controlSize(.large)
                 .tint(.pauseoPrimary)
+                .buttonBorderShape(.roundedRectangle(radius: 10))
                 .padding(.horizontal)
                 .padding(.top, 16)
                 .padding(.bottom, 40)
