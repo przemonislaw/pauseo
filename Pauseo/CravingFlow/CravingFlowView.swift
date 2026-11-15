@@ -174,11 +174,7 @@ private struct GroundingStep: View {
             .padding(.horizontal, 32)
             Spacer()
             Button("Help me now", action: onNext)
-                .frame(maxWidth: .infinity)
-                .buttonStyle(.borderedProminent)
-                .controlSize(.large)
-                .tint(.pauseoPrimary)
-                .buttonBorderShape(.roundedRectangle(radius: 10))
+                .buttonStyle(PauseoPrimaryButtonStyle())
                 .padding(.horizontal)
                 .padding(.bottom, 40)
         }
@@ -220,11 +216,7 @@ private struct TriggerStep: View {
             }
 
             Button("Next", action: onNext)
-                .frame(maxWidth: .infinity)
-                .buttonStyle(.borderedProminent)
-                .controlSize(.large)
-                .tint(.pauseoPrimary)
-                .buttonBorderShape(.roundedRectangle(radius: 10))
+                .buttonStyle(PauseoPrimaryButtonStyle())
                 .padding(.horizontal)
                 .padding(.top, 16)
                 .padding(.bottom, 40)
@@ -268,11 +260,7 @@ private struct MicroActionStep: View {
             Spacer()
 
             Button("I'll do it", action: onNext)
-                .frame(maxWidth: .infinity)
-                .buttonStyle(.borderedProminent)
-                .controlSize(.large)
-                .tint(.pauseoPrimary)
-                .buttonBorderShape(.roundedRectangle(radius: 10))
+                .buttonStyle(PauseoPrimaryButtonStyle())
                 .padding(.horizontal)
                 .padding(.bottom, 40)
         }
@@ -302,11 +290,7 @@ private struct InvitationStep: View {
             Spacer()
             VStack(spacing: 12) {
                 Button("Stay with me", action: onAccept)
-                    .frame(maxWidth: .infinity)
-                    .buttonStyle(.borderedProminent)
-                    .controlSize(.large)
-                    .tint(.pauseoPrimary)
-                    .buttonBorderShape(.roundedRectangle(radius: 10))
+                    .buttonStyle(PauseoPrimaryButtonStyle())
                 Button("I'm done for now", action: onDecline)
                     .font(.footnote)
                     .foregroundStyle(.secondary)
@@ -413,16 +397,10 @@ private struct OutcomeStep: View {
             Spacer()
             VStack(spacing: 10) {
                 Button("I didn't smoke") { onSelect(.didNotSmoke) }
-                    .frame(maxWidth: .infinity)
                 Button("I've put off the decision") { onSelect(.postponed) }
-                    .frame(maxWidth: .infinity)
                 Button("I smoked") { onSelect(.smoked) }
-                    .frame(maxWidth: .infinity)
             }
-            .buttonStyle(.bordered)
-            .controlSize(.large)
-            .tint(.pauseoNeutralAction)
-            .buttonBorderShape(.roundedRectangle(radius: 10))
+            .buttonStyle(PauseoSecondaryButtonStyle())
             .padding(.horizontal)
             .padding(.bottom, 40)
         }
@@ -452,11 +430,7 @@ private struct SecondRoundOfferStep: View {
             Spacer()
             VStack(spacing: 12) {
                 Button("I'll take 2 more minutes", action: onAccept)
-                    .frame(maxWidth: .infinity)
-                    .buttonStyle(.borderedProminent)
-                    .controlSize(.large)
-                    .tint(.pauseoPrimary)
-                    .buttonBorderShape(.roundedRectangle(radius: 10))
+                    .buttonStyle(PauseoPrimaryButtonStyle())
                 Button("I'm done for now", action: onDecline)
                     .font(.footnote)
                     .foregroundStyle(.secondary)
@@ -488,11 +462,7 @@ private struct CompletionStep: View {
             .padding(.horizontal, 32)
             Spacer()
             Button("Back to home", action: onDismiss)
-                .frame(maxWidth: .infinity)
-                .buttonStyle(.borderedProminent)
-                .controlSize(.large)
-                .tint(.pauseoPrimary)
-                .buttonBorderShape(.roundedRectangle(radius: 10))
+                .buttonStyle(PauseoPrimaryButtonStyle())
                 .padding(.horizontal)
                 .padding(.bottom, 40)
         }

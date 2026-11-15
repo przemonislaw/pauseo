@@ -77,11 +77,7 @@ private struct ShameReductionStep: View {
             .padding(.horizontal, 32)
             Spacer()
             Button("Let's continue", action: onNext)
-                .frame(maxWidth: .infinity)
-                .buttonStyle(.borderedProminent)
-                .controlSize(.large)
-                .tint(.pauseoPrimary)
-                .buttonBorderShape(.roundedRectangle(radius: 10))
+                .buttonStyle(PauseoPrimaryButtonStyle())
                 .padding(.horizontal)
                 .padding(.bottom, 40)
         }
@@ -128,11 +124,7 @@ private struct ContextStep: View {
             }
 
             Button("Next", action: onNext)
-                .frame(maxWidth: .infinity)
-                .buttonStyle(.borderedProminent)
-                .controlSize(.large)
-                .tint(.pauseoPrimary)
-                .buttonBorderShape(.roundedRectangle(radius: 10))
+                .buttonStyle(PauseoPrimaryButtonStyle())
                 .padding(.horizontal)
                 .padding(.top, 16)
                 .padding(.bottom, 40)
@@ -178,11 +170,7 @@ private struct RecoveryActionStep: View {
             Spacer()
 
             Button("Continue", action: onNext)
-                .frame(maxWidth: .infinity)
-                .buttonStyle(.borderedProminent)
-                .controlSize(.large)
-                .tint(.pauseoPrimary)
-                .buttonBorderShape(.roundedRectangle(radius: 10))
+                .buttonStyle(PauseoPrimaryButtonStyle())
                 .padding(.horizontal)
                 .padding(.bottom, 40)
         }
@@ -210,11 +198,7 @@ private struct SlipCompletionStep: View {
             .padding(.horizontal, 32)
             Spacer()
             Button("Back to home", action: onDismiss)
-                .frame(maxWidth: .infinity)
-                .buttonStyle(.borderedProminent)
-                .controlSize(.large)
-                .tint(.pauseoPrimary)
-                .buttonBorderShape(.roundedRectangle(radius: 10))
+                .buttonStyle(PauseoPrimaryButtonStyle())
                 .padding(.horizontal)
                 .padding(.bottom, 40)
         }

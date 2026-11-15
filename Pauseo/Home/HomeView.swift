@@ -25,11 +25,7 @@ struct HomeView: View {
             Button("I'm having a craving") {
                 showingCravingFlow = true
             }
-            .frame(maxWidth: .infinity)
-            .buttonStyle(.borderedProminent)
-            .controlSize(.large)
-            .tint(.pauseoPrimary)
-            .buttonBorderShape(.roundedRectangle(radius: 10))
+            .buttonStyle(PauseoPrimaryButtonStyle())
             .padding(.bottom, 32)
 
             SecondaryActionButton(title: "I've had a slip") { showingSlipRecovery = true }
@@ -55,14 +51,9 @@ private struct SecondaryActionButton: View {
     var body: some View {
         Button(action: action) {
             Text(LocalizedStringKey(title))
-                .font(.caption)
                 .multilineTextAlignment(.center)
-                .frame(maxWidth: .infinity)
         }
-        .buttonStyle(.bordered)
-        .controlSize(.small)
-        .tint(.pauseoNeutralAction)
-        .buttonBorderShape(.roundedRectangle(radius: 10))
+        .buttonStyle(PauseoCompactButtonStyle())
     }
 }
 

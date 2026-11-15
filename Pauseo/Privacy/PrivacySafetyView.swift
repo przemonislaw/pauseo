@@ -29,10 +29,7 @@ struct PrivacySafetyView: View {
                         Button("Delete all local data", role: .destructive) {
                             showingDeleteConfirmation = true
                         }
-                        .frame(maxWidth: .infinity)
-                        .buttonStyle(.bordered)
-                        .controlSize(.regular)
-                        .buttonBorderShape(.roundedRectangle(radius: 10))
+                        .buttonStyle(PauseoDestructiveButtonStyle())
                     }
 
                     infoSection(title: "Medical information") {

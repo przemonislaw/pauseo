@@ -11,6 +11,7 @@
 		1A999CEC8E62D486D4A3A4DA /* EventStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A3581E4D2A920EE9DFA4A7 /* EventStore.swift */; };
 		1E2F91A92C7A216F1ED50B93 /* SupportCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E2BBE75670D95095B9A89E /* SupportCard.swift */; };
 		2A2C033BA42E722EA6A47482 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC7112674C30C5CE71F8497 /* AppState.swift */; };
+		345B94DF177AD27192E26EDF /* ButtonStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1320F8FB08463BC39BFEC57B /* ButtonStyles.swift */; };
 		53FC802299012F58BBDECED1 /* DailyCheckInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C16660A65FF2ED157CFC5496 /* DailyCheckInView.swift */; };
 		597F53CEE60E3006EB8B8096 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A8A10524122020C22F4DFC37 /* Preview Assets.xcassets */; };
 		69AC407ADB0BBCF54809EDE4 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BA6D6AF8C6758089C6E7CB /* HomeView.swift */; };
@@ -29,6 +30,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1320F8FB08463BC39BFEC57B /* ButtonStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonStyles.swift; sourceTree = "<group>"; };
 		1A0C2FD1475917E0E3A0FDC4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		427188AA912E0887F47DFCD4 /* SlipRecoveryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlipRecoveryView.swift; sourceTree = "<group>"; };
 		43B969851362975C4A09B128 /* support_cards.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = support_cards.json; sourceTree = "<group>"; };
@@ -89,6 +91,7 @@
 		520A826B0B77196415725325 /* DesignSystem */ = {
 			isa = PBXGroup;
 			children = (
+				1320F8FB08463BC39BFEC57B /* ButtonStyles.swift */,
 				988E9A5FCD92076340860AA5 /* Colors.swift */,
 			);
 			path = DesignSystem;
@@ -261,6 +264,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2A2C033BA42E722EA6A47482 /* AppState.swift in Sources */,
+				345B94DF177AD27192E26EDF /* ButtonStyles.swift in Sources */,
 				797DF8D699DB095E4AB6BF75 /* Colors.swift in Sources */,
 				D50D11789608F75DE20D0F42 /* CravingFlowView.swift in Sources */,
 				53FC802299012F58BBDECED1 /* DailyCheckInView.swift in Sources */,
