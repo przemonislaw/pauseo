@@ -105,9 +105,9 @@ Done:
 - `TARGETED_DEVICE_FAMILY` set to `1` (iPhone only) — see ADR-012.
 - `Pauseo/PrivacyInfo.xcprivacy` added, declaring the app's `UserDefaults` usage; `ITSAppUsesNonExemptEncryption: false` set — see ADR-013.
 - Verified: `xcodegen generate` plus Debug and Release builds (Simulator destination) succeed with no new warnings after all of the above.
+- App icon added (`Pauseo/Assets.xcassets/AppIcon.appiconset/AppIcon-1024.png`, opaque 1024x1024, single-size/universal slot) — solid deep indigo square with two warm ivory pause bars, matching the visual system. A matching native launch screen (`UILaunchScreen` in `Info.plist`, no storyboard) shows the same pause-mark glyph on `LaunchBackground` (ivory light / black dark).
 
 Still pending before an Internal TestFlight build can be uploaded:
-- App icon (`Pauseo/Assets.xcassets/AppIcon.appiconset` currently has no image file — Contents.json slot only).
 - An actual Archive + upload, which requires Xcode signed into the Apple ID for team `5T4Z65558R` (confirmed working in the Xcode GUI; this cannot be done from an unattended/headless shell in this environment — `xcodebuild archive` here fails with "No Account for Team" since no Apple ID session exists outside the interactive Xcode app).
 - Export-compliance and any other build-specific prompts in App Store Connect once a build is uploaded.
 
