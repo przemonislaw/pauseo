@@ -36,9 +36,13 @@ extension Color {
             : UIColor(red: 0xF0 / 255, green: 0xEE / 255, blue: 0xE8 / 255, alpha: 1)
     })
 
+    /// Light mode only: the new surface color needs a hairline border to read
+    /// as a distinct chip. Dark mode keeps the old flat-fill look (no border),
+    /// since `Color.pauseoSurface` already contrasts plenty against the
+    /// existing black background there.
     static let pauseoBorder = Color(UIColor { trait in
         trait.userInterfaceStyle == .dark
-            ? .separator
+            ? .clear
             : UIColor(red: 0x22 / 255, green: 0x22 / 255, blue: 0x36 / 255, alpha: 0.12)
     })
 
