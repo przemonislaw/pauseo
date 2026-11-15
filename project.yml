@@ -35,7 +35,7 @@ targets:
         DEVELOPMENT_ASSET_PATHS: "\"Pauseo/Preview Content\""
         CURRENT_PROJECT_VERSION: 1
         MARKETING_VERSION: "0.1.0"
-        DEVELOPMENT_TEAM: "5T4Z65558R"
+        DEVELOPMENT_TEAM: "36WKZ8Q4L5"
         CODE_SIGN_STYLE: Automatic
         TARGETED_DEVICE_FAMILY: "1"
       configs:
