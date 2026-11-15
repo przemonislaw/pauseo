@@ -292,7 +292,6 @@
 				DEVELOPMENT_TEAM = 5T4Z65558R;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Pauseo/Info.plist;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -438,7 +437,6 @@
 				DEVELOPMENT_TEAM = 5T4Z65558R;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Pauseo/Info.plist;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
