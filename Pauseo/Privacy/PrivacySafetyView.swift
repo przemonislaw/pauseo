@@ -42,11 +42,13 @@ struct PrivacySafetyView: View {
                 }
                 .padding()
             }
+            .background(Color.pauseoBackground.ignoresSafeArea())
             .navigationTitle("Privacy and data")
             .navigationBarTitleDisplayMode(.large)
             .toolbar {
                 ToolbarItem(placement: .confirmationAction) {
                     Button("Done") { dismiss() }
+                        .tint(.pauseoPrimary)
                 }
             }
             .alert("Delete all data?", isPresented: $showingDeleteConfirmation) {

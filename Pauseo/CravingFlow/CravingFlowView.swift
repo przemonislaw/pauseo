@@ -58,6 +58,7 @@ struct CravingFlowView: View {
                 EmptyView()
             }
         }
+        .background(Color.pauseoBackground.ignoresSafeArea())
         .onChange(of: step) { _, newStep in
             guard newStep == 3, !hasCreatedEvent else { return }
             hasCreatedEvent = true
@@ -174,7 +175,7 @@ private struct GroundingStep: View {
             Button("Help me now", action: onNext)
                 .buttonStyle(.borderedProminent)
                 .controlSize(.large)
-                .tint(.indigo)
+                .tint(.pauseoPrimary)
                 .padding(.horizontal)
                 .padding(.bottom, 40)
         }
@@ -218,7 +219,7 @@ private struct TriggerStep: View {
             Button("Next", action: onNext)
                 .buttonStyle(.borderedProminent)
                 .controlSize(.large)
-                .tint(.indigo)
+                .tint(.pauseoPrimary)
                 .padding(.horizontal)
                 .padding(.top, 16)
                 .padding(.bottom, 40)
@@ -264,7 +265,7 @@ private struct MicroActionStep: View {
             Button("I'll do it", action: onNext)
                 .buttonStyle(.borderedProminent)
                 .controlSize(.large)
-                .tint(.indigo)
+                .tint(.pauseoPrimary)
                 .padding(.horizontal)
                 .padding(.bottom, 40)
         }
@@ -296,7 +297,7 @@ private struct InvitationStep: View {
                 Button("Stay with me", action: onAccept)
                     .buttonStyle(.borderedProminent)
                     .controlSize(.large)
-                    .tint(.indigo)
+                    .tint(.pauseoPrimary)
                 Button("I'm done for now", action: onDecline)
                     .font(.footnote)
                     .foregroundStyle(.secondary)
@@ -340,7 +341,7 @@ private struct GuidedLoopStep: View {
                     .padding(.bottom, 8)
 
                 ProgressView(value: elapsed, total: totalDuration)
-                    .tint(.indigo)
+                    .tint(.pauseoPrimary)
                     .padding(.horizontal, 48)
                     .padding(.bottom, 32)
 
@@ -408,6 +409,7 @@ private struct OutcomeStep: View {
             }
             .buttonStyle(.bordered)
             .controlSize(.large)
+            .tint(.pauseoNeutralAction)
             .padding(.horizontal)
             .padding(.bottom, 40)
         }
@@ -439,7 +441,7 @@ private struct SecondRoundOfferStep: View {
                 Button("I'll take 2 more minutes", action: onAccept)
                     .buttonStyle(.borderedProminent)
                     .controlSize(.large)
-                    .tint(.indigo)
+                    .tint(.pauseoPrimary)
                 Button("I'm done for now", action: onDecline)
                     .font(.footnote)
                     .foregroundStyle(.secondary)
@@ -473,7 +475,7 @@ private struct CompletionStep: View {
             Button("Back to home", action: onDismiss)
                 .buttonStyle(.borderedProminent)
                 .controlSize(.large)
-                .tint(.indigo)
+                .tint(.pauseoPrimary)
                 .padding(.horizontal)
                 .padding(.bottom, 40)
         }
@@ -489,15 +491,27 @@ private struct CravingChip: View {
 
     var body: some View {
         Button(action: action) {
-            Text(LocalizedStringKey(title))
-                .font(.callout)
-                .padding(.vertical, 12)
-                .frame(maxWidth: .infinity)
-                .background(isSelected ? Color.indigo : Color(.systemGray6))
-                .foregroundStyle(isSelected ? Color.white : Color.primary)
-                .clipShape(RoundedRectangle(cornerRadius: 12))
+            HStack {
+                Text(LocalizedStringKey(title))
+                    .font(.callout)
+                Spacer()
+                if isSelected {
+                    Image(systemName: "checkmark")
+                        .font(.callout.weight(.semibold))
+                }
+            }
+            .padding(.vertical, 12)
+            .padding(.horizontal, 16)
+            .background(isSelected ? Color.pauseoPrimary : Color.pauseoSurface)
+            .foregroundStyle(isSelected ? Color.white : Color.pauseoTextPrimary)
+            .clipShape(RoundedRectangle(cornerRadius: 10))
+            .overlay(
+                RoundedRectangle(cornerRadius: 10)
+                    .stroke(isSelected ? Color.clear : Color.pauseoBorder, lineWidth: 1)
+            )
         }
         .buttonStyle(.plain)
+        .accessibilityAddTraits(isSelected ? .isSelected : [])
     }
 }
 

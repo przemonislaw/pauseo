@@ -27,7 +27,7 @@ struct HomeView: View {
             }
             .buttonStyle(.borderedProminent)
             .controlSize(.large)
-            .tint(.indigo)
+            .tint(.pauseoPrimary)
             .padding(.bottom, 32)
 
             SecondaryActionButton(title: "I've had a slip") { showingSlipRecovery = true }
@@ -40,6 +40,7 @@ struct HomeView: View {
             Spacer()
         }
         .padding()
+        .background(Color.pauseoBackground.ignoresSafeArea())
         .sheet(isPresented: $showingCravingFlow) { CravingFlowView() }
         .sheet(isPresented: $showingSlipRecovery) { SlipRecoveryView() }
         .sheet(isPresented: $showingPrivacy) { PrivacySafetyView() }
@@ -59,6 +60,7 @@ private struct SecondaryActionButton: View {
         }
         .buttonStyle(.bordered)
         .controlSize(.small)
+        .tint(.pauseoNeutralAction)
     }
 }
 

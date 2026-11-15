@@ -41,6 +41,7 @@ struct OnboardingFlowView: View {
                 EmptyView()
             }
         }
+        .background(Color.pauseoBackground.ignoresSafeArea())
     }
 }
 
@@ -67,7 +68,7 @@ private struct WelcomeStep: View {
             Button("Let's begin", action: onNext)
                 .buttonStyle(.borderedProminent)
                 .controlSize(.large)
-                .tint(.indigo)
+                .tint(.pauseoPrimary)
                 .padding(.horizontal)
                 .padding(.bottom, 40)
         }
@@ -146,11 +147,11 @@ private struct NotificationsStep: View {
                 Button("Go to the app", action: onComplete)
                     .buttonStyle(.borderedProminent)
                     .controlSize(.large)
-                    .tint(.indigo)
+                    .tint(.pauseoPrimary)
                 Button("Not now", action: onComplete)
                     .buttonStyle(.bordered)
                     .controlSize(.large)
-                    .tint(.indigo)
+                    .tint(.pauseoPrimary)
             }
             .padding(.horizontal)
             .padding(.bottom, 40)
@@ -193,7 +194,7 @@ private struct SelectionStep<T: RawRepresentable & CaseIterable & Hashable>: Vie
             Button("Next", action: onNext)
                 .buttonStyle(.borderedProminent)
                 .controlSize(.large)
-                .tint(.indigo)
+                .tint(.pauseoPrimary)
                 .padding(.horizontal)
                 .padding(.top, 16)
                 .padding(.bottom, 40)
@@ -210,15 +211,27 @@ private struct OptionChip: View {
 
     var body: some View {
         Button(action: action) {
-            Text(LocalizedStringKey(title))
-                .font(.callout)
-                .padding(.vertical, 12)
-                .frame(maxWidth: .infinity)
-                .background(isSelected ? Color.indigo : Color(.systemGray6))
-                .foregroundStyle(isSelected ? Color.white : Color.primary)
-                .clipShape(RoundedRectangle(cornerRadius: 12))
+            HStack {
+                Text(LocalizedStringKey(title))
+                    .font(.callout)
+                Spacer()
+                if isSelected {
+                    Image(systemName: "checkmark")
+                        .font(.callout.weight(.semibold))
+                }
+            }
+            .padding(.vertical, 12)
+            .padding(.horizontal, 16)
+            .background(isSelected ? Color.pauseoPrimary : Color.pauseoSurface)
+            .foregroundStyle(isSelected ? Color.white : Color.pauseoTextPrimary)
+            .clipShape(RoundedRectangle(cornerRadius: 10))
+            .overlay(
+                RoundedRectangle(cornerRadius: 10)
+                    .stroke(isSelected ? Color.clear : Color.pauseoBorder, lineWidth: 1)
+            )
         }
         .buttonStyle(.plain)
+        .accessibilityAddTraits(isSelected ? .isSelected : [])
     }
 }
 

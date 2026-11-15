@@ -40,6 +40,7 @@ struct SlipRecoveryView: View {
                 EmptyView()
             }
         }
+        .background(Color.pauseoBackground.ignoresSafeArea())
         .onChange(of: step) { _, newStep in
             guard newStep == 3, !hasSavedCompletionEvent else { return }
             eventStore.save(SlipEvent(
@@ -77,7 +78,7 @@ private struct ShameReductionStep: View {
             Button("Let's continue", action: onNext)
                 .buttonStyle(.borderedProminent)
                 .controlSize(.large)
-                .tint(.indigo)
+                .tint(.pauseoPrimary)
                 .padding(.horizontal)
                 .padding(.bottom, 40)
         }
@@ -126,7 +127,7 @@ private struct ContextStep: View {
             Button("Next", action: onNext)
                 .buttonStyle(.borderedProminent)
                 .controlSize(.large)
-                .tint(.indigo)
+                .tint(.pauseoPrimary)
                 .padding(.horizontal)
                 .padding(.top, 16)
                 .padding(.bottom, 40)
@@ -174,7 +175,7 @@ private struct RecoveryActionStep: View {
             Button("Continue", action: onNext)
                 .buttonStyle(.borderedProminent)
                 .controlSize(.large)
-                .tint(.indigo)
+                .tint(.pauseoPrimary)
                 .padding(.horizontal)
                 .padding(.bottom, 40)
         }
@@ -204,7 +205,7 @@ private struct SlipCompletionStep: View {
             Button("Back to home", action: onDismiss)
                 .buttonStyle(.borderedProminent)
                 .controlSize(.large)
-                .tint(.indigo)
+                .tint(.pauseoPrimary)
                 .padding(.horizontal)
                 .padding(.bottom, 40)
         }
@@ -220,15 +221,27 @@ private struct SlipChip: View {
 
     var body: some View {
         Button(action: action) {
-            Text(LocalizedStringKey(title))
-                .font(.callout)
-                .padding(.vertical, 12)
-                .frame(maxWidth: .infinity)
-                .background(isSelected ? Color.indigo : Color(.systemGray6))
-                .foregroundStyle(isSelected ? Color.white : Color.primary)
-                .clipShape(RoundedRectangle(cornerRadius: 12))
+            HStack {
+                Text(LocalizedStringKey(title))
+                    .font(.callout)
+                Spacer()
+                if isSelected {
+                    Image(systemName: "checkmark")
+                        .font(.callout.weight(.semibold))
+                }
+            }
+            .padding(.vertical, 12)
+            .padding(.horizontal, 16)
+            .background(isSelected ? Color.pauseoPrimary : Color.pauseoSurface)
+            .foregroundStyle(isSelected ? Color.white : Color.pauseoTextPrimary)
+            .clipShape(RoundedRectangle(cornerRadius: 10))
+            .overlay(
+                RoundedRectangle(cornerRadius: 10)
+                    .stroke(isSelected ? Color.clear : Color.pauseoBorder, lineWidth: 1)
+            )
         }
         .buttonStyle(.plain)
+        .accessibilityAddTraits(isSelected ? .isSelected : [])
     }
 }
 
