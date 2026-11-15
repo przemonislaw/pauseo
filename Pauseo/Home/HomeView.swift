@@ -25,6 +25,7 @@ struct HomeView: View {
             Button("I'm having a craving") {
                 showingCravingFlow = true
             }
+            .frame(maxWidth: .infinity)
             .buttonStyle(.borderedProminent)
             .controlSize(.large)
             .tint(.pauseoPrimary)
@@ -37,8 +38,7 @@ struct HomeView: View {
                 .font(.caption2)
                 .foregroundStyle(.tertiary)
                 .padding(.top, 24)
-
-            Spacer()
+                .padding(.bottom, 24)
         }
         .padding()
         .background(Color.pauseoBackground.ignoresSafeArea())

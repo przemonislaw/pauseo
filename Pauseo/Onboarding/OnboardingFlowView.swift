@@ -67,6 +67,7 @@ private struct WelcomeStep: View {
             .padding(.horizontal, 32)
             Spacer()
             Button("Let's begin", action: onNext)
+                .frame(maxWidth: .infinity)
                 .buttonStyle(.borderedProminent)
                 .controlSize(.large)
                 .tint(.pauseoPrimary)
@@ -147,15 +148,17 @@ private struct NotificationsStep: View {
             Spacer()
             VStack(spacing: 12) {
                 Button("Go to the app", action: onComplete)
+                    .frame(maxWidth: .infinity)
                     .buttonStyle(.borderedProminent)
                     .controlSize(.large)
                     .tint(.pauseoPrimary)
-                .buttonBorderShape(.roundedRectangle(radius: 10))
+                    .buttonBorderShape(.roundedRectangle(radius: 10))
                 Button("Not now", action: onComplete)
+                    .frame(maxWidth: .infinity)
                     .buttonStyle(.bordered)
                     .controlSize(.large)
                     .tint(.pauseoPrimary)
-                .buttonBorderShape(.roundedRectangle(radius: 10))
+                    .buttonBorderShape(.roundedRectangle(radius: 10))
             }
             .padding(.horizontal)
             .padding(.bottom, 40)
@@ -196,6 +199,7 @@ private struct SelectionStep<T: RawRepresentable & CaseIterable & Hashable>: Vie
             }
 
             Button("Next", action: onNext)
+                .frame(maxWidth: .infinity)
                 .buttonStyle(.borderedProminent)
                 .controlSize(.large)
                 .tint(.pauseoPrimary)

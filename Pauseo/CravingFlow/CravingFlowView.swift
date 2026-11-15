@@ -174,6 +174,7 @@ private struct GroundingStep: View {
             .padding(.horizontal, 32)
             Spacer()
             Button("Help me now", action: onNext)
+                .frame(maxWidth: .infinity)
                 .buttonStyle(.borderedProminent)
                 .controlSize(.large)
                 .tint(.pauseoPrimary)
@@ -219,6 +220,7 @@ private struct TriggerStep: View {
             }
 
             Button("Next", action: onNext)
+                .frame(maxWidth: .infinity)
                 .buttonStyle(.borderedProminent)
                 .controlSize(.large)
                 .tint(.pauseoPrimary)
@@ -266,6 +268,7 @@ private struct MicroActionStep: View {
             Spacer()
 
             Button("I'll do it", action: onNext)
+                .frame(maxWidth: .infinity)
                 .buttonStyle(.borderedProminent)
                 .controlSize(.large)
                 .tint(.pauseoPrimary)
@@ -299,10 +302,11 @@ private struct InvitationStep: View {
             Spacer()
             VStack(spacing: 12) {
                 Button("Stay with me", action: onAccept)
+                    .frame(maxWidth: .infinity)
                     .buttonStyle(.borderedProminent)
                     .controlSize(.large)
                     .tint(.pauseoPrimary)
-                .buttonBorderShape(.roundedRectangle(radius: 10))
+                    .buttonBorderShape(.roundedRectangle(radius: 10))
                 Button("I'm done for now", action: onDecline)
                     .font(.footnote)
                     .foregroundStyle(.secondary)
@@ -347,7 +351,6 @@ private struct GuidedLoopStep: View {
 
                 ProgressView(value: elapsed, total: totalDuration)
                     .tint(.pauseoPrimary)
-                .buttonBorderShape(.roundedRectangle(radius: 10))
                     .padding(.horizontal, 48)
                     .padding(.bottom, 32)
 
@@ -410,8 +413,11 @@ private struct OutcomeStep: View {
             Spacer()
             VStack(spacing: 10) {
                 Button("I didn't smoke") { onSelect(.didNotSmoke) }
+                    .frame(maxWidth: .infinity)
                 Button("I've put off the decision") { onSelect(.postponed) }
+                    .frame(maxWidth: .infinity)
                 Button("I smoked") { onSelect(.smoked) }
+                    .frame(maxWidth: .infinity)
             }
             .buttonStyle(.bordered)
             .controlSize(.large)
@@ -446,10 +452,11 @@ private struct SecondRoundOfferStep: View {
             Spacer()
             VStack(spacing: 12) {
                 Button("I'll take 2 more minutes", action: onAccept)
+                    .frame(maxWidth: .infinity)
                     .buttonStyle(.borderedProminent)
                     .controlSize(.large)
                     .tint(.pauseoPrimary)
-                .buttonBorderShape(.roundedRectangle(radius: 10))
+                    .buttonBorderShape(.roundedRectangle(radius: 10))
                 Button("I'm done for now", action: onDecline)
                     .font(.footnote)
                     .foregroundStyle(.secondary)
@@ -481,6 +488,7 @@ private struct CompletionStep: View {
             .padding(.horizontal, 32)
             Spacer()
             Button("Back to home", action: onDismiss)
+                .frame(maxWidth: .infinity)
                 .buttonStyle(.borderedProminent)
                 .controlSize(.large)
                 .tint(.pauseoPrimary)
