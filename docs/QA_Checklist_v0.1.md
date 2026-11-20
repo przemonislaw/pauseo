@@ -23,7 +23,7 @@ Pass
 
 ## 2. Onboarding UI flow
 
-- [x] Onboarding shows 5 screens: welcome, nicotine type, goal mode, main trigger, notifications.
+- [x] ~~Onboarding shows 5 screens: welcome, nicotine type, goal mode, main trigger, notifications.~~ Superseded 2026-11-20 by section 16 (single-screen onboarding).
 - [x] Each screen has one primary action to continue.
 - [x] Onboarding can be completed start to finish without errors or dead ends.
 - [x] Selections are not required to be filled in a way that blocks progress (no forced free-text).
@@ -212,7 +212,7 @@ Pass
 
 Not a new feature — verifies that the existing flows from sections 1–14 render correctly in both Polish and English, that data compatibility is preserved, and that language fallback works. Run the full sequence below **once with the device language set to Polish, and once set to English.**
 
-- [x] Complete the full onboarding flow (all 5 screens, every option in each selection step) and confirm every title, option label, and button is in the active language with no missing keys and no mixed-language text.
+- [x] Complete the full onboarding flow (all 5 screens, every option in each selection step — superseded by section 16 for the single-screen onboarding) and confirm every title, option label, and button is in the active language with no missing keys and no mixed-language text.
 - [x] Home shows exactly the three actions from section 1, all in the active language.
 - [x] Complete the craving flow: grounding → trigger selection (all options) → micro-action selection (all options) → completion, confirming every screen is in the active language.
 - [x] Decline the guided-loop invitation ("I'm done for now" / "Kończę na teraz") and confirm it goes straight to the same neutral closing screen as before, in the active language.
@@ -242,6 +242,42 @@ Date: 14.11.2026
 Build/commit tested: Phase 1 PL/EN localization (pre-commit working tree, based on 38b7de0)
 
 Pass
+
+---
+
+## 16. Visual system — physical-device check
+
+Verifies the applied visual design (`docs/Current_State.md` → Visual system) on a real iPhone, in Polish and English, light and dark mode.
+
+- [x] Onboarding "What do you use?" / "Z czego korzystasz?" — option selection, checkmark visible, readable at large Dynamic Type.
+- [x] Craving flow trigger and micro-action selection, slip flow context and recovery action selection — checkmarks clear in light and dark mode.
+- [x] Home, outcome question and Privacy & Safety — contrast, buttons visible, no clipped text.
+
+Tester: Przemek
+Date: reported 20.11.2026
+Build/commit tested: 5da9179 (design pass) and later
+
+Pass
+
+---
+
+## 17. Single-screen onboarding
+
+Verifies the 2026-11-20 change: onboarding cut from 5 screens to 1.
+
+- [ ] Fresh install (or delete app first): exactly one onboarding screen is shown — title, body, privacy line, one button.
+- [ ] No Back button, no progress indicator, no selection screens, no reminders screen.
+- [ ] Privacy line reads "Bez konta. Twoje dane zostają w telefonie." (PL) / "No account. Your data stays on your phone." (EN).
+- [ ] Tapping "Zacznij spokojnie" / "Let's begin" opens Home immediately; Home shows the three actions from section 1.
+- [ ] Relaunch after completing onboarding: app opens directly on Home (onboarding not shown again).
+- [ ] Existing install that already completed onboarding: opens on Home, no change.
+- [ ] Largest Dynamic Type and small-screen device: no clipped text, button reachable.
+- [ ] VoiceOver reads title, body, privacy line and button in the active language.
+- [ ] Light and dark mode: privacy line readable (secondary text contrast).
+
+Tester:
+Date:
+Build/commit tested:
 
 ---
 

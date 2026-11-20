@@ -60,7 +60,10 @@ Acceptance criteria:
 - Explains craving support in simple language.
 - Does not promise quitting.
 - Does not use medical claims.
-- CTA starts onboarding.
+- ~~CTA starts onboarding.~~ CTA completes onboarding and opens Home (2026-11-20: onboarding cut to this single screen).
+- Shows the privacy line "Bez konta. Twoje dane zostają w telefonie."
+
+**Status: implemented (single-screen onboarding, 2026-11-20).** The P0 selection items below were implemented as UI-only screens, then removed before the first App Review submission because their answers were never stored or used. They are deferred: re-introduce only in context, when the answer visibly changes something (see `docs/Product_MVP.md` → Onboarding).
 
 ### P0 — Nicotine type selection
 

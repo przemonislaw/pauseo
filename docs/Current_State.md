@@ -1,6 +1,6 @@
 # Current State — pauseo.app
 
-Last updated: 2026-08-01
+Last updated: 2026-11-20
 
 ## Product canon
 
@@ -27,6 +27,14 @@ Current Home contains only:
 - Primary CTA: "Mam craving teraz"
 - Secondary action: "Miałem slip"
 - Tertiary link: "Prywatność i dane" (opens PrivacySafetyView as a sheet)
+
+## Onboarding
+
+**Single screen (2026-11-20).** `OnboardingFlowView` shows one welcome screen: title, body, privacy line ("Bez konta. Twoje dane zostają w telefonie." / "No account. Your data stays on your phone.") and one CTA that calls `appState.completeOnboarding()` and opens Home.
+
+- The previous nicotine type, goal mode, main trigger and reminders screens were removed: their answers were held only in `@State` and never stored or used, and the reminders screen had two buttons doing the same thing.
+- `UserPreferences`, `NicotineType`, `GoalMode` model types are kept unchanged for future, in-context use. No data migration needed (nothing was stored).
+- Rationale and the rule for re-introducing questions: `docs/Product_MVP.md` → Onboarding, `docs/Inspiration_Onboarding_Reels.md`.
 
 ## Local persistence state
 

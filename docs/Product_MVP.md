@@ -112,9 +112,9 @@ Avoid:
 
 ### 1. Minimal onboarding
 
-Goal: configure only what is necessary.
+Goal: configure only what is necessary. In v0.1 that is nothing: onboarding is a single welcome screen (see "Onboarding" below).
 
-Inputs:
+Deferred inputs (ask later, in context, only when the answer changes something):
 - nicotine type: smoking / vaping / nicotine / mixed,
 - goal mode: quit now / reduce / prepare,
 - top initial trigger,
@@ -234,7 +234,7 @@ Under 90 seconds.
 
 ### Screens
 
-#### Screen 1: Welcome
+#### Screen 1 (only screen): Welcome
 
 Title:
 
@@ -244,50 +244,24 @@ Body:
 
 > “pauseo pomaga wybrać jedną małą akcję, gdy pojawia się głód nikotynowy.”
 
-CTA:
+Privacy line:
+
+> “Bez konta. Twoje dane zostają w telefonie.”
+
+CTA (goes straight to Home):
 
 > “Zacznij spokojnie”
 
-#### Screen 2: What do you use?
+#### Removed setup questions (2026-11-20)
 
-Options:
-- Papierosy
-- Vape
-- Nikotyna
-- Mieszane
-- Wolę nie podawać
+Onboarding was cut from 5 screens to 1 before the first App Review submission. The removed screens were: nicotine type, goal mode, main trigger, reminders.
 
-#### Screen 3: What is your mode?
+Reason: their answers were never stored or used, so they added cognitive load between a new user and craving support without changing anything (see `docs/Inspiration_Onboarding_Reels.md`).
 
-Options:
-- Rzucam teraz
-- Ograniczam
-- Przygotowuję się
-- Jeszcze nie wiem
-
-#### Screen 4: Main trigger
-
-Options:
-- Stres
-- Nuda
-- Alkohol
-- Po jedzeniu
-- Rano
-- Praca
-- Jazda autem
-- Emocje
-- Towarzystwo
-- Inne
-
-#### Screen 5: Permission for reminders
-
-Copy:
-
-> “Możesz dostać delikatne przypomnienia w momentach ryzyka. Bez spamu.”
-
-CTA:
-- “Włącz później”
-- “Ustaw przypomnienia”
+Rule for bringing any of them back: ask in context, at the moment the answer visibly changes something, not upfront. For example:
+- goal mode when a Progress view needs it,
+- reminders after the user has used the craving flow at least once (ADR-008),
+- trigger intelligence is built from triggers logged in the craving flow, not from an onboarding guess.
 
 ## Home screen
 

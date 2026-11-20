@@ -774,6 +774,22 @@
         }
       }
     },
+    "No account. Your data stays on your phone." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No account. Your data stays on your phone."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bez konta. Twoje dane zostają w telefonie."
+          }
+        }
+      }
+    },
     "Not now" : {
       "extractionState" : "stale",
       "localizations" : {
