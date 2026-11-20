@@ -310,16 +310,19 @@ Verifies the 2026-11-20 copy changes and the guided breathing step. PL and EN, l
 
 - [ ] Home secondary button reads "Zdarzył mi się slip" (PL) / "I've had a slip" (EN).
 - [ ] Craving micro-actions show the new concrete labels (water in small sips, change rooms, 5 breaths 4/6, pen or mug, "co u Ciebie?"); no "Odłóż decyzję o 5 minut" option.
-- [ ] Choose "5 oddechów…": breathing screen opens; circle grows for 4 s ("Wdech"), shrinks for 6 s ("Wydech"); seconds count down; counter reads "Zostało 5 oddechów" → "Zostały 4/3/2 oddechy" → "Ostatni oddech" (EN "5 breaths left" … "Last breath").
-- [ ] After ~50 s the invitation "Stay with me for 2 more minutes?" appears automatically.
+- [x] Choose "5 oddechów…": breathing screen opens; circle grows for 4 s ("Wdech"), shrinks for 6 s ("Wydech"); seconds count down; counter reads "Zostało 5 oddechów" → "Zostały 4/3/2 oddechy" → "Ostatni oddech" (EN "5 breaths left" … "Last breath").
+- [x] After ~50 s the invitation "Stay with me for 2 more minutes?" appears automatically.
 - [ ] "Pomiń oddychanie" / "Skip breathing" goes straight to the invitation.
 - [ ] Background the app mid-breathing and return: the exercise continues from real elapsed time (no restart).
 - [ ] Reduce Motion on: circle does not scale; text and counter still change.
 - [ ] VoiceOver: "Breathe in/out" and the counter are read; the circle is not focusable.
+- [ ] Trigger question (craving) has the subtitle "Przyda się następnym razem. Możesz pominąć." / "Helps next time. You can skip this."; the slip flow keeps "Możesz pominąć."
 - [ ] Trigger question reads "Co uruchomiło craving?"; options include "Kawa" / "Coffee".
 - [ ] Completion reads "To wystarczy na teraz." with "Jedna mała akcja się liczy. Jeśli ochota wróci, po prostu tu wróć."; button "Wróć na start" (PL).
 - [ ] Slip flow: "Co działo się tuż przed?" with "Kawa" option; recovery actions show "Schowaj nikotynę w innym pokoju" and "Następna godzina bez nikotyny" (EN "Next hour nicotine-free", no "Start again"); slip still shows "Napisz do kogoś".
 - [ ] Largest Dynamic Type: longer action labels wrap without clipping.
+
+Note: guided breathing opening and auto-continue confirmed working on device by Przemek (20.11.2026); remaining items still to run.
 
 Tester:
 Date:

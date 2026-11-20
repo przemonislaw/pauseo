@@ -225,7 +225,7 @@ private struct TriggerStep: View {
                 .padding(.top, 24)
                 .padding(.bottom, 8)
 
-            Text("You can skip this.")
+            Text("Helps next time. You can skip this.")
                 .font(.caption)
                 .foregroundStyle(.secondary)
                 .padding(.bottom, 16)

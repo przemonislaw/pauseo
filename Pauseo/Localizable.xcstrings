@@ -1,7 +1,10 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "%@" : {},
+    "%@ breaths left" : {},
     "%lld breaths left" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "variations" : {
@@ -24,12 +27,6 @@
         "pl" : {
           "variations" : {
             "plural" : {
-              "one" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "Został %lld oddech"
-                }
-              },
               "few" : {
                 "stringUnit" : {
                   "state" : "translated",
@@ -40,6 +37,12 @@
                 "stringUnit" : {
                   "state" : "translated",
                   "value" : "Zostało %lld oddechów"
+                }
+              },
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "Został %lld oddech"
                 }
               },
               "other" : {
@@ -402,22 +405,6 @@
         }
       }
     },
-    "Go ahead, do it now. I'll be here." : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Go ahead, do it now. I'll be here."
-          }
-        },
-        "pl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Śmiało, zrób to teraz. Będę tutaj."
-          }
-        }
-      }
-    },
     "Głód nikotynowy często trwa kilka minut, choć jego przebieg jest różny u różnych osób." : {
       "extractionState" : "stale",
       "localizations" : {
@@ -452,6 +439,23 @@
         }
       }
     },
+    "Go ahead, do it now. I'll be here." : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Go ahead, do it now. I'll be here."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Śmiało, zrób to teraz. Będę tutaj."
+          }
+        }
+      }
+    },
     "Go to the app" : {
       "extractionState" : "stale",
       "localizations" : {
@@ -470,6 +474,7 @@
       }
     },
     "Good. One small action is enough for now." : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -498,6 +503,22 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Pomóż mi teraz"
+          }
+        }
+      }
+    },
+    "Helps next time. You can skip this." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Helps next time. You can skip this."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Przyda się następnym razem. Możesz pominąć."
           }
         }
       }
@@ -639,6 +660,7 @@
       }
     },
     "If the craving comes back, you can start this flow again." : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -706,6 +728,7 @@
       }
     },
     "Kawa" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1326,6 +1349,7 @@
       }
     },
     "Skip breathing" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1376,6 +1400,7 @@
       }
     },
     "Stay with me for 2 more minutes?" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1440,7 +1465,25 @@
         }
       }
     },
+    "Tętno i ciśnienie krwi zaczynają się obniżać już w krótkim czasie po zaprzestaniu palenia." : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Heart rate and blood pressure start to drop within a short time after you stop smoking."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tętno i ciśnienie krwi zaczynają się obniżać już w krótkim czasie po zaprzestaniu palenia."
+          }
+        }
+      }
+    },
     "Text someone: “how are you?”" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1468,23 +1511,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "To wystarczy na teraz."
-          }
-        }
-      }
-    },
-    "Tętno i ciśnienie krwi zaczynają się obniżać już w krótkim czasie po zaprzestaniu palenia." : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Heart rate and blood pressure start to drop within a short time after you stop smoking."
-          }
-        },
-        "pl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Tętno i ciśnienie krwi zaczynają się obniżać już w krótkim czasie po zaprzestaniu palenia."
           }
         }
       }
@@ -1673,6 +1699,7 @@
       }
     },
     "What was going on at the time?" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1771,6 +1798,7 @@
       }
     },
     "When you're back, you can stay with me for 2 more minutes. Or end here." : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1920,6 +1948,7 @@
       }
     },
     "You can stay with me before deciding. No pressure — you can also end now." : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
