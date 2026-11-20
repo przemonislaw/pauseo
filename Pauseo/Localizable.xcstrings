@@ -286,6 +286,7 @@
       }
     },
     "For now we'll start without setting up notifications. What matters most is having support ready when a craving hits." : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1143,6 +1144,7 @@
       }
     },
     "Reminders later." : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {

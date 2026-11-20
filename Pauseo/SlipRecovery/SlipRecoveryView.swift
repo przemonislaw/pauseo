@@ -107,7 +107,7 @@ private struct ContextStep: View {
 
             Text("You can skip this.")
                 .font(.caption)
-                .foregroundStyle(.tertiary)
+                .foregroundStyle(.secondary)
                 .padding(.bottom, 16)
 
             ScrollView {

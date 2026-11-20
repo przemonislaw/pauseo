@@ -199,7 +199,7 @@ private struct TriggerStep: View {
 
             Text("You can skip this.")
                 .font(.caption)
-                .foregroundStyle(.tertiary)
+                .foregroundStyle(.secondary)
                 .padding(.bottom, 16)
 
             ScrollView {
@@ -243,7 +243,7 @@ private struct MicroActionStep: View {
 
             Text("For the next minute.")
                 .font(.caption)
-                .foregroundStyle(.tertiary)
+                .foregroundStyle(.secondary)
                 .padding(.bottom, 16)
 
             VStack(spacing: 10) {

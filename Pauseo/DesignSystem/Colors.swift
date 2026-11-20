@@ -30,16 +30,21 @@ extension Color {
             : UIColor(red: 0x62 / 255, green: 0x62 / 255, blue: 0x73 / 255, alpha: 1)
     })
 
+    /// Dark mode uses `.secondarySystemBackground`, not `.systemGray6`: the
+    /// craving and slip flows are sheets, whose elevated dark background is
+    /// #1C1C1E, the same as `.systemGray6`, which made unselected chips
+    /// invisible. `.secondarySystemBackground` resolves to #2C2C2E there and
+    /// still contrasts with the black base background on Home.
     static let pauseoSurface = Color(UIColor { trait in
         trait.userInterfaceStyle == .dark
-            ? .systemGray6
+            ? .secondarySystemBackground
             : UIColor(red: 0xF0 / 255, green: 0xEE / 255, blue: 0xE8 / 255, alpha: 1)
     })
 
     /// Light mode only: the new surface color needs a hairline border to read
     /// as a distinct chip. Dark mode keeps the old flat-fill look (no border),
     /// since `Color.pauseoSurface` already contrasts plenty against the
-    /// existing black background there.
+    /// existing background there (see `pauseoSurface`).
     static let pauseoBorder = Color(UIColor { trait in
         trait.userInterfaceStyle == .dark
             ? .clear
