@@ -26,6 +26,14 @@ struct CravingFlowView: View {
         "Napisz do kogoś"
     ]
 
+    /// Micro-actions that are done away from the screen. For these the
+    /// invitation must not say "stay with me": the user first needs explicit
+    /// permission to put the phone down or switch apps.
+    private let awayFromPhoneActions: Set<String> = [
+        "Wyjdź na 2 minuty",
+        "Napisz do kogoś"
+    ]
+
     var body: some View {
         VStack(spacing: 0) {
             HStack {
@@ -72,6 +80,7 @@ struct CravingFlowView: View {
         switch phase {
         case .invitation:
             InvitationStep(
+                awayFromPhone: selectedAction.map(awayFromPhoneActions.contains) ?? false,
                 onAccept: { startGuidedLoop(round: 1) },
                 onDecline: finishFlow
             )
@@ -279,6 +288,7 @@ private struct MicroActionStep: View {
 // MARK: - Invitation
 
 private struct InvitationStep: View {
+    var awayFromPhone: Bool = false
     let onAccept: () -> Void
     let onDecline: () -> Void
 
@@ -286,11 +296,15 @@ private struct InvitationStep: View {
         VStack(spacing: 0) {
             Spacer()
             VStack(spacing: 16) {
-                Text("Stay with me for 2 more minutes?")
+                Text(LocalizedStringKey(awayFromPhone
+                     ? "Go ahead, do it now. I'll be here."
+                     : "Stay with me for 2 more minutes?"))
                     .font(.largeTitle)
                     .fontWeight(.bold)
                     .multilineTextAlignment(.center)
-                Text("You can stay with me before deciding. No pressure — you can also end now.")
+                Text(LocalizedStringKey(awayFromPhone
+                     ? "When you're back, you can stay with me for 2 more minutes. Or end here."
+                     : "You can stay with me before deciding. No pressure — you can also end now."))
                     .font(.body)
                     .foregroundStyle(.secondary)
                     .multilineTextAlignment(.center)

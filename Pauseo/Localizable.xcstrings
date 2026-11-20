@@ -318,6 +318,22 @@
         }
       }
     },
+    "Go ahead, do it now. I'll be here." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Go ahead, do it now. I'll be here."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Śmiało, zrób to teraz. Będę tutaj."
+          }
+        }
+      }
+    },
     "Głód nikotynowy często trwa kilka minut, choć jego przebieg jest różny u różnych osób." : {
       "extractionState" : "stale",
       "localizations" : {
@@ -1554,6 +1570,22 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Co jest Twoim celem?"
+          }
+        }
+      }
+    },
+    "When you're back, you can stay with me for 2 more minutes. Or end here." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "When you're back, you can stay with me for 2 more minutes. Or end here."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gdy wrócisz, możesz zostać ze mną jeszcze 2 minuty. Albo zakończyć tutaj."
           }
         }
       }

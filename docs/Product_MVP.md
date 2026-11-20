@@ -318,6 +318,8 @@ Buttons:
 - “Daj inną”
 - “Pomiń”
 
+Away-from-phone actions ("Wyjdź na 2 minuty", "Napisz do kogoś"): the guided-loop invitation must not say "stay with me". It gives permission to do the action first: "Śmiało, zrób to teraz. Będę tutaj." / "Gdy wrócisz, możesz zostać ze mną jeszcze 2 minuty. Albo zakończyć tutaj." Same two buttons, same logic.
+
 ### Step 3: Outcome
 
 After the micro-action, the user may continue into a short guided 2-minute engagement sequence, with a rotating local support card shown every ~10 seconds, before this question appears.

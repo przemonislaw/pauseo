@@ -42,6 +42,7 @@ Current Home contains only:
 
 - Previously the trigger question came right after "Help me now", before any help. It now comes last on every path, including when the guided loop is declined.
 - The `CravingEvent` is created when the micro-action is confirmed (as before) and marked `completed` when the support part ends, before the trigger question; the trigger is written by a final upsert. Dismissing the sheet on the trigger step keeps a completed event with `trigger == nil`.
+- Away-from-phone micro-actions ("Wyjdź na 2 minuty", "Napisz do kogoś", listed in `awayFromPhoneActions`) get a different invitation copy: "Go ahead, do it now. I'll be here." / "When you're back, you can stay with me for 2 more minutes. Or end here." (PL in the catalog). Buttons and logic are unchanged; the stored `action` value is unchanged. Other actions, or no action selected, keep the original "Stay with me for 2 more minutes?" copy.
 - Expected trade-off: fewer events with a trigger (users who leave early never see the question), in exchange for less friction at peak craving. Watch this in beta.
 
 ## Local persistence state
