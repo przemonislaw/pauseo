@@ -244,6 +244,14 @@ private struct TriggerStep: View {
 
 // MARK: - Micro-Action Selection
 
+/// Craving-flow-only display copy for some micro-actions. The stored value
+/// (`CravingEvent.action`) stays the original Polish string; only the label
+/// changes. "Napisz do kogoś" is shared with the slip flow, which keeps its
+/// own label, so the override lives here rather than in the catalog entry.
+private let microActionDisplayKeys: [String: String] = [
+    "Napisz do kogoś": "Text someone: “how are you?”"
+]
+
 private struct MicroActionStep: View {
     let actions: [String]
     @Binding var selection: String?
@@ -267,7 +275,7 @@ private struct MicroActionStep: View {
             VStack(spacing: 10) {
                 ForEach(actions, id: \.self) { action in
                     CravingChip(
-                        title: action,
+                        title: microActionDisplayKeys[action] ?? action,
                         isSelected: selection == action,
                         action: { selection = action }
                     )

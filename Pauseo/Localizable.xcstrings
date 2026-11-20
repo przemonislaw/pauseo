@@ -1292,6 +1292,22 @@
         }
       }
     },
+    "Text someone: “how are you?”" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Text someone: “how are you?”"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Napisz komuś: „co u Ciebie?”"
+          }
+        }
+      }
+    },
     "Tętno i ciśnienie krwi zaczynają się obniżać już w krótkim czasie po zaprzestaniu palenia." : {
       "extractionState" : "stale",
       "localizations" : {

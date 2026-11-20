@@ -318,6 +318,8 @@ Buttons:
 - “Daj inną”
 - “Pomiń”
 
+Micro-action copy rule: concrete over generic, no decision left to make, no disclosure required. Example: "Napisz do kogoś" is shown in the craving flow as "Napisz komuś: „co u Ciebie?”" (stored value unchanged).
+
 Away-from-phone actions ("Wyjdź na 2 minuty", "Napisz do kogoś"): the guided-loop invitation must not say "stay with me". It gives permission to do the action first: "Śmiało, zrób to teraz. Będę tutaj." / "Gdy wrócisz, możesz zostać ze mną jeszcze 2 minuty. Albo zakończyć tutaj." Same two buttons, same logic.
 
 ### Step 3: Outcome

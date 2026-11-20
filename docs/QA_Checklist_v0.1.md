@@ -293,6 +293,7 @@ Verifies the 2026-11-20 change. Run in PL and EN, light and dark mode.
 - [ ] Path D — outcome "I've put off the decision" → second round offered → after it, outcome → trigger question → completion. Trigger question appears exactly once per flow.
 - [ ] Choose "Go outside for 2 minutes" or "Message someone": invitation reads "Go ahead, do it now. I'll be here." / "Śmiało, zrób to teraz. Będę tutaj." with the "When you're back…" body; switch to another app and back — the screen is still there.
 - [ ] Choose "Drink water", "Take 5 calm breaths", "Keep your hands busy", or no action: invitation still reads "Stay with me for 2 more minutes?".
+- [ ] Micro-action list shows "Napisz komuś: „co u Ciebie?”" / "Text someone: “how are you?”" on one or two lines without clipping (largest Dynamic Type too); the slip flow still shows "Napisz do kogoś" / "Message someone".
 - [ ] Trigger can be skipped: "Next" with nothing selected goes to completion.
 - [ ] Unselected trigger and action chips are visible in dark mode (fix 57b75db).
 - [ ] Swipe the sheet away on the trigger question: no crash; relaunch, no duplicate event.
