@@ -1,0 +1,91 @@
+# Launch Plan v0.1: lista zadań do premiery
+
+> **Data:** 2026-11-21 · **Cel:** publicznie w App Store przed 27.12.2026, wysyłka do App Review ~15.12.
+> **Źródła:** `docs/PAUSEO_GROWTH_BRIEF.md` (sekcje 4, 6, 8, 10), ADR-012–018, `docs/Inspiration_Onboarding_Reels.md` (rolka 3).
+> **Zasada WIP (brief B7):** jeden kanał akwizycji (ASO + lista) i jeden eksperyment (wideo foundera) naraz.
+> Ten plik to lista zadań. Decyzje zostają w ADR, a uzasadnienia w briefie.
+
+## Ścieżka krytyczna (dlaczego ta kolejność)
+
+Listing PL i EN musi być gotowy do ~08.12 (ADR-016). ADR-017 każe przed tym sprawdzić w rozmowach, jakimi słowami ludzie mówią o cravingu. Rozmowy wymagają testerów z zewnątrz, a ci wymagają **External TestFlight**. External TestFlight potrzebuje adresu e-mail do feedbacku i (najpewniej) URL polityki prywatności. Dlatego **e-mail w domenie i minimalna strona pauseo.app trzeba zrobić przed betą, nie przed review.**
+
+```
+Internal TF (22–24.11) ─┐
+e-mail + strona min. (do 28.11) ─┴→ External TF (~29.11) → rozmowy (01–07.12) → copy listingu (08.12) → review (15.12) → premiera (20–23.12)
+```
+
+## A. Archive → Internal TestFlight (22–24.11)
+
+- [ ] **Team ID: rozstrzygnięte w repo, do potwierdzenia przez foundera.** Certyfikat ma `OU=36WKZ8Q4L5`, a Xcode zna jeden płatny team `36WKZ8Q4L5`. `5T4Z65558R` to tylko identyfikator osoby w nazwie certyfikatu, a nie team. Do zrobienia: potwierdzić na developer.apple.com → Membership details → Team ID, ustawić `DEVELOPMENT_TEAM: "36WKZ8Q4L5"` w `project.yml`, uruchomić `xcodegen generate`, sprawdzić `git diff` i poprawić `docs/Current_State.md` (linie o 5T4Z65558R).
+- [ ] Wersja: build ma `0.1.0 (1)` (`MARKETING_VERSION` i `CURRENT_PROJECT_VERSION` z `project.yml`). Decyzja foundera: publicznie `0.1.0` czy `1.0.0`. Numer wersji w ASC musi się zgadzać z buildem.
+- [ ] Przed Archive: nie commitować szumu z `Localizable.xcstrings` („stale”, puste `%@`). Nie klikać „Remove stale”.
+- [ ] Xcode: schemat Pauseo, cel „Any iOS Device (arm64)” → Product → Archive (konfiguracja Release jest w `project.yml`).
+- [ ] Organizer → Distribute App → App Store Connect → Upload. Automatic signing utworzy certyfikat dystrybucyjny (lokalnie jest tylko Apple Development).
+- [ ] Export compliance: `ITSAppUsesNonExemptEncryption = false` jest już w Info.plist (ADR-013), więc ASC nie powinien pytać.
+- [ ] ASC → TestFlight: build przetworzony (zwykle 5–30 min), grupa wewnętrzna z founderem, instalacja z aplikacji TestFlight, smoke test na telefonie.
+- [ ] QA sekcja 17: dwa niezaznaczone punkty sprawdzić na buildzie z TestFlight.
+- [ ] Commit tylko po `git diff` (VS Code potrafi zapisać nieaktualny bufor).
+
+## A0. Przed External TestFlight (do 28.11): fundamenty, których brakowało w WowCow
+
+- [ ] **Zarezerwować nazwy** (10 min, bez publikowania): Instagram, TikTok, Threads (z IG), YouTube, strona na Facebooku. Ta sama nazwa wszędzie, np. `@pauseo.app` albo `@pauseoapp` [DO WERYFIKACJI: dostępność]. Bio na razie: jedno zdanie + pauseo.app. Pytanie Q3 w briefie.
+- [ ] **E-mail w domenie**: `hello@pauseo.app` (kontakt, polityka prywatności, feedback z TestFlight, kontakt dla App Review). Darmowe przekierowanie na prywatną skrzynkę, np. Cloudflare Email Routing albo iCloud+ z własną domeną [DO WERYFIKACJI: gdzie jest DNS domeny]. Prywatny adres nie powinien trafiać do listingu ani na stronę.
+- [ ] **Minimalna strona pauseo.app** (statyczna; hosting np. Cloudflare Pages lub GitHub Pages; bez AWS, bez frameworka):
+  - `/`: co to jest i co z tego masz (rolka 3), 3 wyróżniki z ADR-017, zapis na listę / do bety,
+  - `/privacy` (PL) i `/en/privacy` (EN): aplikacja nie zbiera danych (zgodnie z `docs/Privacy_Safety.md`); osobno strona i lista mailowa: jaki e-mail, po co, kto przetwarza, jak się wypisać (RODO),
+  - `/support`: kontakt + 3–5 pytań (jak usunąć dane, czy jest konto, czy to porada medyczna).
+  - Bez cookies i bez analityki na stronie. Wtedy nie trzeba banera cookies, a strona mówi to samo co aplikacja.
+- [ ] **Lista mailowa** (kanał własny, błąd B11): formularz od dostawcy z UE z podwójnym potwierdzeniem, np. MailerLite [DO WERYFIKACJI: darmowy plan, umowa powierzenia]. Jedna lista, z polem PL/EN albo bez niego.
+- [ ] ASC → TestFlight → Test Information: opis bety, e-mail do feedbacku, dane kontaktowe [DO WERYFIKACJI: czy dla grup zewnętrznych wymagany jest URL polityki prywatności].
+
+## D. Beta i rozmowy (29.11–10.12)
+
+- [ ] Grupa zewnętrzna + publiczny link TestFlight; Beta App Review [DO WERYFIKACJI: aktualny czas, zwykle ~1–2 dni].
+- [ ] Rekrutacja, realnie 15–30 osób, a nie 50–100 [SZACUNEK: bez widowni źródłem są tylko znajomi i znajomi znajomych]: osobiste wiadomości do palących lub wapujących znajomych, prośba „podeślij komuś, kto próbuje rzucić”, zapisy ze strony.
+- [ ] Grupy FB „rzucam palenie”: najpierw zgoda admina, potem jeden post od foundera jako twórcy, z prośbą o testerów, a nie o pobrania [DO WERYFIKACJI: regulaminy grup].
+- [ ] **5–10 rozmów (01–07.12)**, 15 min każda. Pytania:
+  1. „Jak mówisz o tym momencie, kiedy chce Ci się zapalić?” (craving / głód / ssanie / chęć)
+  2. „Kiedy ostatnio to było i co wtedy zrobiłeś/aś?”
+  3. Po pierwszym użyciu: „Gdzie się zatrzymałeś/aś?”, „Czy pytanie o to, co uruchomiło craving, pojawiło się za późno?”
+  4. „Jak opisałbyś/opisałabyś Pauseo komuś w jednym zdaniu?” (gotowe copy do listingu)
+- [ ] Wynik do 08.12: słownik użytkownika → decyzja o słowach w podtytule, słowach kluczowych i screenshotach. Zmiany w aplikacji (np. „Mam craving teraz”) dopiero w v0.1.x, za zgodą foundera.
+- [ ] Trigger po zmianie kolejności flow: pytać w rozmowach (ADR-014: bez analityki).
+
+## B. Listing w App Store Connect, PL i EN (01–10.12)
+
+- [ ] Audyt top 10 aplikacji w App Store PL (tytuły, screenshot #1, skargi w recenzjach 1–3★), tylko na użytek wewnętrzny; bez nazw konkurencji w metadanych (ADR-017).
+- [ ] Tytuł, podtytuł, słowa kluczowe (100 znaków), opis, promo text: PL i EN.
+- [ ] 6 zrzutów ekranu, każdy z jedną konkretną korzyścią; #1 to moment cravingu (Home z jednym przyciskiem + „bez konta”).
+- [ ] Support URL `pauseo.app/support`, Marketing URL `pauseo.app`, Privacy Policy URL `pauseo.app/privacy`, Copyright.
+- [ ] App Privacy: „Data Not Collected”. App Review: odznaczyć „Sign-in required”, notatka dla recenzenta (brak konta, brak sieci, brak porad medycznych).
+- [ ] Dostępność: Chiny kontynentalne [DO WERYFIKACJI].
+- [ ] Opcja do rozważenia: **pre-order** w App Store. Jeśli build przejdzie review wcześniej, link do App Store działa przed premierą, a zamówieni użytkownicy dostają aplikację automatycznie [DO WERYFIKACJI: wymogi i wpływ na termin review].
+
+## C. pauseo.app v2 (do 12.12)
+
+- [ ] Struktura z rolki 3: problem → krótkie demo (nagranie ekranu 2-minutowego flow, 15–20 s) → jedno CTA (przed premierą zapis, po premierze App Store).
+- [ ] Po premierze: link do App Store z tokenem kampanii (`ct=`) osobno dla strony, IG i TikToka, żeby w ASC → Sources widać było źródła (ADR-014, bez SDK).
+- [ ] Press kit: ikona, 3 zrzuty, zdjęcie foundera, 3 zdania o produkcie.
+
+## E. Treści i premiera (30.11 → 15.01)
+
+- [ ] Eksperyment: 5 wideo foundera do 14.12, ręcznie (ADR-018): twarz jako twórca + nagranie ekranu, hook w 1. sekundzie, bez papierosa w kadrze. Aktywnie jedna platforma, rekomendacja: IG Reels [HIPOTEZA: grupa 25–45 w PL]. Ten sam plik można wrzucić też na TikToka, ale bez prowadzenia dwóch kanałów.
+- [ ] Realistyczne oczekiwania: konto od zera do premiery nie zbuduje zasięgu [SZACUNEK]. Cel eksperymentu to sprawdzić hooki i mieć gotowe materiały na szczyt 1–15.01.
+- [ ] Kill criteria (brief 6.1): po 10 wideo średnio <500 wyświetleń → zmiana formatu.
+- [ ] PR: lista 10–20 mediów (zdrowie, tech, lokalne) do 10.12; pitch 14–17.12 z datą premiery, temat „darmowa, prywatna aplikacja bez wstydu po wpadce, na postanowienia noworoczne”.
+- [ ] Dzień premiery: mail do listy, wiadomość do beta-testerów z prośbą o ocenę (prośba w aplikacji działa tylko po wyniku „Nie zapaliłem/am”).
+- [ ] Raport po 2 tygodniach według szablonu z briefu (9.3).
+
+## Higiena (5 minut, przed TestFlight)
+
+- [ ] WowCow: wyłączyć albo naprawić martwą Lambdę IG (brief Q11), żeby alarmy nie uczyły ignorowania alertów.
+
+## Otwarte pytania do foundera
+
+- Q7 z briefu: ile godzin tygodniowo na marketing do 27.12?
+- Q10: czy jest ekspert (psycholog uzależnień), którego warto zapytać już teraz o recenzję kart wsparcia? To potrwa tygodnie.
+- Gdzie jest DNS pauseo.app i czy masz iCloud+ (od tego zależy wybór e-maila w domenie)?
+
+## Odłożone na v1.1 (bez zgody foundera nie robimy przed premierą)
+
+Widget na ekranie blokady lub w Centrum sterowania, przypomnienie w ryzykownej porze, lokalne podsumowanie triggerów, zakres „C” (ekran prywatności), podsumowanie do udostępnienia (ADR-014 C, v0.2).

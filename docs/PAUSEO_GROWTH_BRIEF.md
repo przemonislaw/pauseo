@@ -377,6 +377,8 @@ Uwaga: w tej kategorii „sukces” może oznaczać **mniejsze użycie** (mniej 
 
 ### Faza 0 (0–30 dni, do ~23.12): „Gotowi na Nowy Rok”
 
+> Aktualna lista zadań z datami: `docs/Launch_Plan_v0.1.md` (od 2026-11-21). Lista poniżej to pierwotna propozycja.
+
 - [x] Decyzja Q2: **publiczna premiera przed 27.12.2026** (potwierdzone przez foundera). Plan wsteczny: listing i screenshoty gotowe ~10.12, wysyłka do review ~15.12 (zapas na odrzucenie i okres świąteczny w App Review [DO WERYFIKACJI: przerwa świąteczna Apple]), premiera ~20–23.12.
 - [ ] ADR pomiaru (sekcja 5.3).
 - [ ] Internal TestFlight → External TestFlight (review bety [DO WERYFIKACJI: czas]).
