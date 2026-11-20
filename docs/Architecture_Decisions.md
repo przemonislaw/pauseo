@@ -446,6 +446,170 @@ Before any change that adds network access, a third-party SDK, additional UserDe
 
 ---
 
+# ADR-014 — Measurement for public launch: App Store Connect + qualitative research
+
+## Status
+
+Accepted (2026-11-20)
+
+## Decision
+
+For the v0.1 public launch, measurement is limited to:
+
+- **A — App Store Connect only**: complete metrics (impressions, product page views, first-time downloads, conversion, sources) plus opt-in metrics (sessions, retention) clearly labeled as opt-in.
+- **D — qualitative research**: TestFlight feedback and per-tester sessions, 5–10 user interviews, review mining.
+
+Rejected for v0.1:
+- **B — third-party analytics SDK** (e.g. TelemetryDeck).
+
+Deferred to v0.2 (backlog candidate, requires explicit scope approval):
+- **C — voluntary, user-initiated anonymous summary**: a button in the Privacy screen that opens the system share sheet with a few aggregate local numbers (e.g. guided rounds completed, outcome counts). No network code in the app; the user chooses whether and how to send it.
+
+## Rationale
+
+- The app currently makes no network calls and declares no collected data (ADR-001, ADR-013). Adding an SDK would change the App Store privacy label and contradict the primary positioning message ("your data stays on your phone").
+- At <200 users aggregate analytics is statistically noisy; qualitative research in beta gives more decision value.
+- Product events relevant to the North Star (`guidedLoopStarted`, `guidedLoopOutcome`) are already stored locally, so option C needs only a transport path, not new instrumentation.
+- Adding an SDK ~3 weeks before App Review submission puts risk on the critical path.
+
+## Consequences
+
+- Growth decisions until v0.2 rely on ASC complete metrics + beta qualitative data.
+- Paid-gate thresholds in `docs/PAUSEO_GROWTH_BRIEF.md` section 8 must be expressed in ASC terms; D7 retention is read from ASC opt-in data and treated as low-confidence.
+- Activation ("first craving flow within 72 h") is not directly measurable for public users in v0.1; it is estimated from beta testers only.
+- Before implementing C: verify whether optional, infrequent, user-initiated sharing affects the App Store privacy label, and update `docs/Privacy_Safety.md`.
+
+## Revisit when
+
+- ≥200 organic installs and ASC opt-in data remains "Not Enough Data", or
+- a decision on paid acquisition requires measurable activation/retention.
+
+---
+
+# ADR-015 — Business model at launch: free, core always free
+
+## Status
+
+Accepted (2026-11-20)
+
+## Decision
+
+v0.1 launches free: no in-app purchases, no subscription, no ads, no tip jar.
+
+Public commitment (approved wording direction):
+
+> "Pomoc w momencie cravingu jest i będzie bezpłatna. Bez konta, bez reklam."
+
+Do not use "za darmo na zawsze" / "free forever" for the whole app.
+
+## Rationale
+
+- `docs/Product_MVP.md` defers paid subscription and monetization experiments; monetization before retention validation was already rejected in the growth brief (section 9.2).
+- A tip jar is still IAP: extra ASC setup, review surface and copy for ~zero expected value at launch.
+- Keeping only the core craving support permanently free is a promise that can be kept while leaving room for optional paid non-core features later.
+
+## Consequences
+
+- No StoreKit code in v0.1.
+- Marketing copy may say "bez reklam", "bez konta", "pomoc w momencie cravingu bezpłatna".
+- Any future paid feature must not gate the craving flow or slip recovery.
+
+## Revisit when
+
+After retention is validated (see ADR-014 revisit criteria) or when a B2B opportunity is concrete.
+
+---
+
+# ADR-016 — Launch market: Polish and English storefronts from day one
+
+## Status
+
+Accepted (2026-11-20, founder decision; agent recommended PL-only with EN in v0.2)
+
+## Decision
+
+v0.1 is publicly available in Polish and English from launch, with a PL listing and an EN listing in App Store Connect.
+
+Active marketing at launch is Polish-only; English relies on organic App Store traffic. (Default assumption recorded by agent — confirm or change.)
+
+## Rationale
+
+- The UI is already fully localized PL/EN (ADR-011 update).
+- Founder chooses to capture the international New Year window instead of waiting for v0.2.
+
+## Consequences (on the critical path before App Review submission ~2026-12-15)
+
+- ~~The 15 support cards are Polish-only today.~~ Correction (2026-11-20, verified in code): all 15 support cards already have English translations in `Pauseo/Localizable.xcstrings` and are rendered via `LocalizedStringKey(card.text)`. `support_cards.json` keeps Polish source text as the catalog key. The physical-device PL/EN QA pass (`docs/QA_Checklist_v0.1.md` section 15, including all 15 cards in both languages) already passed on 2026-11-14. No new code scope needed; remaining EN work is the App Store listing only.
+- EN listing: title, subtitle, keywords, description, screenshots.
+- Privacy policy and support URL must be available in English as well as Polish.
+- Two ASO keyword sets to maintain (B3 in the growth brief).
+
+## Revisit when
+
+If the EN listing (metadata, screenshots) is not ready by ~2026-12-08, fall back to PL-only availability for launch and add EN in v0.2.
+
+---
+
+# ADR-017 — Positioning for launch
+
+## Status
+
+Accepted (2026-11-20)
+
+## Decision
+
+Internal positioning statement (not listing copy):
+
+> Dla dorosłych, którzy rzucają lub ograniczają nikotynę i mają dość liczników dni, Pauseo to spokojna pomoc na sam moment cravingu: jedno dotknięcie i 2 minuty prowadzenia, bez wstydu po slipie i bez wysyłania danych z telefonu.
+
+Three differentiators, in this order:
+1. **Moment, not a counter** — Home is an emergency button, not a dashboard.
+2. **A slip is data, not a reset** — no streak to lose (ADR-007).
+3. **No account, data stays on the phone** — "Data Not Collected" (ADR-013, ADR-014).
+
+Working App Store subtitles (to be tested in beta, max 30 chars):
+- PL: "Pomoc, gdy chce Ci się zapalić"
+- EN: "Get through cravings, no shame"
+
+## Rules
+
+- Do not name competitors in App Store metadata; comparisons stay internal or generic ("apps that count days").
+- Claims follow `docs/Privacy_Safety.md` claims policy: allowed "helps you get through / notice triggers"; not allowed "more effective", "evidence-based", "helps you quit".
+- Differentiator 3 depends on ADR-014. Any analytics change requires rewriting it.
+- PL copy avoids relying on the word "craving" until beta interviews validate user vocabulary.
+
+## Open verification
+
+- Competitor first screens and screenshot #1 (Smoke Free, QuitNow!, Kwit) in PL App Store.
+- Competitor App Store privacy labels.
+- 1–3★ review complaints about streak reset / shame.
+
+---
+
+# ADR-018 — Founder presence in marketing content
+
+## Status
+
+Accepted (2026-11-20)
+
+## Decision
+
+The founder appears on camera as the **maker** of Pauseo (face + screen recording of the product). No personal nicotine story at launch. Adding a personal story later remains an open, founder-only choice.
+
+## Rationale
+
+- Face + authentic context is the strongest organic hook hypothesis (growth brief R5, B6); static automated graphics failed in WowCow.
+- A personal story can be added later but cannot be retracted once published; it is the founder's own sensitive data.
+
+## Rules
+
+- Never "I quit thanks to this app" or any implied efficacy claim (`docs/Privacy_Safety.md` claims policy).
+- No cigarettes, vapes or smoking imagery in frame; no fear appeals, no before/after imagery.
+- Format to test first: 15–30 s, hook in the first second, screen demo of the 2-minute flow.
+- Manual recording only; no automation until a format is proven (growth brief B6).
+
+---
+
 # Open questions
 
 These are intentionally not decided yet:

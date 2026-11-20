@@ -31,6 +31,8 @@ Use the following files as the source of truth:
 7. `docs/Privacy_Safety.md`
 8. `docs/Architecture_Decisions.md`
 9. `docs/Claude_Workflow.md`
+
+Marketing i growth: przeczytaj `docs/PAUSEO_GROWTH_BRIEF.md` przed jakąkolwiek pracą marketingową.
  
 
 If implementation ideas conflict with these files, do not silently proceed. Explain the conflict and propose a documentation update first.
