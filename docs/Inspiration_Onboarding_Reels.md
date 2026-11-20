@@ -18,7 +18,7 @@
 
 | # | Ekran | Co użytkownik dostaje? | Werdykt |
 |---|---|---|---|
-| 1 | „Support when a craving hits.” / „Pomoc na moment cravingu.” | obietnicę i zrozumienie, do czego jest appka | ✅ zostaje |
+| 1 | „Support when a craving hits.” / „Pomoc, gdy chce Ci się zapalić.” (do 21.11: „Pomoc na moment cravingu.”) | obietnicę i zrozumienie, do czego jest appka | ✅ zostaje |
 | 2 | Co używasz? (papierosy / vape / …) | **nic**: wybór trzymany tylko w `@State`, nie zapisywany ani nie używany | ❌ |
 | 3 | Tryb (rzucam / ograniczam / …) | **nic**: jw. | ❌ |
 | 4 | Główny trigger | **nic**: jw. | ❌ |
@@ -42,6 +42,7 @@
 | Paywall po pierwszym sukcesie | ↪️ **przenosimy na prośbę o ocenę** | Brak paywalla (ADR-015). Ta sama zasada „po pierwszym sukcesie” dotyczy prośby o ocenę w App Store: po wyniku „Nie zapaliłem/am”, nigdy po slipie, maksymalnie raz (brief 6.3). | ADR-015, no shame |
 | Uprość stronę konwersji (rolka 3) | ✅ **bierzemy** (pauseo.app, App Store) | Strona pauseo.app i listing: problem → 2-minutowe demo → jedno CTA, bez ozdobników. Każdy ekran odpowiada na dwa pytania: „co to jest?” i „co z tego mam?”. | brief: kanał własny (pauseo.app + lista oczekujących), ADR-017, low cognitive load |
 | Konkret zamiast „uroczego” copy (rolka 3: „fun and easy growth”, „Boss up”) | ✅ **bierzemy** | Copy opisuje doświadczenie: „2 minuty, które pomagają przeczekać głód”. Ton dorosły, bez „fajnie i łatwo”, bez żargonu motywacyjnego. | CLAUDE.md (ton: adult, concise, never childish), claims policy (brief) |
+| Ten sam przekaz w listingu i na pierwszym ekranie (rolka 3, wdrożone 2026-11-21) | ✅ **wdrożone** | Tytuł onboardingu PL = podtytuł App Store: „Pomoc, gdy chce Ci się zapalić.” (bez słowa „craving”). Przycisk „Zacznij spokojnie” → „Zaczynamy” (prosto zamiast ozdobnie). EN bez zmian. QA: sekcja 17. | ADR-017 |
 | Testuj drobne sformułowania (rolka 3: „miesiąc” vs „30 dni”) | ↪️ **adaptujemy jakościowo, A/B później** | Najpierw słownik użytkownika z bety: „craving” czy „głód / ssanie / chęć zapalenia” (5–10 wywiadów). Product Page Optimization A/B dopiero, jeśli ruch wystarczy. | brief: pozycja „do sprawdzenia w becie” i monitoring ASO; ADR-014 (bez analityki w v0.1) |
 | Jedno zdarzenie analityczne na ekran, napraw największy spadek | ↪️ **adaptujemy jakościowo** | W v0.1 nie ma analityki (ADR-014). Zamiast tego founder robi zrzuty ekranów z dopiskiem „co dostał?” (ten dokument, sekcja 2), a w becie pytamy testerów, gdzie się zatrzymali. | ADR-014 |
 

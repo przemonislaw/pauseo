@@ -238,11 +238,11 @@ Under 90 seconds.
 
 Title:
 
-> “Pomoc na moment cravingu.”
+> “Pomoc, gdy chce Ci się zapalić.” (EN: “Support when a craving hits.”). PL matches the App Store subtitle (ADR-017), so the first screen repeats the listing’s promise.
 
 Body:
 
-> “pauseo pomaga wybrać jedną małą akcję, gdy pojawia się głód nikotynowy.”
+> “Gdy przyjdzie ochota zapalić, przeprowadzę Cię przez najbliższe minuty: jedna mała akcja, oddech, krótkie podpowiedzi.”
 
 Privacy line:
 
@@ -250,7 +250,7 @@ Privacy line:
 
 CTA (goes straight to Home):
 
-> “Zacznij spokojnie”
+> “Zaczynamy” (EN: “Let’s begin”)
 
 #### Removed setup questions (2026-11-20)
 
