@@ -63,6 +63,15 @@ final class EventStore: ObservableObject {
     /// Creates the record on first call, then updates it in place on every
     /// subsequent call with the same `id` — used so a single craving-flow
     /// session (including the guided loop) never produces duplicate events.
+    /// Cravings the user got through ("didNotSmoke" or "postponed" as the
+    /// final guided-loop outcome). Never decremented by a slip or a later
+    /// "smoked" outcome; only "delete all local data" clears it (ADR-007).
+    var survivedCravingCount: Int {
+        cravingEvents.filter {
+            $0.guidedLoopOutcome == .didNotSmoke || $0.guidedLoopOutcome == .postponed
+        }.count
+    }
+
     func upsert(_ event: CravingEvent) {
         if let index = cravingEvents.firstIndex(where: { $0.id == event.id }) {
             cravingEvents[index] = event

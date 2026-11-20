@@ -371,6 +371,10 @@ Options:
 Current copy (same for every outcome):
 - “To wystarczy na teraz.” / “Jedna mała akcja się liczy. Jeśli ochota wróci, po prostu tu wróć.”
 
+After “Nie zapaliłem/am” or “Odłożyłem/am decyzję” only, one extra line: “Przetrwane cravingi do tej pory: N”. It never resets (a slip or “Zapaliłem/am” does not lower it). This is the product's answer to streaks: progress that cannot be lost.
+
+After “Nie zapaliłem/am” only, the system App Store rating prompt may appear once per install. Never after a slip or “Zapaliłem/am”.
+
 Older copy examples:
 - “Dobra robota. Zrobiłeś jedną rzecz zamiast automatu.”
 - “To nadal się liczy. Zebraliśmy dane na następny raz.”

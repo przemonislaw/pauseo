@@ -124,7 +124,7 @@ Pass
 
 - [x] Home contains no charts, counts, streaks, or history.
 - [x] PrivacySafetyView contains no charts, counts, streaks, or history.
-- [x] No screen in the app displays aggregated craving/slip data, trends, or trigger pattern summaries.
+- [x] No screen in the app displays aggregated craving/slip data, trends, or trigger pattern summaries. (Exception approved 2026-11-20: the single survived-cravings line on the craving completion screen, see section 20.)
 - [x] No "Progress" or "Insights" screen is reachable from any current flow.
 
 Pass 
@@ -323,6 +323,23 @@ Verifies the 2026-11-20 copy changes and the guided breathing step. PL and EN, l
 - [ ] Largest Dynamic Type: longer action labels wrap without clipping.
 
 Note: guided breathing opening and auto-continue confirmed working on device by Przemek (20.11.2026); remaining items still to run.
+
+Tester:
+Date:
+Build/commit tested:
+
+---
+
+## 20. Survived-cravings count and rating prompt
+
+- [ ] Outcome "Nie zapaliłem/am": completion shows "Przetrwane cravingi do tej pory: N" (EN "Cravings you've got through so far: N").
+- [ ] Outcome "Odłożyłem/am decyzję" (then decline the second round): line shown, N increased by 1.
+- [ ] Outcome "Zapaliłem/am": no count line, no rating prompt.
+- [ ] Declining the 2-minute loop: no count line.
+- [ ] After a slip flow, the next "Nie zapaliłem/am" shows N + 1 (the slip did not lower it).
+- [ ] Delete all local data → next survived craving shows 1.
+- [ ] Rating prompt (Debug build from Xcode on device; it never shows in TestFlight): appears ~1.5 s after the first "Nie zapaliłem/am" completion; not again on later ones.
+- [ ] Home still shows no counts.
 
 Tester:
 Date:

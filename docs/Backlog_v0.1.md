@@ -193,6 +193,28 @@ Acceptance criteria:
 - Outcome is stored locally.
 - Outcome influences simple local summary later.
 
+### P0 — Survived-cravings count on completion (approved 2026-11-20)
+
+**Status: implemented.**
+
+After a guided-loop outcome of "Nie zapaliłem/am" or "Odłożyłem/am decyzję", the completion screen shows one line: "Przetrwane cravingi do tej pory: N" / "Cravings you've got through so far: N".
+
+Acceptance criteria:
+- Counts craving events whose final outcome is didNotSmoke or postponed (`EventStore.survivedCravingCount`).
+- Never decreases after a slip or a "smoked" outcome; only "delete all local data" clears it (ADR-007).
+- Not shown after "Zapaliłem/am" and not shown when the guided loop was declined (no outcome).
+- Not shown on Home; no history, chart or streak.
+
+### P0 — App Store rating prompt after a good outcome (approved 2026-11-20)
+
+**Status: implemented.**
+
+Acceptance criteria:
+- Requested only on the completion screen after "Nie zapaliłem/am", ~1.5 s after it appears.
+- At most once per install (`reviewPromptShown`); Apple may still suppress it.
+- Never after a slip, "Zapaliłem/am" or "Odłożyłem/am decyzję".
+- Uses the system prompt only (`requestReview`); no custom pre-prompt, no data sent.
+
 ## Epic 5 — Trigger logging
 
 ### P0 — Trigger chips

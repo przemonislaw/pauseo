@@ -254,6 +254,22 @@
         }
       }
     },
+    "Cravings you've got through so far: %lld" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cravings you've got through so far: %lld"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Przetrwane cravingi do tej pory: %lld"
+          }
+        }
+      }
+    },
     "Daily check-in" : {
       "localizations" : {
         "en" : {

@@ -1,4 +1,5 @@
 import SwiftUI
+import StoreKit
 
 struct CravingFlowView: View {
     @Environment(\.dismiss) private var dismiss
@@ -117,7 +118,12 @@ struct CravingFlowView: View {
                 persistEvent(completed: true)
             })
         case .completion:
-            CompletionStep(onDismiss: { dismiss() })
+            let survived = guidedLoopOutcome == .didNotSmoke || guidedLoopOutcome == .postponed
+            CompletionStep(
+                survivedCount: survived ? eventStore.survivedCravingCount : nil,
+                asksForReview: guidedLoopOutcome == .didNotSmoke,
+                onDismiss: { dismiss() }
+            )
         }
     }
 
@@ -577,7 +583,15 @@ private struct SecondRoundOfferStep: View {
 // MARK: - Completion
 
 private struct CompletionStep: View {
+    /// Shown only after a "didNotSmoke"/"postponed" outcome; never after "smoked".
+    let survivedCount: Int?
+    /// App Store rating prompt: only after "didNotSmoke", at most once per
+    /// install, never after a slip or a "smoked" outcome.
+    let asksForReview: Bool
     let onDismiss: () -> Void
+
+    @Environment(\.requestReview) private var requestReview
+    @AppStorage("reviewPromptShown") private var reviewPromptShown = false
 
     var body: some View {
         VStack(spacing: 0) {
@@ -591,6 +605,13 @@ private struct CompletionStep: View {
                     .font(.body)
                     .foregroundStyle(.secondary)
                     .multilineTextAlignment(.center)
+                if let survivedCount {
+                    Text("Cravings you've got through so far: \(survivedCount)")
+                        .font(.headline)
+                        .foregroundStyle(Color.pauseoPrimary)
+                        .multilineTextAlignment(.center)
+                        .padding(.top, 8)
+                }
             }
             .padding(.horizontal, 32)
             Spacer()
@@ -598,6 +619,13 @@ private struct CompletionStep: View {
                 .buttonStyle(PauseoPrimaryButtonStyle())
                 .padding(.horizontal)
                 .padding(.bottom, 40)
+        }
+        .task {
+            guard asksForReview, !reviewPromptShown else { return }
+            try? await Task.sleep(for: .seconds(1.5))
+            guard !Task.isCancelled else { return }
+            reviewPromptShown = true
+            requestReview()
         }
     }
 }

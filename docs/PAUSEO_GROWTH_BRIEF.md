@@ -321,7 +321,7 @@ Okres: ~wrzesień 2025 (premiera iOS) → listopad 2026. Kontekst produktu: jedn
 [HIPOTEZA, do zaprojektowania z agentem]
 - **„Wyślij komuś, kto rzuca”:** udostępnienie karty wsparcia (fakt + źródło + link). Nie ujawnia, że użytkownik sam pali.
 - **„Quit buddy”:** zaproszenie jednej osoby wspierającej (bez konta: link lub kod). Wymaga przemyślenia zgodności z „no backend”, możliwe w v2.
-- **Recenzje jako pętla ASO:** prośba o ocenę **po pozytywnym wyniku** cravingu („Nie zapaliłem/am”), nigdy po slipie. Max 1 raz, zgodnie z `SKStoreReviewController`. [REKOMENDACJA · pewność: wysoka]
+- **Recenzje jako pętla ASO:** prośba o ocenę **po pozytywnym wyniku** cravingu („Nie zapaliłem/am”), nigdy po slipie. Max 1 raz, zgodnie z `SKStoreReviewController`. [REKOMENDACJA · pewność: wysoka] **Wdrożone 2026-11-20** (razem z licznikiem „Przetrwane cravingi do tej pory: N” na ekranie zakończenia).
 
 ### 6.4 Checklista przed jakimkolwiek wydatkiem na paid (z WowCow)
 
