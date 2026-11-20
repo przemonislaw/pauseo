@@ -265,19 +265,21 @@ Pass
 
 Verifies the 2026-11-20 change: onboarding cut from 5 screens to 1.
 
-- [ ] Fresh install (or delete app first): exactly one onboarding screen is shown — title, body, privacy line, one button.
-- [ ] No Back button, no progress indicator, no selection screens, no reminders screen.
-- [ ] Privacy line reads "Bez konta. Twoje dane zostają w telefonie." (PL) / "No account. Your data stays on your phone." (EN).
-- [ ] Tapping "Zacznij spokojnie" / "Let's begin" opens Home immediately; Home shows the three actions from section 1.
-- [ ] Relaunch after completing onboarding: app opens directly on Home (onboarding not shown again).
-- [ ] Existing install that already completed onboarding: opens on Home, no change.
-- [ ] Largest Dynamic Type and small-screen device: no clipped text, button reachable.
-- [ ] VoiceOver reads title, body, privacy line and button in the active language.
-- [ ] Light and dark mode: privacy line readable (secondary text contrast).
+- [x] Fresh install (or delete app first): exactly one onboarding screen is shown — title, body, privacy line, one button.
+- [x] No Back button, no progress indicator, no selection screens, no reminders screen.
+- [x] Privacy line reads "Bez konta. Twoje dane zostają w telefonie." (PL) / "No account. Your data stays on your phone." (EN).
+- [x] Tapping "Zacznij spokojnie" / "Let's begin" opens Home immediately; Home shows the three actions from section 1.
+- [x] Relaunch after completing onboarding: app opens directly on Home (onboarding not shown again).
+- [x] Existing install that already completed onboarding: opens on Home, no change.
+- [x] Largest Dynamic Type and small-screen device: no clipped text, button reachable.
+- [x] VoiceOver reads title, body, privacy line and button in the active language.
+- [x] Light and dark mode: privacy line readable (secondary text contrast).
 
-Tester:
-Date:
-Build/commit tested:
+Tester: Przemek
+Date: 20.11.2026
+Build/commit tested: 1eb0d6a
+
+Pass
 
 ---
 
@@ -285,22 +287,24 @@ Build/commit tested:
 
 Verifies the 2026-11-20 change. Run in PL and EN, light and dark mode.
 
-- [ ] "I'm having a craving" → "Pause for a moment" → "Help me now" opens the **micro-action** screen (not the trigger question).
-- [ ] Back on the micro-action screen returns to "Pause for a moment"; no Back button after that.
-- [ ] Path A — decline the 2-minute loop ("I'm done for now"): trigger question appears, then completion.
-- [ ] Path B — full 2-minute loop → outcome "I didn't smoke": trigger question, then completion.
-- [ ] Path C — exit loop early → outcome "I smoked": trigger question, then completion (copy stays neutral).
-- [ ] Path D — outcome "I've put off the decision" → second round offered → after it, outcome → trigger question → completion. Trigger question appears exactly once per flow.
-- [ ] Choose "Change rooms for 2 minutes" or "Text someone: “how are you?”": invitation reads "Go ahead, do it now. I'll be here." / "Śmiało, zrób to teraz. Będę tutaj." with the "When you're back…" body; switch to another app and back — the screen is still there.
-- [ ] Choose "Drink water", "Take 5 calm breaths", "Keep your hands busy", or no action: invitation still reads "Stay with me for 2 more minutes?".
-- [ ] Micro-action list shows "Napisz komuś: „co u Ciebie?”" / "Text someone: “how are you?”" on one or two lines without clipping (largest Dynamic Type too); the slip flow shows the same label.
-- [ ] Trigger can be skipped: "Next" with nothing selected goes to completion.
-- [ ] Unselected trigger and action chips are visible in dark mode (fix 57b75db).
-- [ ] Swipe the sheet away on the trigger question: no crash; relaunch, no duplicate event.
+- [x] "I'm having a craving" → "Pause for a moment" → "Help me now" opens the **micro-action** screen (not the trigger question).
+- [x] Back on the micro-action screen returns to "Pause for a moment"; no Back button after that.
+- [x] Path A — decline the 2-minute loop ("I'm done for now"): trigger question appears, then completion.
+- [x] Path B — full 2-minute loop → outcome "I didn't smoke": trigger question, then completion.
+- [x] Path C — exit loop early → outcome "I smoked": trigger question, then completion (copy stays neutral).
+- [x] Path D — outcome "I've put off the decision" → second round offered → after it, outcome → trigger question → completion. Trigger question appears exactly once per flow.
+- [x] Choose "Change rooms for 2 minutes" or "Text someone: “how are you?”": invitation reads "Go ahead, do it now. I'll be here." / "Śmiało, zrób to teraz. Będę tutaj." with the "When you're back…" body; switch to another app and back — the screen is still there.
+- [x] Choose "Drink water", "Take 5 calm breaths", "Keep your hands busy", or no action: invitation still reads "Stay with me for 2 more minutes?".
+- [x] Micro-action list shows "Napisz komuś: „co u Ciebie?”" / "Text someone: “how are you?”" on one or two lines without clipping (largest Dynamic Type too); the slip flow shows the same label.
+- [x] Trigger can be skipped: "Next" with nothing selected goes to completion.
+- [x] Unselected trigger and action chips are visible in dark mode (fix 57b75db).
+- [x] Swipe the sheet away on the trigger question: no crash; relaunch, no duplicate event.
 
-Tester:
-Date:
-Build/commit tested:
+Tester: Przemek
+Date: 20.11.2026
+Build/commit tested: 1eb0d6a
+
+Pass
 
 ---
 
@@ -308,44 +312,48 @@ Build/commit tested:
 
 Verifies the 2026-11-20 copy changes and the guided breathing step. PL and EN, light and dark mode.
 
-- [ ] Home secondary button reads "Zdarzył mi się slip" (PL) / "I've had a slip" (EN).
-- [ ] Craving micro-actions show the new concrete labels (water in small sips, change rooms, 5 breaths 4/6, pen or mug, "co u Ciebie?"); no "Odłóż decyzję o 5 minut" option.
+- [x] Home secondary button reads "Zdarzył mi się slip" (PL) / "I've had a slip" (EN).
+- [x] Craving micro-actions show the new concrete labels (water in small sips, change rooms, 5 breaths 4/6, pen or mug, "co u Ciebie?"); no "Odłóż decyzję o 5 minut" option.
 - [x] Choose "5 oddechów…": breathing screen opens; circle grows for 4 s ("Wdech"), shrinks for 6 s ("Wydech"); seconds count down; counter reads "Zostało 5 oddechów" → "Zostały 4/3/2 oddechy" → "Ostatni oddech" (EN "5 breaths left" … "Last breath").
 - [x] After ~50 s the invitation "Stay with me for 2 more minutes?" appears automatically.
-- [ ] "Pomiń oddychanie" / "Skip breathing" goes straight to the invitation.
-- [ ] Background the app mid-breathing and return: the exercise continues from real elapsed time (no restart).
-- [ ] Reduce Motion on: circle does not scale; text and counter still change.
-- [ ] VoiceOver: "Breathe in/out" and the counter are read; the circle is not focusable.
-- [ ] Trigger question (craving) has the subtitle "Przyda się następnym razem. Możesz pominąć." / "Helps next time. You can skip this."; the slip flow keeps "Możesz pominąć."
-- [ ] Trigger question reads "Co uruchomiło craving?"; options include "Kawa" / "Coffee".
-- [ ] Completion reads "To wystarczy na teraz." with "Jedna mała akcja się liczy. Jeśli ochota wróci, po prostu tu wróć."; button "Wróć na start" (PL).
-- [ ] Slip flow: "Co działo się tuż przed?" with "Kawa" option; recovery actions show "Schowaj nikotynę w innym pokoju" and "Następna godzina bez nikotyny" (EN "Next hour nicotine-free", no "Start again"); slip also shows "Napisz komuś: „co u Ciebie?”".
-- [ ] Largest Dynamic Type: longer action labels wrap without clipping.
-- [ ] Copy pass 2: Home body ends "Jedno dotknięcie i przejdziemy przez najbliższe minuty."; grounding starts "Ta ochota zwykle trwa tylko kilka minut."; invitation (non-away actions) says "Co 10 sekund pokażę Ci krótką podpowiedź."; onboarding body (fresh install) is the new "Gdy przyjdzie ochota zapalić…" text; slip completion ends "Jeśli ochota wróci, wróć tu."
-- [ ] Support cards in a guided round (PL and EN): the new cards appear ("Zauważ, gdzie w ciele…", "Oceń tę ochotę od 1 do 10…", "…w ciągu około 20 minut…", "Po około 2 dniach…", "Po około 8 godzinach…"); no old vague card texts; sources still shown for the three body cards.
+- [x] "Pomiń oddychanie" / "Skip breathing" goes straight to the invitation.
+- [x] Background the app mid-breathing and return: the exercise continues from real elapsed time (no restart).
+- [x] Reduce Motion on: circle does not scale; text and counter still change.
+- [x] VoiceOver: "Breathe in/out" and the counter are read; the circle is not focusable.
+- [x] Trigger question (craving) has the subtitle "Przyda się następnym razem. Możesz pominąć." / "Helps next time. You can skip this."; the slip flow keeps "Możesz pominąć."
+- [x] Trigger question reads "Co uruchomiło craving?"; options include "Kawa" / "Coffee".
+- [x] Completion reads "To wystarczy na teraz." with "Jedna mała akcja się liczy. Jeśli ochota wróci, po prostu tu wróć."; button "Wróć na start" (PL).
+- [x] Slip flow: "Co działo się tuż przed?" with "Kawa" option; recovery actions show "Schowaj nikotynę w innym pokoju" and "Następna godzina bez nikotyny" (EN "Next hour nicotine-free", no "Start again"); slip also shows "Napisz komuś: „co u Ciebie?”".
+- [x] Largest Dynamic Type: longer action labels wrap without clipping.
+- [x] Copy pass 2: Home body ends "Jedno dotknięcie i przejdziemy przez najbliższe minuty."; grounding starts "Ta ochota zwykle trwa tylko kilka minut."; invitation (non-away actions) says "Co 10 sekund pokażę Ci krótką podpowiedź."; onboarding body (fresh install) is the new "Gdy przyjdzie ochota zapalić…" text; slip completion ends "Jeśli ochota wróci, wróć tu."
+- [x] Support cards in a guided round (PL and EN): the new cards appear ("Zauważ, gdzie w ciele…", "Oceń tę ochotę od 1 do 10…", "…w ciągu około 20 minut…", "Po około 2 dniach…", "Po około 8 godzinach…"); no old vague card texts; sources still shown for the three body cards.
 
-Note: guided breathing opening and auto-continue confirmed working on device by Przemek (20.11.2026); remaining items still to run.
+Note: guided breathing confirmed working on device earlier the same day; full section re-run below.
 
-Tester:
-Date:
-Build/commit tested:
+Tester: Przemek
+Date: 20.11.2026
+Build/commit tested: 1eb0d6a
+
+Pass
 
 ---
 
 ## 20. Survived-cravings count and rating prompt
 
-- [ ] Outcome "Nie zapaliłem/am": completion shows "Przetrwane cravingi do tej pory: N" (EN "Cravings you've got through so far: N").
-- [ ] Outcome "Odłożyłem/am decyzję" (then decline the second round): line shown, N increased by 1.
-- [ ] Outcome "Zapaliłem/am": no count line, no rating prompt.
-- [ ] Declining the 2-minute loop: no count line.
-- [ ] After a slip flow, the next "Nie zapaliłem/am" shows N + 1 (the slip did not lower it).
-- [ ] Delete all local data → next survived craving shows 1.
-- [ ] Rating prompt (Debug build from Xcode on device; it never shows in TestFlight): appears ~1.5 s after the first "Nie zapaliłem/am" completion; not again on later ones.
-- [ ] Home still shows no counts.
+- [x] Outcome "Nie zapaliłem/am": completion shows "Przetrwane cravingi do tej pory: N" (EN "Cravings you've got through so far: N").
+- [x] Outcome "Odłożyłem/am decyzję" (then decline the second round): line shown, N increased by 1.
+- [x] Outcome "Zapaliłem/am": no count line, no rating prompt.
+- [x] Declining the 2-minute loop: no count line.
+- [x] After a slip flow, the next "Nie zapaliłem/am" shows N + 1 (the slip did not lower it).
+- [x] Delete all local data → next survived craving shows 1.
+- [x] Rating prompt (Debug build from Xcode on device; it never shows in TestFlight): appears ~1.5 s after the first "Nie zapaliłem/am" completion; not again on later ones.
+- [x] Home still shows no counts.
 
-Tester:
-Date:
-Build/commit tested:
+Tester: Przemek
+Date: 20.11.2026
+Build/commit tested: 1eb0d6a
+
+Pass
 
 ---
 
