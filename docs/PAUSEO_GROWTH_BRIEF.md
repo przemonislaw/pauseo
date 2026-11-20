@@ -217,8 +217,8 @@ Okres: ~wrzesień 2025 (premiera iOS) → listopad 2026. Kontekst produktu: jedn
 [FAKT: repo Pauseo, docs/Current_State.md, docs/Product_MVP.md, memory projektu]
 
 - **Co to jest:** iOS (SwiftUI, iOS 17+) wsparcie przy rzucaniu lub ograniczaniu palenia, wapowania i nikotyny. Nisza: **„craving intelligence + micro-habit replacement”**, czyli pomoc w samym momencie głodu nikotynowego. Nie jest to licznik dni ani aplikacja medyczna.
-- **Pętla produktowa:** craving → jedna mikro-akcja → (opcjonalnie) 2-minutowa prowadzona sekwencja z rotującymi kartami wsparcia → pytanie o wynik („Nie zapaliłem/am” / „Odłożyłem/am decyzję” / „Zapaliłem/am”) → neutralne zakończenie. Osobna ścieżka „Miałem slip”: powrót bez zawstydzania.
-- **Home = ekran awaryjny**, nie dashboard: „Mam craving teraz”, „Miałem slip”, „Prywatność i dane”.
+- **Pętla produktowa:** craving → jedna mikro-akcja → (opcjonalnie) 2-minutowa prowadzona sekwencja z rotującymi kartami wsparcia → pytanie o wynik („Nie zapaliłem/am” / „Odłożyłem/am decyzję” / „Zapaliłem/am”) → neutralne zakończenie. Osobna ścieżka „Zdarzył mi się slip”: powrót bez zawstydzania.
+- **Home = ekran awaryjny**, nie dashboard: „Mam craving teraz”, „Zdarzył mi się slip”, „Prywatność i dane”.
 - **Lokalizacja:** pełne PL + EN (String Catalog). Karty wsparcia: 15, **przetłumaczone na EN w String Catalogu** [FAKT: kod, 2026-11-20; wcześniejsza wersja briefu błędnie podawała „tylko po polsku”]. QA PL/EN na urządzeniu przeszło 14.11.2026.
 - **Onboarding:** 1 ekran (od 2026-11-20), bez pytań konfiguracyjnych.
 - **Dane:** tylko lokalnie (UserDefaults), usuwalne przez użytkownika. Bez backendu i bez konta.

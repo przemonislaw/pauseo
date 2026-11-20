@@ -29,6 +29,10 @@ struct CravingFlowView: View {
     /// Micro-actions that are done away from the screen. For these the
     /// invitation must not say "stay with me": the user first needs explicit
     /// permission to put the phone down or switch apps.
+    /// Choosing this action opens an in-app guided breathing exercise
+    /// (5 × in 4 s / out 6 s) before the guided-loop invitation.
+    private let breathingAction = "Weź 5 spokojnych oddechów"
+
     private let awayFromPhoneActions: Set<String> = [
         "Wyjdź na 2 minuty",
         "Napisz do kogoś"
@@ -60,7 +64,10 @@ struct CravingFlowView: View {
             case 0:
                 GroundingStep(onNext: { step = 1 })
             case 1:
-                MicroActionStep(actions: microActions, selection: $selectedAction, onNext: { step = 2 })
+                MicroActionStep(actions: microActions, selection: $selectedAction, onNext: {
+                    phase = selectedAction == breathingAction ? .breathing : .invitation
+                    step = 2
+                })
             case 2:
                 postActionContent
             default:
@@ -78,6 +85,8 @@ struct CravingFlowView: View {
     @ViewBuilder
     private var postActionContent: some View {
         switch phase {
+        case .breathing:
+            BreathingStep(onFinished: { phase = .invitation })
         case .invitation:
             InvitationStep(
                 awayFromPhone: selectedAction.map(awayFromPhoneActions.contains) ?? false,
@@ -163,6 +172,7 @@ struct CravingFlowView: View {
 }
 
 private enum PostActionPhase: Equatable {
+    case breathing
     case invitation
     case guidedLoop(round: Int)
     case outcome(round: Int)
@@ -290,6 +300,98 @@ private struct MicroActionStep: View {
                 .padding(.horizontal)
                 .padding(.bottom, 40)
         }
+    }
+}
+
+// MARK: - Guided breathing
+
+/// Guided breathing for the "5 breaths" micro-action: 5 cycles of
+/// in 4 s / out 6 s (50 s). Wall-clock based like the guided loop, so
+/// backgrounding does not desync it. With Reduce Motion the circle stays
+/// still and only the text and counter change.
+private struct BreathingStep: View {
+    let onFinished: () -> Void
+
+    private let inhale: TimeInterval = 4
+    private let exhale: TimeInterval = 6
+    private let cycles = 5
+    private var cycleLength: TimeInterval { inhale + exhale }
+    private var totalDuration: TimeInterval { cycleLength * Double(cycles) }
+
+    @Environment(\.accessibilityReduceMotion) private var reduceMotion
+    @State private var startDate = Date()
+    @State private var hasFinished = false
+
+    var body: some View {
+        TimelineView(.animation(minimumInterval: reduceMotion ? 1 : nil)) { context in
+            let elapsed = min(context.date.timeIntervalSince(startDate), totalDuration)
+            let isDone = elapsed >= totalDuration
+            let cycleIndex = min(Int(elapsed / cycleLength), cycles - 1)
+            let inCycle = elapsed - Double(cycleIndex) * cycleLength
+            let isInhale = inCycle < inhale
+            let phaseProgress = isInhale ? inCycle / inhale : (inCycle - inhale) / exhale
+            let secondsLeft = Int(ceil((isInhale ? inhale : exhale) * (1 - phaseProgress)))
+            let eased = 0.5 - 0.5 * cos(phaseProgress * .pi)
+            let scale = reduceMotion ? 0.8 : (isInhale ? 0.6 + 0.4 * eased : 1.0 - 0.4 * eased)
+            let breathsLeft = cycles - cycleIndex
+
+            VStack(spacing: 0) {
+                Spacer()
+
+                ZStack {
+                    Circle()
+                        .fill(Color.pauseoPrimary.opacity(0.15))
+                    Circle()
+                        .stroke(Color.pauseoPrimary, lineWidth: 2)
+                    Text("\(max(secondsLeft, 1))")
+                        .font(.system(.largeTitle, design: .rounded))
+                        .foregroundStyle(Color.pauseoTextPrimary)
+                }
+                .frame(width: 220, height: 220)
+                .scaleEffect(scale)
+                .accessibilityHidden(true)
+                .padding(.bottom, 32)
+
+                Group {
+                    if isInhale {
+                        Text("Breathe in")
+                    } else {
+                        Text("Breathe out")
+                    }
+                }
+                .font(.title)
+                .fontWeight(.bold)
+                .padding(.bottom, 8)
+
+                Group {
+                    if breathsLeft == 1 {
+                        Text("Last breath")
+                    } else {
+                        Text("\(breathsLeft) breaths left")
+                    }
+                }
+                .font(.body)
+                .foregroundStyle(.secondary)
+
+                Spacer()
+
+                Button("Skip breathing") { finish() }
+                    .font(.footnote)
+                    .foregroundStyle(.secondary)
+                    .padding(.bottom, 40)
+            }
+            .frame(maxWidth: .infinity)
+            .onChange(of: isDone) { _, done in
+                guard done else { return }
+                finish()
+            }
+        }
+    }
+
+    private func finish() {
+        guard !hasFinished else { return }
+        hasFinished = true
+        onFinished()
     }
 }
 
@@ -481,11 +583,11 @@ private struct CompletionStep: View {
         VStack(spacing: 0) {
             Spacer()
             VStack(spacing: 16) {
-                Text("Good. One small action is enough for now.")
+                Text("That's enough for now.")
                     .font(.largeTitle)
                     .fontWeight(.bold)
                     .multilineTextAlignment(.center)
-                Text("If the craving comes back, you can start this flow again.")
+                Text("One small action counts. If it comes back, just come back here.")
                     .font(.body)
                     .foregroundStyle(.secondary)
                     .multilineTextAlignment(.center)

@@ -92,12 +92,12 @@ private struct ContextStep: View {
 
     private let contexts = [
         "Stres", "Alkohol", "Nuda", "Towarzystwo",
-        "Po jedzeniu", "Praca", "Emocje", "Zmęczenie", "Inne"
+        "Po jedzeniu", "Kawa", "Praca", "Emocje", "Zmęczenie", "Inne"
     ]
 
     var body: some View {
         VStack(spacing: 0) {
-            Text("What was going on at the time?")
+            Text("What was happening just before?")
                 .font(.title2)
                 .fontWeight(.semibold)
                 .multilineTextAlignment(.center)

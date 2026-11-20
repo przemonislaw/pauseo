@@ -180,7 +180,7 @@ Primary CTA:
 > “Mam craving teraz”
 
 Secondary:
-- “Miałem slip”
+- “Zdarzył mi się slip”
 - “Dzienny check-in”
 - “Moje triggery”
 - “Postęp”
@@ -222,13 +222,16 @@ Buttons:
 
 Title:
 
-> “Co odpaliło craving?”
+> “Co uruchomiło craving?”
+
+(Not “odpaliło”: in Polish it also means lighting a cigarette.)
 
 Options:
 - Stres
 - Nuda
 - Alkohol
 - Po jedzeniu
+- Kawa
 - Praca
 - Towarzystwo
 - Emocje

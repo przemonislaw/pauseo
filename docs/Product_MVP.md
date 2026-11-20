@@ -172,7 +172,7 @@ Fields:
 Relapse or slip must not feel like failure.
 
 Flow:
-1. User taps “Miałem slip”.
+1. User taps “Zdarzył mi się slip”.
 2. App responds calmly.
 3. User records what happened.
 4. App asks one recovery question.
@@ -270,7 +270,7 @@ Primary element:
 > “Mam craving teraz”
 
 Secondary actions:
-- “Miałem slip”
+- “Zdarzył mi się slip”
 - “Dzienny check-in”
 - “Moje triggery”
 - “Postęp”
@@ -318,7 +318,16 @@ Buttons:
 - “Daj inną”
 - “Pomiń”
 
-Micro-action copy rule: concrete over generic, no decision left to make, no disclosure required. Example: "Napisz do kogoś" is shown in the craving flow as "Napisz komuś: „co u Ciebie?”" (stored value unchanged).
+Micro-action copy rule: concrete over generic, no decision left to make, no disclosure required, ideally a small task that holds attention for a moment (a count, an object, a pace). Stored values stay the original short Polish strings; only the label changes.
+
+Current craving micro-actions (label PL / EN):
+- “Wypij szklankę wody, małymi łykami” / “Drink a glass of water, in small sips”
+- “Zmień miejsce na 2 minuty” / “Change rooms for 2 minutes”
+- “5 oddechów: wdech na 4, wydech na 6” / “5 breaths: in for 4, out for 6” → opens **guided breathing** in the app (5 × 4 s in / 6 s out, ~50 s, circle that grows and shrinks, seconds count, “Zostały 3 oddechy” / “Ostatni oddech”, “Pomiń oddychanie”), then the usual guided-loop invitation. With Reduce Motion the circle stays still.
+- “Weź coś do ręki: długopis, kubek” / “Hold something: a pen, a mug”
+- “Napisz komuś: „co u Ciebie?”” / “Text someone: “how are you?”” (craving flow only; the slip flow keeps “Napisz do kogoś”)
+
+Rejected (2026-11-20): “Odłóż decyzję o 5 minut” — duplicates the 2-minute guided loop and the “Odłożyłem/am decyzję” outcome.
 
 Away-from-phone actions ("Wyjdź na 2 minuty", "Napisz do kogoś"): the guided-loop invitation must not say "stay with me". It gives permission to do the action first: "Śmiało, zrób to teraz. Będę tutaj." / "Gdy wrócisz, możesz zostać ze mną jeszcze 2 minuty. Albo zakończyć tutaj." Same two buttons, same logic.
 
@@ -343,13 +352,14 @@ Why last (decided 2026-11-20): the user opens the flow at peak craving and taps 
 
 Question:
 
-> “Co najbardziej odpaliło craving?”
+> “Co uruchomiło craving?”
 
 Options:
 - Stres
 - Nuda
 - Alkohol
 - Po jedzeniu
+- Kawa
 - Towarzystwo
 - Emocje
 - Praca
@@ -358,7 +368,10 @@ Options:
 
 ### Step 5: Close
 
-Copy examples:
+Current copy (same for every outcome):
+- “To wystarczy na teraz.” / “Jedna mała akcja się liczy. Jeśli ochota wróci, po prostu tu wróć.”
+
+Older copy examples:
 - “Dobra robota. Zrobiłeś jedną rzecz zamiast automatu.”
 - “To nadal się liczy. Zebraliśmy dane na następny raz.”
 - “Nie musisz wygrywać całego dnia. Wystarczy wrócić do następnej małej decyzji.”
@@ -369,7 +382,7 @@ Copy examples:
 
 User taps:
 
-> “Miałem slip”
+> “Zdarzył mi się slip”
 
 ### Response
 

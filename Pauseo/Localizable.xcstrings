@@ -1,6 +1,58 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "%lld breaths left" : {
+      "localizations" : {
+        "en" : {
+          "variations" : {
+            "plural" : {
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld breath left"
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld breaths left"
+                }
+              }
+            }
+          }
+        },
+        "pl" : {
+          "variations" : {
+            "plural" : {
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "Został %lld oddech"
+                }
+              },
+              "few" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "Zostały %lld oddechy"
+                }
+              },
+              "many" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "Zostało %lld oddechów"
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "Zostało %lld oddechu"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "A slip doesn't mean it's over." : {
       "localizations" : {
         "en" : {
@@ -78,7 +130,39 @@
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Wróć do Home"
+            "value" : "Wróć na start"
+          }
+        }
+      }
+    },
+    "Breathe in" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Breathe in"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wdech"
+          }
+        }
+      }
+    },
+    "Breathe out" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Breathe out"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wydech"
           }
         }
       }
@@ -532,7 +616,7 @@
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Miałem slip"
+            "value" : "Zdarzył mi się slip"
           }
         }
       }
@@ -617,6 +701,38 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Jeszcze nie wiem"
+          }
+        }
+      }
+    },
+    "Kawa" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Coffee"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kawa"
+          }
+        }
+      }
+    },
+    "Last breath" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Last breath"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ostatni oddech"
           }
         }
       }
@@ -847,13 +963,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Put your nicotine out of reach"
+            "value" : "Put your nicotine in another room"
           }
         },
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Odłóż nikotynę poza zasięg"
+            "value" : "Schowaj nikotynę w innym pokoju"
           }
         }
       }
@@ -888,6 +1004,22 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Ograniczam"
+          }
+        }
+      }
+    },
+    "One small action counts. If it comes back, just come back here." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "One small action counts. If it comes back, just come back here."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jedna mała akcja się liczy. Jeśli ochota wróci, po prostu tu wróć."
           }
         }
       }
@@ -1193,6 +1325,22 @@
         }
       }
     },
+    "Skip breathing" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Skip breathing"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pomiń oddychanie"
+          }
+        }
+      }
+    },
     "Slip events" : {
       "extractionState" : "stale",
       "localizations" : {
@@ -1308,6 +1456,22 @@
         }
       }
     },
+    "That's enough for now." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "That's enough for now."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "To wystarczy na teraz."
+          }
+        }
+      }
+    },
     "Tętno i ciśnienie krwi zaczynają się obniżać już w krótkim czasie po zaprzestaniu palenia." : {
       "extractionState" : "stale",
       "localizations" : {
@@ -1415,13 +1579,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Take 5 slow breaths"
+            "value" : "5 breaths: in for 4, out for 6"
           }
         },
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Weź 5 spokojnych oddechów"
+            "value" : "5 oddechów: wdech na 4, wydech na 6"
           }
         }
       }
@@ -1486,7 +1650,7 @@
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Co odpaliło craving?"
+            "value" : "Co uruchomiło craving?"
           }
         }
       }
@@ -1520,6 +1684,22 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Co było najbliżej tego momentu?"
+          }
+        }
+      }
+    },
+    "What was happening just before?" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What was happening just before?"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Co działo się tuż przed?"
           }
         }
       }
@@ -1663,13 +1843,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Step outside for 2 minutes"
+            "value" : "Change rooms for 2 minutes"
           }
         },
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Wyjdź na 2 minuty"
+            "value" : "Zmień miejsce na 2 minuty"
           }
         }
       }
@@ -1680,13 +1860,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Drink water"
+            "value" : "Drink a glass of water, in small sips"
           }
         },
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Wypij wodę"
+            "value" : "Wypij szklankę wody, małymi łykami"
           }
         }
       }
@@ -1857,13 +2037,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Start again from the next hour"
+            "value" : "Next hour nicotine-free"
           }
         },
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Zacznij od następnej godziny"
+            "value" : "Następna godzina bez nikotyny"
           }
         }
       }
@@ -1874,13 +2054,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Keep your hands busy"
+            "value" : "Hold something: a pen, a mug"
           }
         },
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Zajmij ręce"
+            "value" : "Weź coś do ręki: długopis, kubek"
           }
         }
       }

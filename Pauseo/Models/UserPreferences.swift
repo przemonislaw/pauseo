@@ -20,6 +20,7 @@ enum TriggerCategory: String, CaseIterable, Codable {
     case boredom = "Nuda"
     case alcohol = "Alkohol"
     case afterMeal = "Po jedzeniu"
+    case coffee = "Kawa"
     case morning = "Rano"
     case work = "Praca"
     case driving = "Jazda autem"

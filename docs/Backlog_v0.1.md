@@ -98,6 +98,7 @@ Options:
 - Nuda
 - Alkohol
 - Po jedzeniu
+- Kawa
 - Rano
 - Praca
 - Jazda autem
@@ -136,7 +137,7 @@ Acceptance criteria:
 ### P0 — Secondary actions
 
 Include:
-- “Miałem slip”
+- “Zdarzył mi się slip”
 - “Dzienny check-in”
 - “Moje triggery”
 - “Postęp”
@@ -201,6 +202,7 @@ Options:
 - Nuda
 - Alkohol
 - Po jedzeniu
+- Kawa
 - Rano
 - Praca
 - Jazda autem
@@ -236,7 +238,7 @@ Acceptance criteria:
 
 Button:
 
-> “Miałem slip”
+> “Zdarzył mi się slip”
 
 Acceptance criteria:
 - Easy to access.
