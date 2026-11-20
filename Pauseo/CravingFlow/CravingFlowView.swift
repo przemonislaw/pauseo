@@ -29,7 +29,7 @@ struct CravingFlowView: View {
     var body: some View {
         VStack(spacing: 0) {
             HStack {
-                if step > 0 && step < 3 {
+                if step == 1 {
                     Button(action: { step -= 1 }) {
                         HStack(spacing: 4) {
                             Image(systemName: "chevron.left")
@@ -47,13 +47,13 @@ struct CravingFlowView: View {
             .padding(.top, 8)
 
             switch step {
+            // Help first, ask later: grounding → micro-action → (optional guided
+            // loop → outcome) → trigger reflection → completion.
             case 0:
                 GroundingStep(onNext: { step = 1 })
             case 1:
-                TriggerStep(selection: $selectedTrigger, onNext: { step = 2 })
+                MicroActionStep(actions: microActions, selection: $selectedAction, onNext: { step = 2 })
             case 2:
-                MicroActionStep(actions: microActions, selection: $selectedAction, onNext: { step = 3 })
-            case 3:
                 postActionContent
             default:
                 EmptyView()
@@ -61,7 +61,7 @@ struct CravingFlowView: View {
         }
         .background(Color.pauseoBackground.ignoresSafeArea())
         .onChange(of: step) { _, newStep in
-            guard newStep == 3, !hasCreatedEvent else { return }
+            guard newStep == 2, !hasCreatedEvent else { return }
             hasCreatedEvent = true
             persistEvent(completed: false)
         }
@@ -93,6 +93,11 @@ struct CravingFlowView: View {
                 onAccept: { startGuidedLoop(round: 2) },
                 onDecline: finishFlow
             )
+        case .trigger:
+            TriggerStep(selection: $selectedTrigger, onNext: {
+                phase = .completion
+                persistEvent(completed: true)
+            })
         case .completion:
             CompletionStep(onDismiss: { dismiss() })
         }
@@ -124,8 +129,11 @@ struct CravingFlowView: View {
         }
     }
 
+    /// The support part of the flow is done here, so the event is marked
+    /// completed before the optional trigger question. Dismissing the sheet
+    /// on the trigger step keeps a completed event with no trigger.
     private func finishFlow() {
-        phase = .completion
+        phase = .trigger
         persistEvent(completed: true)
     }
 
@@ -150,6 +158,7 @@ private enum PostActionPhase: Equatable {
     case guidedLoop(round: Int)
     case outcome(round: Int)
     case secondRoundOffer
+    case trigger
     case completion
 }
 

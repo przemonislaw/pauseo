@@ -37,7 +37,7 @@ Pass
 ## 3. Craving flow
 
 - [x] Opens from Home primary CTA.
-- [x] Shows 4 screens: grounding, trigger selection, micro-action selection, completion.
+- [x] ~~Shows 4 screens: grounding, trigger selection, micro-action selection, completion.~~ Superseded 2026-11-20 by section 18 (trigger asked last).
 - [x] Flow can be completed start to finish.
 - [x] Flow can be exited/cancelled without crashing.
 - [x] Completion screen tone matches supportive, non-judgmental style (no praise pressure, no gamified reward language).
@@ -274,6 +274,26 @@ Verifies the 2026-11-20 change: onboarding cut from 5 screens to 1.
 - [ ] Largest Dynamic Type and small-screen device: no clipped text, button reachable.
 - [ ] VoiceOver reads title, body, privacy line and button in the active language.
 - [ ] Light and dark mode: privacy line readable (secondary text contrast).
+
+Tester:
+Date:
+Build/commit tested:
+
+---
+
+## 18. Craving flow order: help first, trigger last
+
+Verifies the 2026-11-20 change. Run in PL and EN, light and dark mode.
+
+- [ ] "I'm having a craving" → "Pause for a moment" → "Help me now" opens the **micro-action** screen (not the trigger question).
+- [ ] Back on the micro-action screen returns to "Pause for a moment"; no Back button after that.
+- [ ] Path A — decline the 2-minute loop ("I'm done for now"): trigger question appears, then completion.
+- [ ] Path B — full 2-minute loop → outcome "I didn't smoke": trigger question, then completion.
+- [ ] Path C — exit loop early → outcome "I smoked": trigger question, then completion (copy stays neutral).
+- [ ] Path D — outcome "I've put off the decision" → second round offered → after it, outcome → trigger question → completion. Trigger question appears exactly once per flow.
+- [ ] Trigger can be skipped: "Next" with nothing selected goes to completion.
+- [ ] Unselected trigger and action chips are visible in dark mode (fix 57b75db).
+- [ ] Swipe the sheet away on the trigger question: no crash; relaunch, no duplicate event.
 
 Tester:
 Date:

@@ -36,6 +36,14 @@ Current Home contains only:
 - `UserPreferences`, `NicotineType`, `GoalMode` model types are kept unchanged for future, in-context use. No data migration needed (nothing was stored).
 - Rationale and the rule for re-introducing questions: `docs/Product_MVP.md` → Onboarding, `docs/Inspiration_Onboarding_Reels.md`.
 
+## Craving flow order
+
+**Help first, ask later (2026-11-20).** `CravingFlowView` order: grounding ("Pause for a moment" → "Help me now") → micro-action → invitation to the guided 2-minute loop → (loop → outcome → optional second round) → **trigger question** ("What triggered the craving?", optional) → completion.
+
+- Previously the trigger question came right after "Help me now", before any help. It now comes last on every path, including when the guided loop is declined.
+- The `CravingEvent` is created when the micro-action is confirmed (as before) and marked `completed` when the support part ends, before the trigger question; the trigger is written by a final upsert. Dismissing the sheet on the trigger step keeps a completed event with `trigger == nil`.
+- Expected trade-off: fewer events with a trigger (users who leave early never see the question), in exchange for less friction at peak craving. Watch this in beta.
+
 ## Local persistence state
 
 `EventStore` now persists completed craving and slip events locally.

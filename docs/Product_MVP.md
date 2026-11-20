@@ -318,7 +318,24 @@ Buttons:
 - “Daj inną”
 - “Pomiń”
 
-### Step 3: Trigger log
+### Step 3: Outcome
+
+After the micro-action, the user may continue into a short guided 2-minute engagement sequence, with a rotating local support card shown every ~10 seconds, before this question appears.
+
+Question:
+
+> “Co się teraz dzieje?”
+
+Options:
+- Nie zapaliłem/am
+- Odłożyłem/am decyzję
+- Zapaliłem/am
+
+### Step 4: Trigger log (after the outcome)
+
+Asked last, on every path (guided loop finished, exited early, or declined), once the user has had help and is calmer. Optional: "Next" without a selection skips it. The event is already saved as completed before this step, so dismissing here keeps the record without a trigger.
+
+Why last (decided 2026-11-20): the user opens the flow at peak craving and taps "Help me now"; the first thing they get must be help, not a question. Asked after the outcome, the question reads as reflection ("what set it off?"), matches the slip flow pattern ("zapiszmy, co go uruchomiło"), and is easier to answer accurately.
 
 Question:
 
@@ -334,19 +351,6 @@ Options:
 - Praca
 - Rano
 - Inne
-
-### Step 4: Outcome
-
-After the micro-action, the user may continue into a short guided 2-minute engagement sequence, with a rotating local support card shown every ~10 seconds, before this question appears.
-
-Question:
-
-> “Co się teraz dzieje?”
-
-Options:
-- Nie zapaliłem/am
-- Odłożyłem/am decyzję
-- Zapaliłem/am
 
 ### Step 5: Close
 
