@@ -254,7 +254,9 @@
         }
       }
     },
+    "Cravings you've got through so far: %@" : {},
     "Cravings you've got through so far: %lld" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -867,13 +869,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Message someone"
+            "value" : "Text someone: “how are you?”"
           }
         },
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Napisz do kogoś"
+            "value" : "Napisz komuś: „co u Ciebie?”"
           }
         }
       }
@@ -1494,23 +1496,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tętno i ciśnienie krwi zaczynają się obniżać już w krótkim czasie po zaprzestaniu palenia."
-          }
-        }
-      }
-    },
-    "Text someone: “how are you?”" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Text someone: “how are you?”"
-          }
-        },
-        "pl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Napisz komuś: „co u Ciebie?”"
           }
         }
       }

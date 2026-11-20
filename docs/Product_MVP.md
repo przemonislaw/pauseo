@@ -325,7 +325,7 @@ Current craving micro-actions (label PL / EN):
 - “Zmień miejsce na 2 minuty” / “Change rooms for 2 minutes”
 - “5 oddechów: wdech na 4, wydech na 6” / “5 breaths: in for 4, out for 6” → opens **guided breathing** in the app (5 × 4 s in / 6 s out, ~50 s, circle that grows and shrinks, seconds count, “Zostały 3 oddechy” / “Ostatni oddech”, “Pomiń oddychanie”), then the usual guided-loop invitation. With Reduce Motion the circle stays still.
 - “Weź coś do ręki: długopis, kubek” / “Hold something: a pen, a mug”
-- “Napisz komuś: „co u Ciebie?”” / “Text someone: “how are you?”” (craving flow only; the slip flow keeps “Napisz do kogoś”)
+- “Napisz komuś: „co u Ciebie?”” / “Text someone: “how are you?”” (craving and slip flows; stored value stays “Napisz do kogoś”)
 
 Rejected (2026-11-20): “Odłóż decyzję o 5 minut” — duplicates the 2-minute guided loop and the “Odłożyłem/am decyzję” outcome.
 

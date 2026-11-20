@@ -291,9 +291,9 @@ Verifies the 2026-11-20 change. Run in PL and EN, light and dark mode.
 - [ ] Path B — full 2-minute loop → outcome "I didn't smoke": trigger question, then completion.
 - [ ] Path C — exit loop early → outcome "I smoked": trigger question, then completion (copy stays neutral).
 - [ ] Path D — outcome "I've put off the decision" → second round offered → after it, outcome → trigger question → completion. Trigger question appears exactly once per flow.
-- [ ] Choose "Go outside for 2 minutes" or "Message someone": invitation reads "Go ahead, do it now. I'll be here." / "Śmiało, zrób to teraz. Będę tutaj." with the "When you're back…" body; switch to another app and back — the screen is still there.
+- [ ] Choose "Change rooms for 2 minutes" or "Text someone: “how are you?”": invitation reads "Go ahead, do it now. I'll be here." / "Śmiało, zrób to teraz. Będę tutaj." with the "When you're back…" body; switch to another app and back — the screen is still there.
 - [ ] Choose "Drink water", "Take 5 calm breaths", "Keep your hands busy", or no action: invitation still reads "Stay with me for 2 more minutes?".
-- [ ] Micro-action list shows "Napisz komuś: „co u Ciebie?”" / "Text someone: “how are you?”" on one or two lines without clipping (largest Dynamic Type too); the slip flow still shows "Napisz do kogoś" / "Message someone".
+- [ ] Micro-action list shows "Napisz komuś: „co u Ciebie?”" / "Text someone: “how are you?”" on one or two lines without clipping (largest Dynamic Type too); the slip flow shows the same label.
 - [ ] Trigger can be skipped: "Next" with nothing selected goes to completion.
 - [ ] Unselected trigger and action chips are visible in dark mode (fix 57b75db).
 - [ ] Swipe the sheet away on the trigger question: no crash; relaunch, no duplicate event.
@@ -319,7 +319,7 @@ Verifies the 2026-11-20 copy changes and the guided breathing step. PL and EN, l
 - [ ] Trigger question (craving) has the subtitle "Przyda się następnym razem. Możesz pominąć." / "Helps next time. You can skip this."; the slip flow keeps "Możesz pominąć."
 - [ ] Trigger question reads "Co uruchomiło craving?"; options include "Kawa" / "Coffee".
 - [ ] Completion reads "To wystarczy na teraz." with "Jedna mała akcja się liczy. Jeśli ochota wróci, po prostu tu wróć."; button "Wróć na start" (PL).
-- [ ] Slip flow: "Co działo się tuż przed?" with "Kawa" option; recovery actions show "Schowaj nikotynę w innym pokoju" and "Następna godzina bez nikotyny" (EN "Next hour nicotine-free", no "Start again"); slip still shows "Napisz do kogoś".
+- [ ] Slip flow: "Co działo się tuż przed?" with "Kawa" option; recovery actions show "Schowaj nikotynę w innym pokoju" and "Następna godzina bez nikotyny" (EN "Next hour nicotine-free", no "Start again"); slip also shows "Napisz komuś: „co u Ciebie?”".
 - [ ] Largest Dynamic Type: longer action labels wrap without clipping.
 
 Note: guided breathing opening and auto-continue confirmed working on device by Przemek (20.11.2026); remaining items still to run.
