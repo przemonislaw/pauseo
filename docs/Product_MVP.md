@@ -305,6 +305,8 @@ Copy:
 
 > “Zatrzymajmy to na 60 sekund. Nie musisz decydować o całym dniu. Tylko o tej minucie.”
 
+Current implemented copy (2026-11-20): “Zatrzymaj się na chwilę.” / “Ta ochota zwykle trwa tylko kilka minut. Wybierz jedną małą akcję na najbliższą minutę.” (source: NHS, “Cravings usually only last a few minutes”).
+
 ### Step 2: Micro-action
 
 Display one action.

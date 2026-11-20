@@ -35,30 +35,30 @@
     "sourceURL": "https://www.cancer.gov/about-cancer/causes-prevention/risk/tobacco/withdrawal-fact-sheet"
   },
   {
-    "id": "fact-smoking-body-response",
-    "category": "fact",
-    "text": "Po odstawieniu papierosów organizm zaczyna reagować na brak dalszej ekspozycji na dym.",
-    "sourceLabel": "NHS",
-    "sourceURL": "https://www.nhs.uk/better-health/quit-smoking/"
+    "id": "action-rate-urge",
+    "category": "action",
+    "text": "Oceń tę ochotę od 1 do 10. Za kilka kart sprawdź jeszcze raz, czy się zmieniła.",
+    "sourceLabel": null,
+    "sourceURL": null
   },
   {
     "id": "body-heart-rate",
     "category": "bodyEffect",
-    "text": "Tętno i ciśnienie krwi zaczynają się obniżać już w krótkim czasie po zaprzestaniu palenia.",
+    "text": "Tętno i ciśnienie krwi zaczynają spadać już w ciągu około 20 minut po zaprzestaniu palenia.",
     "sourceLabel": "WHO",
     "sourceURL": "https://www.who.int/news-room/questions-and-answers/item/tobacco-health-benefits-of-smoking-cessation"
   },
   {
     "id": "body-taste-smell",
     "category": "bodyEffect",
-    "text": "Po odstawieniu papierosów zmysł smaku i węchu może zacząć się poprawiać w ciągu pierwszych dni.",
+    "text": "Po około 2 dniach bez papierosów smak i węch zaczynają się poprawiać.",
     "sourceLabel": "NHS",
     "sourceURL": "https://www.nhs.uk/better-health/quit-smoking/"
   },
   {
     "id": "body-carbon-monoxide",
     "category": "bodyEffect",
-    "text": "Po odstawieniu papierosów poziom tlenku węgla we krwi zaczyna spadać.",
+    "text": "Po około 8 godzinach bez papierosa poziom tlenku węgla we krwi spada o połowę.",
     "sourceLabel": "NHS",
     "sourceURL": "https://www.nhs.uk/better-health/quit-smoking/"
   },
@@ -98,9 +98,9 @@
     "sourceURL": null
   },
   {
-    "id": "perspective-impulse-changes",
-    "category": "perspective",
-    "text": "Natężenie tego impulsu może się zmieniać. Możesz jeszcze chwilę obserwować, co dzieje się teraz.",
+    "id": "action-locate-urge",
+    "category": "action",
+    "text": "Zauważ, gdzie w ciele czujesz tę ochotę: w dłoniach, w gardle, w klatce piersiowej?",
     "sourceLabel": null,
     "sourceURL": null
   }

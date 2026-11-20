@@ -200,7 +200,7 @@ private struct GroundingStep: View {
                     .font(.largeTitle)
                     .fontWeight(.bold)
                     .multilineTextAlignment(.center)
-                Text("You don't have to solve everything right now. Choose one small action for the next minute.")
+                Text("This urge usually lasts only a few minutes. Choose one small action for the next minute.")
                     .font(.body)
                     .foregroundStyle(.secondary)
                     .multilineTextAlignment(.center)
@@ -413,7 +413,7 @@ private struct InvitationStep: View {
                     .multilineTextAlignment(.center)
                 Text(LocalizedStringKey(awayFromPhone
                      ? "When you're back, you can stay with me for 2 more minutes. Or end here."
-                     : "You can stay with me before deciding. No pressure — you can also end now."))
+                     : "I'll show you a short tip every 10 seconds. No pressure — you can stop at any time."))
                     .font(.body)
                     .foregroundStyle(.secondary)
                     .multilineTextAlignment(.center)

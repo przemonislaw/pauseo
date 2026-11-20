@@ -15,7 +15,7 @@ struct OnboardingFlowView: View {
                     .font(.largeTitle)
                     .fontWeight(.bold)
                     .multilineTextAlignment(.center)
-                Text("pauseo helps you choose one small action when a nicotine craving hits.")
+                Text("When you want to smoke, I'll guide you through the next few minutes: one small action, a breath, short tips.")
                     .font(.body)
                     .foregroundStyle(.secondary)
                     .multilineTextAlignment(.center)

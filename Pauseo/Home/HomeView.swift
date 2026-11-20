@@ -14,7 +14,7 @@ struct HomeView: View {
                     .font(.largeTitle)
                     .fontWeight(.bold)
 
-                Text("You don't have to handle the whole day.\nChoose one small action.")
+                Text("You don't have to handle the whole day.\nOne tap and we'll get through the next few minutes.")
                     .font(.body)
                     .foregroundStyle(.secondary)
                     .multilineTextAlignment(.center)

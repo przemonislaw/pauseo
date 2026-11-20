@@ -190,7 +190,7 @@ private struct SlipCompletionStep: View {
                     .font(.largeTitle)
                     .fontWeight(.bold)
                     .multilineTextAlignment(.center)
-                Text("Your next decision matters more than a perfect record.")
+                Text("Your next decision matters more than a perfect record. If the urge comes back, come back here.")
                     .font(.body)
                     .foregroundStyle(.secondary)
                     .multilineTextAlignment(.center)

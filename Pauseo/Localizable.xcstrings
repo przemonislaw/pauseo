@@ -592,6 +592,22 @@
         }
       }
     },
+    "I'll show you a short tip every 10 seconds. No pressure — you can stop at any time." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "I'll show you a short tip every 10 seconds. No pressure — you can stop at any time."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Co 10 sekund pokażę Ci krótką podpowiedź. Bez presji — możesz zakończyć w każdej chwili."
+          }
+        }
+      }
+    },
     "I'll take 2 more minutes" : {
       "extractionState" : "stale",
       "localizations" : {
@@ -880,23 +896,6 @@
         }
       }
     },
-    "Natężenie tego impulsu może się zmieniać. Możesz jeszcze chwilę obserwować, co dzieje się teraz." : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "The intensity of this urge can change. You can keep observing what's happening for a bit longer."
-          }
-        },
-        "pl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Natężenie tego impulsu może się zmieniać. Możesz jeszcze chwilę obserwować, co dzieje się teraz."
-          }
-        }
-      }
-    },
     "Next" : {
       "extractionState" : "stale",
       "localizations" : {
@@ -994,6 +993,22 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Nuda"
+          }
+        }
+      }
+    },
+    "Oceń tę ochotę od 1 do 10. Za kilka kart sprawdź jeszcze raz, czy się zmieniła." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rate this urge from 1 to 10. In a few cards, check again whether it has changed."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Oceń tę ochotę od 1 do 10. Za kilka kart sprawdź jeszcze raz, czy się zmieniła."
           }
         }
       }
@@ -1196,57 +1211,6 @@
         }
       }
     },
-    "Po odstawieniu papierosów organizm zaczyna reagować na brak dalszej ekspozycji na dym." : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "After quitting cigarettes, your body starts responding to the absence of further smoke exposure."
-          }
-        },
-        "pl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Po odstawieniu papierosów organizm zaczyna reagować na brak dalszej ekspozycji na dym."
-          }
-        }
-      }
-    },
-    "Po odstawieniu papierosów poziom tlenku węgla we krwi zaczyna spadać." : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "After quitting cigarettes, carbon monoxide levels in your blood start to drop."
-          }
-        },
-        "pl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Po odstawieniu papierosów poziom tlenku węgla we krwi zaczyna spadać."
-          }
-        }
-      }
-    },
-    "Po odstawieniu papierosów zmysł smaku i węchu może zacząć się poprawiać w ciągu pierwszych dni." : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "After quitting cigarettes, your sense of taste and smell can start to improve within the first few days."
-          }
-        },
-        "pl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Po odstawieniu papierosów zmysł smaku i węchu może zacząć się poprawiać w ciągu pierwszych dni."
-          }
-        }
-      }
-    },
     "Po ograniczeniu nikotyny głód może pojawiać się w różnych momentach i z różną intensywnością." : {
       "extractionState" : "stale",
       "localizations" : {
@@ -1260,6 +1224,38 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Po ograniczeniu nikotyny głód może pojawiać się w różnych momentach i z różną intensywnością."
+          }
+        }
+      }
+    },
+    "Po około 2 dniach bez papierosów smak i węch zaczynają się poprawiać." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "After about 2 days without cigarettes, your sense of taste and smell starts to improve."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Po około 2 dniach bez papierosów smak i węch zaczynają się poprawiać."
+          }
+        }
+      }
+    },
+    "Po około 8 godzinach bez papierosa poziom tlenku węgla we krwi spada o połowę." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "After about 8 hours without a cigarette, the carbon monoxide level in your blood drops by half."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Po około 8 godzinach bez papierosa poziom tlenku węgla we krwi spada o połowę."
           }
         }
       }
@@ -1483,23 +1479,6 @@
         }
       }
     },
-    "Tętno i ciśnienie krwi zaczynają się obniżać już w krótkim czasie po zaprzestaniu palenia." : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Heart rate and blood pressure start to drop within a short time after you stop smoking."
-          }
-        },
-        "pl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Tętno i ciśnienie krwi zaczynają się obniżać już w krótkim czasie po zaprzestaniu palenia."
-          }
-        }
-      }
-    },
     "That's enough for now." : {
       "localizations" : {
         "en" : {
@@ -1512,6 +1491,22 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "To wystarczy na teraz."
+          }
+        }
+      }
+    },
+    "This urge usually lasts only a few minutes. Choose one small action for the next minute." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "This urge usually lasts only a few minutes. Choose one small action for the next minute."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ta ochota zwykle trwa tylko kilka minut. Wybierz jedną małą akcję na najbliższą minutę."
           }
         }
       }
@@ -1563,6 +1558,22 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Towarzystwo"
+          }
+        }
+      }
+    },
+    "Tętno i ciśnienie krwi zaczynają spadać już w ciągu około 20 minut po zaprzestaniu palenia." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Heart rate and blood pressure start to drop within about 20 minutes of stopping smoking."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tętno i ciśnienie krwi zaczynają spadać już w ciągu około 20 minut po zaprzestaniu palenia."
           }
         }
       }
@@ -1798,6 +1809,22 @@
         }
       }
     },
+    "When you want to smoke, I'll guide you through the next few minutes: one small action, a breath, short tips." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "When you want to smoke, I'll guide you through the next few minutes: one small action, a breath, short tips."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gdy przyjdzie ochota zapalić, przeprowadzę Cię przez najbliższe minuty: jedna mała akcja, oddech, krótkie podpowiedzi."
+          }
+        }
+      }
+    },
     "When you're back, you can stay with me for 2 more minutes. Or end here." : {
       "extractionState" : "stale",
       "localizations" : {
@@ -1981,6 +2008,22 @@
         }
       }
     },
+    "You don't have to handle the whole day.\nOne tap and we'll get through the next few minutes." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "You don't have to handle the whole day.\nOne tap and we'll get through the next few minutes."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nie musisz ogarniać całego dnia.\nJedno dotknięcie i przejdziemy przez najbliższe minuty."
+          }
+        }
+      }
+    },
     "You don't have to solve everything right now. Choose one small action for the next minute." : {
       "localizations" : {
         "en" : {
@@ -2061,6 +2104,22 @@
         }
       }
     },
+    "Your next decision matters more than a perfect record. If the urge comes back, come back here." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Your next decision matters more than a perfect record. If the urge comes back, come back here."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Najważniejsza jest następna decyzja, nie idealna historia. Jeśli ochota wróci, wróć tu."
+          }
+        }
+      }
+    },
     "Zacznij od następnej godziny" : {
       "extractionState" : "stale",
       "localizations" : {
@@ -2091,6 +2150,22 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Weź coś do ręki: długopis, kubek"
+          }
+        }
+      }
+    },
+    "Zauważ, gdzie w ciele czujesz tę ochotę: w dłoniach, w gardle, w klatce piersiowej?" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Notice where in your body you feel this urge: your hands, your throat, your chest?"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zauważ, gdzie w ciele czujesz tę ochotę: w dłoniach, w gardle, w klatce piersiowej?"
           }
         }
       }

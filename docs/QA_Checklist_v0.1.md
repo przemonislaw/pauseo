@@ -321,6 +321,8 @@ Verifies the 2026-11-20 copy changes and the guided breathing step. PL and EN, l
 - [ ] Completion reads "To wystarczy na teraz." with "Jedna mała akcja się liczy. Jeśli ochota wróci, po prostu tu wróć."; button "Wróć na start" (PL).
 - [ ] Slip flow: "Co działo się tuż przed?" with "Kawa" option; recovery actions show "Schowaj nikotynę w innym pokoju" and "Następna godzina bez nikotyny" (EN "Next hour nicotine-free", no "Start again"); slip also shows "Napisz komuś: „co u Ciebie?”".
 - [ ] Largest Dynamic Type: longer action labels wrap without clipping.
+- [ ] Copy pass 2: Home body ends "Jedno dotknięcie i przejdziemy przez najbliższe minuty."; grounding starts "Ta ochota zwykle trwa tylko kilka minut."; invitation (non-away actions) says "Co 10 sekund pokażę Ci krótką podpowiedź."; onboarding body (fresh install) is the new "Gdy przyjdzie ochota zapalić…" text; slip completion ends "Jeśli ochota wróci, wróć tu."
+- [ ] Support cards in a guided round (PL and EN): the new cards appear ("Zauważ, gdzie w ciele…", "Oceń tę ochotę od 1 do 10…", "…w ciągu około 20 minut…", "Po około 2 dniach…", "Po około 8 godzinach…"); no old vague card texts; sources still shown for the three body cards.
 
 Note: guided breathing opening and auto-continue confirmed working on device by Przemek (20.11.2026); remaining items still to run.
 
