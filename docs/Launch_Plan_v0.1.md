@@ -19,12 +19,14 @@ e-mail + strona min. (do 28.11) ─┴→ External TF (~29.11) → rozmowy (01�
 - [x] **Team ID = `36WKZ8Q4L5`** (2026-11-21). W Xcode team „Przemyslaw Pietruszewski” to jedyny team, a certyfikat ma `OU=36WKZ8Q4L5`. `5T4Z65558R` to identyfikator osoby w nazwie certyfikatu. Poprawione w `project.yml`, pbxproj wygenerowany przez xcodegen.
 - [x] **Wersja `1.0.0`, build `1`** (decyzja foundera). W ASC jest „iOS App Version 1.0” → zmienić numer na **1.0.0**, żeby zgadzał się z buildem (pole jest edytowalne w stanie Prepare for Submission). Każdy kolejny upload: `CURRENT_PROJECT_VERSION` +1.
 - [ ] Przed Archive: nie commitować szumu z `Localizable.xcstrings` („stale”, puste `%@`). Nie klikać „Remove stale”.
-- [ ] Xcode: schemat Pauseo, cel „Any iOS Device (arm64)” → Product → Archive (konfiguracja Release jest w `project.yml`).
-- [ ] Organizer → Distribute App → App Store Connect → Upload. Automatic signing utworzy certyfikat dystrybucyjny (lokalnie jest tylko Apple Development).
-- [ ] Export compliance: `ITSAppUsesNonExemptEncryption = false` jest już w Info.plist (ADR-013), więc ASC nie powinien pytać.
-- [ ] ASC → TestFlight: build przetworzony (zwykle 5–30 min), grupa wewnętrzna z founderem, instalacja z aplikacji TestFlight, smoke test na telefonie.
-- [ ] QA sekcja 17: dwa niezaznaczone punkty sprawdzić na buildzie z TestFlight.
+- [x] Xcode: schemat Pauseo, cel „Any iOS Device (arm64)” → Product → Archive (konfiguracja Release jest w `project.yml`).
+- [x] Organizer → Distribute App → App Store Connect → Upload. Automatic signing utworzy certyfikat dystrybucyjny (lokalnie jest tylko Apple Development).
+- [x] Export compliance: `ITSAppUsesNonExemptEncryption = false` jest już w Info.plist (ADR-013), więc ASC nie powinien pytać.
+- [x] ASC → TestFlight: build przetworzony (zwykle 5–30 min), grupa wewnętrzna z founderem, instalacja z aplikacji TestFlight, smoke test na telefonie.
+- [x] QA sekcja 17: dwa niezaznaczone punkty sprawdzić na buildzie z TestFlight.
 - [ ] Commit tylko po `git diff` (VS Code potrafi zapisać nieaktualny bufor).
+
+**A zrobione 2026-11-21:** Archive 1.0.0 (1) wysłany (ostrzeżenie 90725 o SDK iOS 26.5 jest informacyjne; od 04.2027 wymagany Xcode 27, więc v1.1 buduj nowym Xcode), build Complete, testy na iPhonie z TestFlight przeszły.
 
 ## A0. Przed External TestFlight (do 28.11): fundamenty, których brakowało w WowCow
 

@@ -268,8 +268,8 @@ Verifies the 2026-11-20 change: onboarding cut from 5 screens to 1.
 - [x] Fresh install (or delete app first): exactly one onboarding screen is shown — title, body, privacy line, one button.
 - [x] No Back button, no progress indicator, no selection screens, no reminders screen.
 - [x] Privacy line reads "Bez konta. Twoje dane zostają w telefonie." (PL) / "No account. Your data stays on your phone." (EN).
-- [ ] Title reads "Pomoc, gdy chce Ci się zapalić." (PL) / "Support when a craving hits." (EN), with no clipping at largest Dynamic Type (2026-11-21 copy change).
-- [ ] Tapping "Zaczynamy" / "Let's begin" opens Home immediately; Home shows the three actions from section 1.
+- [x] Title reads "Pomoc, gdy chce Ci się zapalić." (PL) / "Support when a craving hits." (EN), with no clipping at largest Dynamic Type (2026-11-21 copy change).
+- [x] Tapping "Zaczynamy" / "Let's begin" opens Home immediately; Home shows the three actions from section 1.
 - [x] Relaunch after completing onboarding: app opens directly on Home (onboarding not shown again).
 - [x] Existing install that already completed onboarding: opens on Home, no change.
 - [x] Largest Dynamic Type and small-screen device: no clipped text, button reachable.
@@ -280,7 +280,7 @@ Tester: Przemek
 Date: 20.11.2026
 Build/commit tested: 1eb0d6a
 
-Pass (re-check the two unchecked items after the 2026-11-21 copy change)
+Pass (the two items from the 2026-11-21 copy change re-checked 2026-11-21 on the TestFlight build 1.0.0 (1), Archive of ba68051)
 
 ---
 
