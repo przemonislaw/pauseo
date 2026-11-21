@@ -29,14 +29,14 @@ e-mail + strona min. (do 28.11) ─┴→ External TF (~29.11) → rozmowy (01�
 ## A0. Przed External TestFlight (do 28.11): fundamenty, których brakowało w WowCow
 
 - [ ] **Zarezerwować nazwy** (10 min, bez publikowania): Instagram, TikTok, Threads (z IG), YouTube, strona na Facebooku. Ta sama nazwa wszędzie, np. `@pauseo.app` albo `@pauseoapp` [DO WERYFIKACJI: dostępność]. Bio na razie: jedno zdanie + pauseo.app. Pytanie Q3 w briefie.
-- [ ] **E-mail w domenie**: `hello@pauseo.app` (kontakt, polityka prywatności, feedback z TestFlight, kontakt dla App Review), na razie tylko odbiór z przekierowaniem na prywatną skrzynkę. DNS jest w GoDaddy (NS `domaincontrol.com`), więc Cloudflare Email Routing odpada (wymaga przeniesienia NS). Opcje: przekierowanie w GoDaddy → E-mail, jeśli jest w planie, albo ImprovMX free (2 rekordy MX + SPF TXT) [DO WERYFIKACJI: aktualne limity]. Uwaga: w DNS jest już `_dmarc` z `p=quarantine`; nie ruszać przy dodawaniu MX.
+- [ ] **E-mail w domenie**: `support@pauseo.app` (decyzja 2026-11-21, jak `support@wowcow.app`) (kontakt, polityka prywatności, feedback z TestFlight, kontakt dla App Review), na razie tylko odbiór z przekierowaniem na prywatną skrzynkę. DNS jest w GoDaddy (NS `domaincontrol.com`), więc Cloudflare Email Routing odpada (wymaga przeniesienia NS). Opcje: przekierowanie w GoDaddy → E-mail, jeśli jest w planie, albo ImprovMX free (2 rekordy MX + SPF TXT) [DO WERYFIKACJI: aktualne limity]. Uwaga: w DNS jest już `_dmarc` z `p=quarantine`; nie ruszać przy dodawaniu MX.
 - [ ] **Hosting strony: folder `web/` w tym repo → Vercel → domena GoDaddy** (tak jak WowCow):
   - Vercel: nowy projekt z repo `pauseo`, Root Directory = `web`, bez frameworka (statyczny HTML/CSS).
   - Ignored Build Step: `git diff HEAD^ HEAD --quiet -- .` (w katalogu `web`), żeby commity aplikacji iOS nie budowały strony.
   - GoDaddy DNS: rekord `A @` dziś wskazuje na „WebsiteBuilder Site” → zamienić na wartość podaną przez Vercel; `CNAME www` → wartość z Vercel (dziś `pauseo.app.`). Wartości przepisać z ekranu Vercel → Domains, nie z pamięci.
   - Bez Vercel Web Analytics i bez Meta Pixel (inaczej niż WowCow), bez banera cookies.
   - [DO WERYFIKACJI] Plan Hobby jest dla użytku niekomercyjnego; darmowa aplikacja bez przychodu raczej się mieści, sprawdzić warunki.
-- [ ] **Minimalna strona pauseo.app** (statyczna; hosting np. Cloudflare Pages lub GitHub Pages; bez AWS, bez frameworka):
+- [x] **Minimalna strona pauseo.app: kod gotowy w `web/` (2026-11-21)**, do wdrożenia na Vercel. Strona główna, `/privacy`, `/support` + `/en/...`. Zapis do bety na razie przez `mailto:` (zero dostawców danych); formularz listy dopiero po wyborze dostawcy (statyczna; hosting np. Cloudflare Pages lub GitHub Pages; bez AWS, bez frameworka):
   - `/`: co to jest i co z tego masz (rolka 3), 3 wyróżniki z ADR-017, zapis na listę / do bety,
   - `/privacy` (PL) i `/en/privacy` (EN): aplikacja nie zbiera danych (zgodnie z `docs/Privacy_Safety.md`); osobno strona i lista mailowa: jaki e-mail, po co, kto przetwarza, jak się wypisać (RODO),
   - `/support`: kontakt + 3–5 pytań (jak usunąć dane, czy jest konto, czy to porada medyczna).
