@@ -3,8 +3,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
   <title>Pauseo: support when a craving hits</title>
   <meta name="description" content="An iPhone app for the moment you want to smoke or vape: one small action and 2 guided minutes. No account, your data stays on your phone.">
+  <link rel="canonical" href="https://pauseo.app/en">
   <meta property="og:title" content="Pauseo: support when a craving hits">
   <meta property="og:description" content="One small action and 2 guided minutes. No shame after a slip. No account.">
   <meta property="og:image" content="https://pauseo.app/icon-512.png">
@@ -16,36 +18,137 @@
   <link rel="stylesheet" href="/style.css">
 </head>
 <body>
-  <div class="wrap">
-    <header class="top">
+  <header class="bar">
+    <div class="wrap">
       <a class="brand" href="/en"><img src="/apple-touch-icon.png" alt="">Pauseo</a>
-      <a class="lang" href="/" hreflang="pl">Polski</a>
-    </header>
+      <nav>
+        <a class="lang" href="/" hreflang="pl">Polski</a>
+        <a class="button small-btn" href="#test">I want to test it</a>
+      </nav>
+    </div>
+  </header>
 
-    <main>
-      <h1>Support when a craving hits.</h1>
-      <p class="lead">When the urge to smoke or vape comes, Pauseo walks you through the next few minutes: one small action, a breath, short prompts.</p>
+  <main>
+    <section class="hero">
+      <div class="wrap">
+        <h1>Support when a craving hits.</h1>
+        <p class="lead">Get through the next few minutes. One tap, 2 minutes, no shame.</p>
+        <a class="button" href="#test">I want to test it</a>
+        <p class="note">No account. Your data stays on your phone.</p>
 
-      <ul class="points">
-        <li><strong>One tap, not a day counter.</strong><span>Open the app in the hard moment and know right away what to do.</span></li>
-        <li><strong>A slip is information, not a reset.</strong><span>Nothing is lost and nobody judges you. You just note what set it off.</span></li>
-        <li><strong>No account. Your data stays on your phone.</strong><span>The app sends nothing: no ads, no analytics, no tracking.</span></li>
-      </ul>
+        <div class="phones" role="img" aria-label="Three Pauseo screens: home, a prompt during the 2-minute sequence, and the closing screen">
+          <div class="phone side" aria-hidden="true">
+            <div class="island"></div>
+            <div class="screen">
+              <div class="s-card">A nicotine craving often lasts a few minutes, though it varies from person to person.</div>
+              <div class="s-bar"><i></i></div>
+              <div class="s-time">1:09</div>
+              <div class="s-link" style="margin-top:auto">I'm done for now</div>
+            </div>
+          </div>
+          <div class="phone big" aria-hidden="true">
+            <div class="island"></div>
+            <div class="screen">
+              <div class="s-title">What now?</div>
+              <p class="s-body">You don't have to handle the whole day.
+One tap and we'll get through the next few minutes.</p>
+              <div class="s-btn">I'm having a craving</div>
+              <div class="s-btn2">I've had a slip</div>
+              <div class="s-link">Privacy and data</div>
+            </div>
+          </div>
+          <div class="phone side" aria-hidden="true">
+            <div class="island"></div>
+            <div class="screen">
+              <div class="s-title">That's enough for now.</div>
+              <p class="s-body">One small action counts. If it comes back, just come back here.</p>
+              <div class="s-count">Cravings you've got through so far: 3</div>
+              <div class="s-btn">Back to home</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-      <section class="cta">
-        <p><strong>Pauseo arrives on the App Store in December 2026.</strong><br>Want to try it earlier on your iPhone? Email me and I'll send you a test invite.</p>
+    <section class="band block">
+      <div class="wrap">
+        <h2>What you get</h2>
+        <div class="cards">
+          <div class="card">
+            <h3>You know what to do in the hardest moment</h3>
+            <p>One small action, then short prompts every 10 seconds.</p>
+          </div>
+          <div class="card">
+            <h3>A slip resets nothing</h3>
+            <p>The count of cravings you got through never goes down. You only note what set it off.</p>
+          </div>
+          <div class="card">
+            <h3>Nobody sees your data</h3>
+            <p>No account, no ads, no tracking. Everything stays on your phone.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="block">
+      <div class="wrap">
+        <h2>How it goes</h2>
+        <div class="cards">
+          <div class="card">
+            <span class="step-n">1</span>
+            <h3>One tap</h3>
+            <p>You open the app and know right away what comes next.</p>
+          </div>
+          <div class="card">
+            <span class="step-n">2</span>
+            <h3>A small action and a breath</h3>
+            <p>Water, changing rooms, or 5 calm breaths.</p>
+          </div>
+          <div class="card">
+            <span class="step-n">3</span>
+            <h3>Two minutes of prompts</h3>
+            <p>You can stop at any time. No pressure.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="band block">
+      <div class="wrap split">
+        <div>
+          <h2>It happened? It's not over.</h2>
+          <p>A slip is not a failure. Note what set it off and come back when you're ready.</p>
+        </div>
+        <div class="phone big" role="img" aria-label="App screen after a slip">
+          <div class="island"></div>
+          <div class="screen" style="background:#fff">
+            <div class="s-title">A slip doesn't mean it's over.</div>
+            <p class="s-body">You don't have to start from zero. Just come back to one small decision now.</p>
+            <div class="s-card" style="margin-top:18px">What was happening just before?</div>
+            <div class="s-btn2" style="margin-top:10px">Coffee</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="final" id="test">
+      <div class="wrap narrow">
+        <h2>Support in the moment of a craving is and will stay free.</h2>
+        <p>No account, no ads.</p>
         <a class="button" href="mailto:support@pauseo.app?subject=I%27d%20like%20to%20test%20Pauseo">I want to test it</a>
-      </section>
+        <p class="note">The app arrives on the App Store in December 2026. Email me and I'll send you a test invite for your iPhone.</p>
+      </div>
+    </section>
+  </main>
 
-      <p class="small">Support in the moment of a craving is and will stay free. Pauseo helps in hard moments but does not replace advice from a doctor or therapist.</p>
-    </main>
-
-    <footer>
+  <footer>
+    <div class="wrap">
       <a href="/en/privacy">Privacy Policy</a>
       <a href="/en/support">Support</a>
       <a href="mailto:support@pauseo.app">support@pauseo.app</a>
       <span>© 2026 Pauseo</span>
-    </footer>
-  </div>
+      <span class="disc">Pauseo does not replace advice from a doctor or therapist.</span>
+    </div>
+  </footer>
 </body>
 </html>
