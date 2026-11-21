@@ -28,6 +28,8 @@ e-mail + strona min. (do 28.11) ─┴→ External TF (~29.11) → rozmowy (01�
 
 **A zrobione 2026-11-21:** Archive 1.0.0 (1) wysłany (ostrzeżenie 90725 o SDK iOS 26.5 jest informacyjne; od 04.2027 wymagany Xcode 27, więc v1.1 buduj nowym Xcode), build Complete, testy na iPhonie z TestFlight przeszły.
 
+**Strona (2026-11-21):** pauseo.app działa na Vercelu z folderu `web/` (DNS w GoDaddy ustawiony: A `@` 216.198.79.1, CNAME `www` do vercel-dns-017), jasna wersja PL/EN z `/privacy` i `/support`. **Zostaje:** `support@pauseo.app` (brak MX), wersja ASC 1.0 → 1.0.0, zewnętrzny TestFlight. Pełna lista w `docs/Next_Session_Prompt.md`.
+
 ## A0. Przed External TestFlight (do 28.11): fundamenty, których brakowało w WowCow
 
 - [ ] **Zarezerwować nazwy** (10 min, bez publikowania): Instagram, TikTok, Threads (z IG), YouTube, strona na Facebooku. Ta sama nazwa wszędzie, np. `@pauseo.app` albo `@pauseoapp` [DO WERYFIKACJI: dostępność]. Bio na razie: jedno zdanie + pauseo.app. Pytanie Q3 w briefie.
