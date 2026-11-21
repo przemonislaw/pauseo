@@ -48,4 +48,20 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://pauseo.app/en/support"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://pauseo.app/support"/>
   </url>
+  <url>
+    <loc>https://pauseo.app/co-robic-gdy-chce-sie-zapalic</loc>
+    <lastmod>2026-11-21</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://pauseo.app/co-robic-gdy-chce-sie-zapalic"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pauseo.app/en/what-to-do-when-you-want-to-smoke"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pauseo.app/co-robic-gdy-chce-sie-zapalic"/>
+  </url>
+  <url>
+    <loc>https://pauseo.app/en/what-to-do-when-you-want-to-smoke</loc>
+    <lastmod>2026-11-21</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://pauseo.app/co-robic-gdy-chce-sie-zapalic"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pauseo.app/en/what-to-do-when-you-want-to-smoke"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pauseo.app/co-robic-gdy-chce-sie-zapalic"/>
+  </url>
 </urlset>

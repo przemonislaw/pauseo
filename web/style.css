@@ -145,7 +145,8 @@ footer .disc { flex-basis: 100%; margin-top: 6px; }
 .doc .card h2 { font-size: 19px; text-align: left; margin: 0 0 8px; }
 .doc .card p, .doc .card ul { margin: 0 0 8px; color: var(--text); font-size: 16px; }
 .doc .card p:last-child, .doc .card ul:last-child { margin-bottom: 0; }
-.doc ul { padding-left: 20px; }
+.doc ul, .doc ol { padding-left: 20px; }
+.doc ol li { margin-bottom: 10px; }
 
 @media (max-width: 860px) {
   .cards { grid-template-columns: 1fr; }

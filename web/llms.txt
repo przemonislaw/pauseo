@@ -16,6 +16,8 @@ Pauseo is not a medical product: it gives no medical advice, does not suggest me
 ## Pages
 - [Home (Polish)](https://pauseo.app/): what Pauseo is, how it works, FAQ
 - [Home (English)](https://pauseo.app/en): same in English
+- [What to do when you want to smoke](https://pauseo.app/en/what-to-do-when-you-want-to-smoke): 7 steps for a craving, with NHS/NCI/WHO sources
+- [Co robić, gdy chce Ci się zapalić](https://pauseo.app/co-robic-gdy-chce-sie-zapalic): wersja polska
 - [Privacy policy](https://pauseo.app/en/privacy): what data is (not) collected
 - [Support](https://pauseo.app/en/support): contact and common questions
 - [Polityka prywatności](https://pauseo.app/privacy)
