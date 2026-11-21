@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://pauseo.app/</loc>
+    <lastmod>2026-11-21</lastmod>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://pauseo.app/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pauseo.app/en"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pauseo.app/"/>
+  </url>
+  <url>
+    <loc>https://pauseo.app/en</loc>
+    <lastmod>2026-11-21</lastmod>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://pauseo.app/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pauseo.app/en"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pauseo.app/"/>
+  </url>
+  <url>
+    <loc>https://pauseo.app/privacy</loc>
+    <lastmod>2026-11-21</lastmod>
+    <priority>0.4</priority>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://pauseo.app/privacy"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pauseo.app/en/privacy"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pauseo.app/privacy"/>
+  </url>
+  <url>
+    <loc>https://pauseo.app/en/privacy</loc>
+    <lastmod>2026-11-21</lastmod>
+    <priority>0.4</priority>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://pauseo.app/privacy"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pauseo.app/en/privacy"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pauseo.app/privacy"/>
+  </url>
+  <url>
+    <loc>https://pauseo.app/support</loc>
+    <lastmod>2026-11-21</lastmod>
+    <priority>0.4</priority>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://pauseo.app/support"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pauseo.app/en/support"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pauseo.app/support"/>
+  </url>
+  <url>
+    <loc>https://pauseo.app/en/support</loc>
+    <lastmod>2026-11-21</lastmod>
+    <priority>0.4</priority>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://pauseo.app/support"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pauseo.app/en/support"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pauseo.app/support"/>
+  </url>
+</urlset>

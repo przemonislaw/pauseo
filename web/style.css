@@ -159,3 +159,8 @@ footer .disc { flex-basis: 100%; margin-top: 6px; }
   .bar .lang { display: none; }
   .phone.big { width: 100%; max-width: 276px; }
 }
+
+/* faq */
+.faq .card { margin-bottom: 12px; }
+.faq .card h3 { margin: 0 0 6px; }
+.faq .card p { margin: 0; }

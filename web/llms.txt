@@ -1,0 +1,22 @@
+# Pauseo
+
+> Pauseo is a free iPhone app (iOS 17+, Polish and English) that helps people quitting or reducing smoking, vaping or nicotine get through the exact moment of a craving: one tap, one small action and 2 guided minutes of short prompts. After a slip it helps note the trigger without shame or "starting over". No account, no ads, no in-app purchases; all data stays on the phone. Launch on the App Store is planned for December 2026.
+
+Pauseo is not a medical product: it gives no medical advice, does not suggest medication or nicotine-replacement doses, and does not replace a doctor or therapist.
+
+## Key facts
+- Category: craving support and micro-habit replacement for quitting smoking/vaping/nicotine
+- Platform: iPhone, iOS 17 or later
+- Languages: Polish, English
+- Price: free; support in the moment of a craving is and will stay free
+- Privacy: no account, no backend, no analytics or tracking; data stored locally on the device and deletable in the app
+- Differentiator: helps in the moment of craving instead of counting days; a slip does not reset anything (counter of survived cravings never decreases)
+- Contact: support@pauseo.app
+
+## Pages
+- [Home (Polish)](https://pauseo.app/): what Pauseo is, how it works, FAQ
+- [Home (English)](https://pauseo.app/en): same in English
+- [Privacy policy](https://pauseo.app/en/privacy): what data is (not) collected
+- [Support](https://pauseo.app/en/support): contact and common questions
+- [Polityka prywatności](https://pauseo.app/privacy)
+- [Wsparcie](https://pauseo.app/support)
