@@ -16,8 +16,8 @@ e-mail + strona min. (do 28.11) ─┴→ External TF (~29.11) → rozmowy (01�
 
 ## A. Archive → Internal TestFlight (22–24.11)
 
-- [ ] **Team ID: rozstrzygnięte w repo, do potwierdzenia przez foundera.** Certyfikat ma `OU=36WKZ8Q4L5`, a Xcode zna jeden płatny team `36WKZ8Q4L5`. `5T4Z65558R` to tylko identyfikator osoby w nazwie certyfikatu, a nie team. Do zrobienia: potwierdzić na developer.apple.com → Membership details → Team ID, ustawić `DEVELOPMENT_TEAM: "36WKZ8Q4L5"` w `project.yml`, uruchomić `xcodegen generate`, sprawdzić `git diff` i poprawić `docs/Current_State.md` (linie o 5T4Z65558R).
-- [ ] Wersja: build ma `0.1.0 (1)` (`MARKETING_VERSION` i `CURRENT_PROJECT_VERSION` z `project.yml`). Decyzja foundera: publicznie `0.1.0` czy `1.0.0`. Numer wersji w ASC musi się zgadzać z buildem.
+- [x] **Team ID = `36WKZ8Q4L5`** (2026-11-21). W Xcode team „Przemyslaw Pietruszewski” to jedyny team, a certyfikat ma `OU=36WKZ8Q4L5`. `5T4Z65558R` to identyfikator osoby w nazwie certyfikatu. Poprawione w `project.yml`, pbxproj wygenerowany przez xcodegen.
+- [x] **Wersja `1.0.0`, build `1`** (decyzja foundera). W ASC jest „iOS App Version 1.0” → zmienić numer na **1.0.0**, żeby zgadzał się z buildem (pole jest edytowalne w stanie Prepare for Submission). Każdy kolejny upload: `CURRENT_PROJECT_VERSION` +1.
 - [ ] Przed Archive: nie commitować szumu z `Localizable.xcstrings` („stale”, puste `%@`). Nie klikać „Remove stale”.
 - [ ] Xcode: schemat Pauseo, cel „Any iOS Device (arm64)” → Product → Archive (konfiguracja Release jest w `project.yml`).
 - [ ] Organizer → Distribute App → App Store Connect → Upload. Automatic signing utworzy certyfikat dystrybucyjny (lokalnie jest tylko Apple Development).
@@ -29,7 +29,13 @@ e-mail + strona min. (do 28.11) ─┴→ External TF (~29.11) → rozmowy (01�
 ## A0. Przed External TestFlight (do 28.11): fundamenty, których brakowało w WowCow
 
 - [ ] **Zarezerwować nazwy** (10 min, bez publikowania): Instagram, TikTok, Threads (z IG), YouTube, strona na Facebooku. Ta sama nazwa wszędzie, np. `@pauseo.app` albo `@pauseoapp` [DO WERYFIKACJI: dostępność]. Bio na razie: jedno zdanie + pauseo.app. Pytanie Q3 w briefie.
-- [ ] **E-mail w domenie**: `hello@pauseo.app` (kontakt, polityka prywatności, feedback z TestFlight, kontakt dla App Review). Darmowe przekierowanie na prywatną skrzynkę, np. Cloudflare Email Routing albo iCloud+ z własną domeną [DO WERYFIKACJI: gdzie jest DNS domeny]. Prywatny adres nie powinien trafiać do listingu ani na stronę.
+- [ ] **E-mail w domenie**: `hello@pauseo.app` (kontakt, polityka prywatności, feedback z TestFlight, kontakt dla App Review), na razie tylko odbiór z przekierowaniem na prywatną skrzynkę. DNS jest w GoDaddy (NS `domaincontrol.com`), więc Cloudflare Email Routing odpada (wymaga przeniesienia NS). Opcje: przekierowanie w GoDaddy → E-mail, jeśli jest w planie, albo ImprovMX free (2 rekordy MX + SPF TXT) [DO WERYFIKACJI: aktualne limity]. Uwaga: w DNS jest już `_dmarc` z `p=quarantine`; nie ruszać przy dodawaniu MX.
+- [ ] **Hosting strony: folder `web/` w tym repo → Vercel → domena GoDaddy** (tak jak WowCow):
+  - Vercel: nowy projekt z repo `pauseo`, Root Directory = `web`, bez frameworka (statyczny HTML/CSS).
+  - Ignored Build Step: `git diff HEAD^ HEAD --quiet -- .` (w katalogu `web`), żeby commity aplikacji iOS nie budowały strony.
+  - GoDaddy DNS: rekord `A @` dziś wskazuje na „WebsiteBuilder Site” → zamienić na wartość podaną przez Vercel; `CNAME www` → wartość z Vercel (dziś `pauseo.app.`). Wartości przepisać z ekranu Vercel → Domains, nie z pamięci.
+  - Bez Vercel Web Analytics i bez Meta Pixel (inaczej niż WowCow), bez banera cookies.
+  - [DO WERYFIKACJI] Plan Hobby jest dla użytku niekomercyjnego; darmowa aplikacja bez przychodu raczej się mieści, sprawdzić warunki.
 - [ ] **Minimalna strona pauseo.app** (statyczna; hosting np. Cloudflare Pages lub GitHub Pages; bez AWS, bez frameworka):
   - `/`: co to jest i co z tego masz (rolka 3), 3 wyróżniki z ADR-017, zapis na listę / do bety,
   - `/privacy` (PL) i `/en/privacy` (EN): aplikacja nie zbiera danych (zgodnie z `docs/Privacy_Safety.md`); osobno strona i lista mailowa: jaki e-mail, po co, kto przetwarza, jak się wypisać (RODO),
@@ -58,7 +64,7 @@ e-mail + strona min. (do 28.11) ─┴→ External TF (~29.11) → rozmowy (01�
 - [ ] 6 zrzutów ekranu, każdy z jedną konkretną korzyścią; #1 to moment cravingu (Home z jednym przyciskiem + „bez konta”).
 - [ ] Support URL `pauseo.app/support`, Marketing URL `pauseo.app`, Privacy Policy URL `pauseo.app/privacy`, Copyright.
 - [ ] App Privacy: „Data Not Collected”. App Review: odznaczyć „Sign-in required”, notatka dla recenzenta (brak konta, brak sieci, brak porad medycznych).
-- [ ] Dostępność: Chiny kontynentalne [DO WERYFIKACJI].
+- [ ] **Dostępność: wykluczyć Chiny kontynentalne** (Pricing and Availability). ASC wymaga tam Security Assessment i deklaracji AIGC (banery w ASC, 2026-11-21). Dla aplikacji z marketingiem PL/EN to koszt bez zysku.
 - [ ] Opcja do rozważenia: **pre-order** w App Store. Jeśli build przejdzie review wcześniej, link do App Store działa przed premierą, a zamówieni użytkownicy dostają aplikację automatycznie [DO WERYFIKACJI: wymogi i wpływ na termin review].
 
 ## C. pauseo.app v2 (do 12.12)
@@ -80,11 +86,20 @@ e-mail + strona min. (do 28.11) ─┴→ External TF (~29.11) → rozmowy (01�
 
 - [ ] WowCow: wyłączyć albo naprawić martwą Lambdę IG (brief Q11), żeby alarmy nie uczyły ignorowania alertów.
 
+## Budżet czasu: 5–6 h/tydz. na marketing (Q7, 2026-11-21)
+
+Około 25–30 h do premiery. Kolejność cięć, gdy brakuje czasu: najpierw PR, potem liczba wideo (5 → 3), nigdy listing i polityka prywatności.
+
+| Tydzień | Zadania (≈5–6 h) |
+|---|---|
+| 23–29.11 | nazwy w social media (0,5 h), e-mail w domenie (0,5 h), strona min. + polityka prywatności (2 h z Claude), Test Information + External TF (0,5 h), wiadomości do znajomych (1 h) |
+| 30.11–06.12 | 5 rozmów po 15 min (2 h), audyt konkurencji (1 h), 2 wideo (2 h) |
+| 07–13.12 | listing PL/EN + zrzuty (3 h), strona v2 z demo (1 h), 1–2 wideo (1,5 h) |
+| 14–20.12 | wysyłka do review, lista 10 mediów i pitch (2 h), 1 wideo, mail na premierę (1 h) |
+
 ## Otwarte pytania do foundera
 
-- Q7 z briefu: ile godzin tygodniowo na marketing do 27.12?
 - Q10: czy jest ekspert (psycholog uzależnień), którego warto zapytać już teraz o recenzję kart wsparcia? To potrwa tygodnie.
-- Gdzie jest DNS pauseo.app i czy masz iCloud+ (od tego zależy wybór e-maila w domenie)?
 
 ## Odłożone na v1.1 (bez zgody foundera nie robimy przed premierą)
 

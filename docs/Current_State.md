@@ -1,6 +1,6 @@
 # Current State — pauseo.app
 
-Last updated: 2026-11-20
+Last updated: 2026-11-21
 
 ## Product canon
 
@@ -125,14 +125,15 @@ Goal: first Internal TestFlight build. No application feature work — this is p
 
 Done:
 - App ID `app.pauseo` registered in Apple Developer Portal; app record created in App Store Connect ("Pauseo", primary language Polish).
-- `DEVELOPMENT_TEAM` corrected to `5T4Z65558R` (the previous value, `36WKZ8Q4L5`, matched no locally available certificate); `CODE_SIGN_STYLE: Automatic` pinned in `project.yml` so it survives `xcodegen generate`. Verified working in Xcode's Signing & Capabilities (automatic profile + certificate resolved).
+- `DEVELOPMENT_TEAM` is `36WKZ8Q4L5` (corrected 2026-11-21). The certificate's `OU` and Xcode's only team are `36WKZ8Q4L5`; `5T4Z65558R` is just the per-person ID in the certificate name "Apple Development: Przemyslaw Pietruszewski (5T4Z65558R)", which an earlier check mistook for the team. Xcode's GUI kept rewriting pbxproj to `36WKZ8Q4L5` for this reason. `CODE_SIGN_STYLE: Automatic` pinned in `project.yml` so it survives `xcodegen generate`. Verified working in Xcode's Signing & Capabilities (automatic profile + certificate resolved).
 - `TARGETED_DEVICE_FAMILY` set to `1` (iPhone only) — see ADR-012.
+- `MARKETING_VERSION` set to `1.0.0` for the first public release (2026-11-21, founder decision; was `0.1.0`). Build number `CURRENT_PROJECT_VERSION` starts at `1` and must increase with every upload.
 - `Pauseo/PrivacyInfo.xcprivacy` added, declaring the app's `UserDefaults` usage; `ITSAppUsesNonExemptEncryption: false` set — see ADR-013.
 - Verified: `xcodegen generate` plus Debug and Release builds (Simulator destination) succeed with no new warnings after all of the above.
 - App icon added (`Pauseo/Assets.xcassets/AppIcon.appiconset/AppIcon-1024.png`, opaque 1024x1024, single-size/universal slot) — solid deep indigo square with two warm ivory pause bars, matching the visual system. A matching native launch screen (`UILaunchScreen` in `Info.plist`, no storyboard) shows the same pause-mark glyph on `LaunchBackground` (ivory light / black dark).
 
 Still pending before an Internal TestFlight build can be uploaded:
-- An actual Archive + upload, which requires Xcode signed into the Apple ID for team `5T4Z65558R` (confirmed working in the Xcode GUI; this cannot be done from an unattended/headless shell in this environment — `xcodebuild archive` here fails with "No Account for Team" since no Apple ID session exists outside the interactive Xcode app).
+- An actual Archive + upload, which requires Xcode signed into the Apple ID for team `36WKZ8Q4L5` (confirmed working in the Xcode GUI; this cannot be done from an unattended/headless shell in this environment — `xcodebuild archive` here fails with "No Account for Team" since no Apple ID session exists outside the interactive Xcode app).
 - Export-compliance and any other build-specific prompts in App Store Connect once a build is uploaded.
 
 Out of scope for Internal TestFlight (confirmed from App Store Connect's own UI): the "iOS App Version" distribution page (description, keywords, screenshots, promotional text, support/marketing URLs) is for the public App Store listing, not required to test via Internal TestFlight.
