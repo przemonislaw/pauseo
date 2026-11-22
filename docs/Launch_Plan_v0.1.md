@@ -28,13 +28,13 @@ e-mail + strona min. (do 28.11) ─┴→ External TF (~29.11) → rozmowy (01�
 
 **A zrobione 2026-11-21:** Archive 1.0.0 (1) wysłany (ostrzeżenie 90725 o SDK iOS 26.5 jest informacyjne; od 04.2027 wymagany Xcode 27, więc v1.1 buduj nowym Xcode), build Complete, testy na iPhonie z TestFlight przeszły.
 
-**Strona (2026-11-21):** pauseo.app działa na Vercelu z folderu `web/` (DNS w GoDaddy ustawiony: A `@` 216.198.79.1, CNAME `www` do vercel-dns-017), jasna wersja PL/EN z `/privacy` i `/support`. **Zostaje:** `support@pauseo.app` (brak MX), wersja ASC 1.0 → 1.0.0, zewnętrzny TestFlight. Pełna lista w `docs/Next_Session_Prompt.md`.
+**Strona (2026-11-21):** pauseo.app działa na Vercelu z folderu `web/` (DNS w GoDaddy ustawiony: A `@` 216.198.79.1, CNAME `www` do vercel-dns-017), jasna wersja PL/EN z `/privacy` i `/support`. **22.11:** `support@pauseo.app` działa (ImprovMX, odbiór, filtr w Gmailu), SEO i dwie podstrony treściowe wdrożone, wersja mobilna sprawdzona. **Zostaje:** wersja ASC 1.0 → 1.0.0, zewnętrzny TestFlight. Pełna lista w `docs/Next_Session_Prompt.md`.
 
 ## A0. Przed External TestFlight (do 28.11): fundamenty, których brakowało w WowCow
 
 - [ ] **Zarezerwować nazwy** (10 min, bez publikowania): Instagram, TikTok, Threads (z IG), YouTube, strona na Facebooku. Ta sama nazwa wszędzie, np. `@pauseo.app` albo `@pauseoapp` [DO WERYFIKACJI: dostępność]. Bio na razie: jedno zdanie + pauseo.app. Pytanie Q3 w briefie.
-- [ ] **E-mail w domenie**: `support@pauseo.app` (decyzja 2026-11-21, jak `support@wowcow.app`) (kontakt, polityka prywatności, feedback z TestFlight, kontakt dla App Review), na razie tylko odbiór z przekierowaniem na prywatną skrzynkę. DNS jest w GoDaddy (NS `domaincontrol.com`), więc Cloudflare Email Routing odpada (wymaga przeniesienia NS). Opcje: przekierowanie w GoDaddy → E-mail, jeśli jest w planie, albo ImprovMX free (2 rekordy MX + SPF TXT) [DO WERYFIKACJI: aktualne limity]. Uwaga: w DNS jest już `_dmarc` z `p=quarantine`; nie ruszać przy dodawaniu MX.
-- [ ] **Hosting strony: folder `web/` w tym repo → Vercel → domena GoDaddy** (tak jak WowCow):
+- [x] **E-mail w domenie (zrobione 2026-11-22, ImprovMX, filtr w Gmailu)**: `support@pauseo.app` (decyzja 2026-11-21, jak `support@wowcow.app`) (kontakt, polityka prywatności, feedback z TestFlight, kontakt dla App Review), na razie tylko odbiór z przekierowaniem na prywatną skrzynkę. DNS jest w GoDaddy (NS `domaincontrol.com`), więc Cloudflare Email Routing odpada (wymaga przeniesienia NS). Opcje: przekierowanie w GoDaddy → E-mail, jeśli jest w planie, albo ImprovMX free (2 rekordy MX + SPF TXT) [DO WERYFIKACJI: aktualne limity]. Uwaga: w DNS jest już `_dmarc` z `p=quarantine`; nie ruszać przy dodawaniu MX.
+- [x] **Hosting strony: folder `web/` w tym repo → Vercel → domena GoDaddy (zrobione 2026-11-21, 200 na żywo)** (tak jak WowCow):
   - Vercel: nowy projekt z repo `pauseo`, Root Directory = `web`, bez frameworka (statyczny HTML/CSS).
   - Ignored Build Step: `git diff HEAD^ HEAD --quiet -- .` (w katalogu `web`), żeby commity aplikacji iOS nie budowały strony.
   - GoDaddy DNS: rekord `A @` dziś wskazuje na „WebsiteBuilder Site” → zamienić na wartość podaną przez Vercel; `CNAME www` → wartość z Vercel (dziś `pauseo.app.`). Wartości przepisać z ekranu Vercel → Domains, nie z pamięci.
@@ -86,9 +86,21 @@ e-mail + strona min. (do 28.11) ─┴→ External TF (~29.11) → rozmowy (01�
 - [ ] Dzień premiery: mail do listy, wiadomość do beta-testerów z prośbą o ocenę (prośba w aplikacji działa tylko po wyniku „Nie zapaliłem/am”).
 - [ ] Raport po 2 tygodniach według szablonu z briefu (9.3).
 
-## Higiena (5 minut, przed TestFlight)
+## F. SEO i Search Console (kod wdrożony 21–22.11, reszta ręcznie)
 
-- [ ] WowCow: wyłączyć albo naprawić martwą Lambdę IG (brief Q11), żeby alarmy nie uczyły ignorowania alertów.
+Zrobione: canonical i hreflang, OG, JSON-LD, FAQ, `robots.txt`, `sitemap.xml`, `llms.txt`, dwie podstrony treściowe (PL/EN), wszystko 200 na żywo.
+
+- [ ] **Google Search Console (ręcznie, ~15 min):** właściwość domeny `pauseo.app` (weryfikacja TXT w GoDaddy; po dodaniu sprawdzić na serwerze autorytatywnym), wysłać `https://pauseo.app/sitemap.xml`, poprosić o indeksację `/`, `/en`, `/co-robic-gdy-chce-sie-zapalic`, `/en/what-to-do-when-you-want-to-smoke`.
+- [ ] **Bing Webmaster Tools** (import z GSC; z Bingiem korzysta m.in. ChatGPT Search).
+- [ ] Test „Rich Results” dla FAQPage i MobileApplication.
+- [ ] Kolejne podstrony treściowe (np. „ile trwa głód nikotynowy”, „co robić po wpadce”) dopiero po sprawdzeniu w GSC, czy pierwsze dwie się indeksują. Metryka: indeksacja i wyświetlenia w GSC (kompletna dla Google). Kryterium stop: brak indeksacji po 4 tygodniach → przegląd treści.
+- [ ] Po premierze: `<meta name="apple-itunes-app" content="app-id=...">`, `downloadUrl` w JSON-LD i link App Store w `llms.txt`; w tekstach „w grudniu 2026” → „w App Store”.
+- [ ] Linki zwrotne (budują widoczność w Google i cytowania AI): katalogi aplikacji i zdrowia, wzmianki w społecznościach i mediach PL, profile IG/YT z linkiem.
+- [ ] Autor podstron: dziś „twórca Pauseo”; imię i nazwisko dodać tylko decyzją foundera.
+
+## Do zrobienia ręcznie (higiena, poza repo)
+
+- [ ] WowCow: wyłączyć albo naprawić martwą Lambdę IG (EventBridge lub uprawnienie IAM, brief Q11), żeby alarmy nie uczyły ignorowania alertów. Nie dotyczy kodu Pauseo.
 
 ## Budżet czasu: 5–6 h/tydz. na marketing (Q7, 2026-11-21)
 

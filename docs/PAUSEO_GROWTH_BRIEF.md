@@ -44,7 +44,7 @@
 | R1 | Zdecyduj o dacie premiery: publiczny App Store **przed 27.12.2026** (okno noworoczne) albo świadomie celuj w Wielki Post. Nie wypuszczaj „po cichu” bez przygotowanego ASO. | wysoka |
 | R2 | Zbuduj ASO od pierwszego dnia: tytuł i podtytuł pod frazy PL („rzucić palenie”, „głód nikotynowy”, „e-papieros”), screenshot #1 pokazujący moment cravingu. W WowCow to był jedyny działający kanał. | wysoka |
 | R3 | Rozstrzygnij ADR „pomiar zgodny z prywatnością” przed premierą (sekcja 5.3). | wysoka |
-| R4 | Uruchom kanał własny przed premierą: strona pauseo.app z zapisem na listę i zewnętrzna beta TestFlight (cel 50–100 osób palących lub wapujących). | wysoka |
+| R4 | Uruchom kanał własny przed premierą: strona pauseo.app z zapisem na listę i zewnętrzna beta TestFlight (cel 15–30 osób palących lub wapujących; ujednolicone 2026-11-22 z Launch Plan). | wysoka |
 | R5 | Treści organiczne jako demo produktu („co zrobić w 2 minuty, gdy chcesz zapalić”), nagrywane ręcznie, z twarzą lub historią foundera. Bez automatyzacji przed udowodnieniem, że format działa. | średnia |
 
 ---
@@ -295,7 +295,7 @@ Okres: ~wrzesień 2025 (premiera iOS) → listopad 2026. Kontekst produktu: jedn
 |---|---|---|---|---|---|
 | **P0** | **ASO (PL)** | jedyny działający kanał w WowCow; w tej kategorii wyszukiwanie ma wysoką intencję | research fraz PL (Apple Search Ads keyword planner / narzędzia ASO free tier), tytuł 30 znaków + podtytuł 30 + słowa kluczowe 100, 6 screenshotów (pierwszy = moment cravingu) | impressions/dzień, konwersja page view → download | po 6 tyg. impressions <10/dzień → zmiana fraz |
 | **P0** | **Kanał własny: pauseo.app + lista oczekujących** | WowCow nie miał listy; każdy launch od zera | jedna strona: problem → 2-minutowe demo (GIF/wideo) → zapis → link TestFlight | zapisy/tydzień, konwersja odwiedzin na zapis | — (infrastruktura, nie eksperyment) |
-| **P0** | **Beta zewnętrzna TestFlight** | walidacja aktywacji, język użytkownika, pierwsze recenzje w dniu premiery | rekrutacja 50–100 osób (znajomi, grupy, lista) | % testerów, którzy użyli flow cravingu ≥1 raz w 7 dni; wywiady | <20% aktywacji → problem produktowy, nie marketingowy |
+| **P0** | **Beta zewnętrzna TestFlight** | walidacja aktywacji, język użytkownika, pierwsze recenzje w dniu premiery | rekrutacja 15–30 osób (znajomi, grupy, lista) | **jakościowa** (ADR-014, bez analityki): z rozmów, ilu z 5–10 rozmówców uruchomiło flow cravingu i gdzie się zatrzymało; w TestFlight instalacje i sesje tylko opt-in (niekompletne) | większość rozmówców nie dochodzi do końca 1. flow → problem produktowy, nie marketingowy |
 | **P1** | **Krótkie wideo (IG Reels / TikTok), ręcznie, natywnie** | kategoria ma silny ładunek emocjonalny i historie | 5 wideo w 2 tygodnie: „co zrobić w 2 minuty, gdy chcesz zapalić” / historia foundera / „dlaczego licznik dni nie działa po wpadce” | hook rate, avg watch, zapisy, komentarze „jak się nazywa app?” | po 10 wideo <500 wyświetleń średnio → zmiana formatu |
 | **P1** | **Społeczności** (grupy FB „rzucam palenie”, fora, r/stopsmoking dla EN) | ludzie w trakcie rzucania szukają wsparcia | **najpierw obecność i pomoc, bez linka** (zgodnie z feedbackiem foundera dot. Reddita) | jakość rozmów, zaproszenia do bety | brak zgody adminów → nie publikować |
 | **P2** | **PR / media PL** | historia „solo-dev zrobił darmową, prywatną apkę do rzucania palenia, bez wstydu” plus sezon noworoczny | lista 20 dziennikarzy zdrowie/tech, pitch na koniec grudnia | publikacje, skoki impressions | — |
@@ -343,7 +343,7 @@ Okres: ~wrzesień 2025 (premiera iOS) → listopad 2026. Kontekst produktu: jedn
 
 | Metryka | Definicja | Dlaczego |
 |---|---|---|
-| **Aktywacja** | ukończony 1. flow „Mam craving teraz” w ciągu 72 h od instalacji | moment „aha”; bez tego appka to ikona |
+| **Aktywacja** | ukończony 1. flow „Mam craving teraz” w ciągu 72 h od instalacji. **W v1.0 oceniana jakościowo** (rozmowy), bo ADR-014 wyklucza analitykę | moment „aha”; bez tego appka to ikona |
 | **Głęboka aktywacja** | ukończona 1. sekwencja 2-minutowa | dowód wartości rdzenia |
 | **North Star (propozycja)** | liczba „przetrwanych cravingów” (wynik „Nie zapaliłem/am” lub „Odłożyłem/am”) na aktywnego użytkownika na tydzień | mierzy pomoc, nie czas w appce |
 | **Retencja** | D1 / D7 / D30 (ASC opt-in lub analityka wg ADR) | |
@@ -383,7 +383,7 @@ Uwaga: w tej kategorii „sukces” może oznaczać **mniejsze użycie** (mniej 
 - [ ] ADR pomiaru (sekcja 5.3).
 - [ ] Internal TestFlight → External TestFlight (review bety [DO WERYFIKACJI: czas]).
 - [ ] pauseo.app (domena kupiona): landing z listą oczekujących + polityka prywatności PL. Uwaga: polityka prywatności i URL wsparcia są wymagane w listingu App Store, więc landing jest na ścieżce krytycznej premiery.
-- [ ] Rekrutacja 50–100 beta-testerów; 5–10 wywiadów (słownik użytkownika, moment aktywacji).
+- [ ] Rekrutacja 15–30 beta-testerów; 5–10 wywiadów (słownik użytkownika, moment aktywacji).
 - [ ] Audyt ASO konkurencji PL + listing (tytuł, podtytuł, słowa kluczowe, 6 screenshotów, opis PL).
 - [ ] 5 ręcznych krótkich wideo (test formatów); profil IG/TikTok Pauseo.
 - [ ] Pitch PR „na Nowy Rok” do 10–20 mediów.
@@ -415,7 +415,7 @@ Uwaga: w tej kategorii „sukces” może oznaczać **mniejsze użycie** (mniej 
 |---|---|---|
 | Lista oczekujących przed premierą | 100–300 | realne przy zerowym budżecie i sezonie [SZACUNEK] |
 | Instalacje w 90 dni | 300–1000 | WowCow robił ~12/mies. w szczycie; Pauseo ma lepszy problem, sezon i plan [SZACUNEK, niska pewność] |
-| Aktywacja (1. craving flow w 72 h) | ≥40% | [HIPOTEZA] |
+| Aktywacja (1. craving flow w 72 h) | ≥40% — **w v1.0 tylko jakościowo** (rozmowy z betą; ASC nie pokazuje przepływów, ADR-014) | [HIPOTEZA] |
 | Recenzje App Store | ≥20 | social proof dla konwersji |
 
 ---

@@ -1,6 +1,6 @@
 # Current State — pauseo.app
 
-Last updated: 2026-11-21
+Last updated: 2026-11-22
 
 ## Product canon
 
@@ -120,28 +120,40 @@ Full PL/EN localization, per ADR-011's update, covers onboarding, Home, the full
 - No account, backend, sync, remote content, or in-app language-switcher setting was added. Language selection is the standard iOS per-app mechanism (Settings → Pauseo → Language).
 - Verified: `xcodegen generate`, Debug and Release builds (iOS Simulator destination) both succeed with no new warnings; the built app bundle contains `en.lproj/Localizable.strings` and `pl.lproj/Localizable.strings` (111 keys each); a Simulator smoke test confirmed the app actually renders in Polish and English depending on the device language and falls back correctly. Full manual QA (real device, all flows, both languages, accessibility, VoiceOver, Reduce Motion, language switching, fallback) has passed — see `docs/QA_Checklist_v0.1.md` section 15.
 
-## Release readiness (Phase 2, in progress)
+## Release readiness (Phase 2: Internal TestFlight done, public launch in preparation)
 
-Goal: first Internal TestFlight build. No application feature work — this is packaging/signing/compliance only.
+Packaging, signing and compliance (no feature work). Status 2026-11-22:
 
 Done:
-- App ID `app.pauseo` registered in Apple Developer Portal; app record created in App Store Connect ("Pauseo", primary language Polish).
-- `DEVELOPMENT_TEAM` is `36WKZ8Q4L5` (corrected 2026-11-21). The certificate's `OU` and Xcode's only team are `36WKZ8Q4L5`; `5T4Z65558R` is just the per-person ID in the certificate name "Apple Development: Przemyslaw Pietruszewski (5T4Z65558R)", which an earlier check mistook for the team. Xcode's GUI kept rewriting pbxproj to `36WKZ8Q4L5` for this reason. `CODE_SIGN_STYLE: Automatic` pinned in `project.yml` so it survives `xcodegen generate`. Verified working in Xcode's Signing & Capabilities (automatic profile + certificate resolved).
-- `TARGETED_DEVICE_FAMILY` set to `1` (iPhone only) — see ADR-012.
-- `MARKETING_VERSION` set to `1.0.0` for the first public release (2026-11-21, founder decision; was `0.1.0`). Build number `CURRENT_PROJECT_VERSION` starts at `1` and must increase with every upload.
-- `Pauseo/PrivacyInfo.xcprivacy` added, declaring the app's `UserDefaults` usage; `ITSAppUsesNonExemptEncryption: false` set — see ADR-013.
-- Verified: `xcodegen generate` plus Debug and Release builds (Simulator destination) succeed with no new warnings after all of the above.
-- App icon added (`Pauseo/Assets.xcassets/AppIcon.appiconset/AppIcon-1024.png`, opaque 1024x1024, single-size/universal slot) — solid deep indigo square with two warm ivory pause bars, matching the visual system. A matching native launch screen (`UILaunchScreen` in `Info.plist`, no storyboard) shows the same pause-mark glyph on `LaunchBackground` (ivory light / black dark).
+- App ID `app.pauseo` registered; app record created in App Store Connect ("Pauseo", primary language Polish).
+- `DEVELOPMENT_TEAM` is `36WKZ8Q4L5` (corrected 2026-11-21). The certificate's `OU` and Xcode's only team are `36WKZ8Q4L5`; `5T4Z65558R` is just the per-person ID in the certificate name. `CODE_SIGN_STYLE: Automatic` pinned in `project.yml`.
+- `TARGETED_DEVICE_FAMILY` = `1` (iPhone only), see ADR-012.
+- `MARKETING_VERSION` = `1.0.0`, `CURRENT_PROJECT_VERSION` = `1` (increase with every upload).
+- `Pauseo/PrivacyInfo.xcprivacy` and `ITSAppUsesNonExemptEncryption: false`, see ADR-013.
+- App icon and native launch screen added.
+- **Archive and upload done 2026-11-21:** build 1.0.0 (1) processed in App Store Connect, TestFlight Complete. Warning 90725 (SDK iOS 26.5; Xcode 27 required from 04.2027) is informational: build v1.1 with the new Xcode.
+- **Internal TestFlight QA passed on a physical iPhone** (`docs/QA_Checklist_v0.1.md` section 17 closed).
 
-Still pending before an Internal TestFlight build can be uploaded:
-- An actual Archive + upload, which requires Xcode signed into the Apple ID for team `36WKZ8Q4L5` (confirmed working in the Xcode GUI; this cannot be done from an unattended/headless shell in this environment — `xcodebuild archive` here fails with "No Account for Team" since no Apple ID session exists outside the interactive Xcode app).
-- Export-compliance and any other build-specific prompts in App Store Connect once a build is uploaded.
+Still to do before public release (task list and dates: `docs/Launch_Plan_v0.1.md`):
+- App Store Connect: version "1.0" → 1.0.0, Privacy Policy / Support / Marketing URLs, exclude mainland China, App Privacy "Data Not Collected", "Sign-in required" off, age-rating questionnaire (tobacco references: verify), reviewer note.
+- External TestFlight group + public link + Beta App Review, then beta conversations.
+- Listing PL and EN with screenshots, submission to App Review ~2026-12-15.
 
-Out of scope for Internal TestFlight (confirmed from App Store Connect's own UI): the "iOS App Version" distribution page (description, keywords, screenshots, promotional text, support/marketing URLs) is for the public App Store listing, not required to test via Internal TestFlight.
+## Website, email, SEO (2026-11-21/22)
+
+Not part of the app bundle. Lives in `web/` in this repo.
+
+- **Site:** `pauseo.app` (static HTML/CSS, Vercel project `pauseo-web`, Root Directory `web`, auto-deploy from `main`). Pages: `/`, `/privacy`, `/support` and `/en/...`. Light only (founder decision). No cookies, no analytics, no external fonts. Phone frames are CSS mockups using real app strings.
+- **DNS (GoDaddy):** A `@` = `216.198.79.1`, CNAME `www` to the Vercel target, `www` redirects to the apex. After any DNS change verify on the authoritative server (`dig ... @ns19.domaincontrol.com`), not on 8.8.8.8 or 1.1.1.1.
+- **Email:** `support@pauseo.app` works through ImprovMX (free plan, receive only, forwards to the founder's private Gmail; MX mx1 10 / mx2 20 and SPF TXT, `_dmarc` untouched). Gmail filter "never send to spam" added 2026-11-22.
+- **SEO shipped:** canonical and hreflang (pl/en/x-default), OG/Twitter with `og-image.png`, JSON-LD (Organization, WebSite, MobileApplication, FAQPage; Article and BreadcrumbList on content pages), `robots.txt` (AI crawlers allowed), `sitemap.xml`, `llms.txt`, `vercel.json`.
+- **Content pages:** `/co-robic-gdy-chce-sie-zapalic` and `/en/what-to-do-when-you-want-to-smoke` (7 steps, NHS/NCI/WHO sources, no doses or medication). Author line: "twórca Pauseo" (founder decision 2026-11-21).
+- **Decision 2026-11-22:** the "what happens in the body after quitting" section (WHO/NHS) stays on educational pages only, with sources. No health figures in the listing, ads or video.
+- **Open:** Google Search Console and Bing Webmaster Tools (manual), backlinks, Smart App Banner and App Store link after launch.
 
 ## Recommended next step
 
-No feature is locked as the next step. A manual QA pass and v0.1 checkpoint should happen before committing to new scope.
+No app feature is locked as the next step. QA passed on TestFlight 1.0.0 (1). Until launch the work is ASC, external beta, listing and marketing (`docs/Launch_Plan_v0.1.md`). New app scope only after beta feedback and with explicit founder approval.
 
 Candidates after QA:
 - Progress / top trigger summary — EventStore has data but no UI reads it yet.
