@@ -26,8 +26,8 @@ Najpierw przeczytaj: `CLAUDE.md`, `docs/Current_State.md`, `docs/Launch_Plan_v0.
 
 ## Do zrobienia (w tej kolejności)
 
-1. ~~`support@pauseo.app`~~ **zrobione 22.11** (patrz wyżej). Zostaje filtr antyspamowy w Gmailu.
-2. **Deploy strony sprawdzony 22.11** (200 na wszystkich adresach, `curl --resolve pauseo.app:443:216.198.79.1`). Zostaje: obejrzeć stronę i obie podstrony treściowe na prawdziwym telefonie.
+1. ~~`support@pauseo.app`~~ **zrobione 22.11** (patrz wyżej). Filtr antyspamowy w Gmailu dodany 22.11.
+2. **Deploy strony sprawdzony 22.11** (200 na wszystkich adresach, `curl --resolve pauseo.app:443:216.198.79.1`). Wersja mobilna strony i podstron treściowych obejrzana na telefonie 22.11.
 3. **ASC**: zmienić wersję „1.0” na **1.0.0** (Distribution). Wpisać Privacy Policy URL `https://pauseo.app/privacy`, Support URL `https://pauseo.app/support`, Marketing URL `https://pauseo.app`. Wykluczyć Chiny kontynentalne (Pricing and Availability). App Privacy: „Data Not Collected”. Odznaczyć „Sign-in required”.
 4. **Zewnętrzny TestFlight**: grupa zewnętrzna + publiczny link, Test Information (opis bety, e-mail `support@pauseo.app`), Beta App Review.
 5. **Zrzuty ekranu z TestFlight** (Home, karta w sekwencji, zakończenie z licznikiem, slip). Wstawić je na stronę zamiast makiet CSS i do listingu (6 zrzutów, każdy z jedną korzyścią, #1 = moment cravingu, bez nazw konkurencji).
