@@ -1,6 +1,6 @@
 # Prompt na następną sesję (wklej na start nowego wątku)
 
-> Wersja z 2026-11-21, ~02:30. Poprzedni wątek jest za długi. Ten plik zastępuje go jako punkt startu.
+> Wersja z 2026-11-22. Poprzedni wątek (SEO, poczta, strona) jest za długi. Ten plik zastępuje go jako punkt startu.
 
 ---
 
@@ -16,10 +16,18 @@ Najpierw przeczytaj: `CLAUDE.md`, `docs/Current_State.md`, `docs/Launch_Plan_v0.
 - **Strona pauseo.app działa** (Vercel projekt `pauseo-web`, Root Directory `web`, folder `web/` w tym repo, auto-deploy z `main`). DNS w GoDaddy: A `@` = `216.198.79.1`, CNAME `www` = `5a7864dbec6591f5.vercel-dns-017.com.`; `pauseo.app` główne, `www` przekierowuje. Strony: `/`, `/privacy`, `/support` i wersje `/en/...`. **Jasna, bez trybu ciemnego** (decyzja foundera). Ramki telefonów to makiety CSS z prawdziwych tekstów aplikacji (PL/EN z `Localizable.xcstrings`).
 - Stitch: projekt „pauseo.app — website” (`11718551952973042349`), ekran „Pauseo — Top Section” (desktop, białe tło); projekt aplikacji „pauseo — iOS MVP” (`10453210848545566223`). Generowanie często zwraca timeout: nie ponawiaj od razu, sprawdzaj `list_screens`; krótsze prompty działają lepiej. Pobieranie plików tylko przez `mcp__stitch__download_file`.
 
+## Stan na 22.11.2026 (zrobione w ostatnim wątku)
+
+- **SEO strony wdrożone** (`4b01ca9`, `2a22efb`): canonical i hreflang (pl/en/x-default) na wszystkich 6+2 stronach, OG/Twitter, `og-image.png` 1200×630, JSON-LD (Organization, WebSite, MobileApplication, FAQPage na stronach głównych; Article + BreadcrumbList na podstronach), sekcja FAQ, `robots.txt` (zezwala na crawlery AI), `sitemap.xml`, `llms.txt`, `vercel.json` (www → apex, nagłówki, cache). Wszystko zwraca 200 na żywo.
+- **Dwie podstrony treściowe:** `/co-robic-gdy-chce-sie-zapalic` i `/en/what-to-do-when-you-want-to-smoke` (7 kroków, źródła NHS/NCI/WHO, bez dawek i leków). **Autor: „twórca Pauseo”** (decyzja 2026-11-21; imię i nazwisko oraz własne doświadczenie można dodać później, to najsilniejszy sygnał zaufania).
+- **Decyzja 2026-11-22: sekcja „Co dzieje się w ciele po odstawieniu” (20 min / 8 h / 2 dni, WHO/NHS) ZOSTAJE** na podstronach edukacyjnych. Warunek: tylko tam, ze źródłem; w listingu, reklamach i wideo liczb zdrowotnych nie używamy (zakaz z „Niezmienne ograniczenia” dotyczy marketingu).
+- **Poczta `support@pauseo.app` działa** (ImprovMX, plan darmowy: tylko odbiór, przekierowanie na prywatnego Gmaila; MX mx1 10 / mx2 20 + TXT SPF w GoDaddy, `_dmarc` nietknięty). Test przeszedł 22.11, ale mail trafił do spamu: **dodać w Gmailu filtr „Do: support@pauseo.app → nigdy nie wysyłaj do spamu”** (ważne dla maili z App Review). Odpowiadanie jako support@ opcjonalnie później (Gmail „Wyślij jako” + hasło aplikacji; SMTP ImprovMX jest płatny).
+- **Lekcja z tego wątku:** po każdej zmianie DNS sprawdzać wynik na serwerze autorytatywnym (`dig MX pauseo.app @ns19.domaincontrol.com`), bo 8.8.8.8 i 1.1.1.1 trzymają cache do godziny; błąd (dwa razy mx1 zamiast mx2) wyłapał dopiero zrzut ekranu.
+
 ## Do zrobienia (w tej kolejności)
 
-1. **`support@pauseo.app`**: strona i polityka już go podają, ale poczta nie działa (brak rekordów MX). Sprawdzić GoDaddy → E-mail (przekierowanie bez płatnego planu), w przeciwnym razie darmowy ImprovMX (2× MX + TXT SPF, nie ruszać `_dmarc`). Wyślij test z innego konta. Weryfikacja: `dig MX pauseo.app @8.8.8.8`.
-2. **Sprawdzić deploy strony** po commicie `95f6a5b` (na żywo `https://pauseo.app`; lokalny resolver bywa w cache, używaj `curl --resolve pauseo.app:443:216.198.79.1`). Obejrzeć wersję mobilną na prawdziwym telefonie.
+1. ~~`support@pauseo.app`~~ **zrobione 22.11** (patrz wyżej). Zostaje filtr antyspamowy w Gmailu.
+2. **Deploy strony sprawdzony 22.11** (200 na wszystkich adresach, `curl --resolve pauseo.app:443:216.198.79.1`). Zostaje: obejrzeć stronę i obie podstrony treściowe na prawdziwym telefonie.
 3. **ASC**: zmienić wersję „1.0” na **1.0.0** (Distribution). Wpisać Privacy Policy URL `https://pauseo.app/privacy`, Support URL `https://pauseo.app/support`, Marketing URL `https://pauseo.app`. Wykluczyć Chiny kontynentalne (Pricing and Availability). App Privacy: „Data Not Collected”. Odznaczyć „Sign-in required”.
 4. **Zewnętrzny TestFlight**: grupa zewnętrzna + publiczny link, Test Information (opis bety, e-mail `support@pauseo.app`), Beta App Review.
 5. **Zrzuty ekranu z TestFlight** (Home, karta w sekwencji, zakończenie z licznikiem, slip). Wstawić je na stronę zamiast makiet CSS i do listingu (6 zrzutów, każdy z jedną korzyścią, #1 = moment cravingu, bez nazw konkurencji).
@@ -27,7 +35,7 @@ Najpierw przeczytaj: `CLAUDE.md`, `docs/Current_State.md`, `docs/Launch_Plan_v0.
 7. **Listing PL i EN** (do 08.12 wg ADR-016, inaczej fallback PL-only): tytuł, podtytuł, słowa kluczowe, opis, promo text, copyright; audyt top 10 konkurencji w PL (wewnętrznie).
 8. **Konta social**: zarezerwować nazwy (IG, TikTok, YouTube, FB), jedno konto aktywne (rekomendacja: IG Reels), ręcznie, twarz jako twórca (ADR-018), bez automatyzacji.
 9. **Higiena**: wyłączyć martwą Lambdę IG z WowCow (brief Q11).
-9b. **SEO (kod gotowy 2026-11-21, do zrobienia ręcznie po deployu):** (a) Google Search Console: dodać właściwość domeny `pauseo.app` (weryfikacja TXT w GoDaddy), wysłać `https://pauseo.app/sitemap.xml`, poprosić o indeksację `/`, `/en`, `/co-robic-gdy-chce-sie-zapalic` i `/en/what-to-do-when-you-want-to-smoke` (podstrony treściowe są na razie bez imienia autora, podpis „twórca Pauseo”, decyzja foundera 2026-11-21); (b) Bing Webmaster Tools (import z GSC), bo z Bingiem korzysta m.in. ChatGPT Search; (c) po deployu sprawdzić `https://pauseo.app/robots.txt`, `/sitemap.xml`, `/llms.txt`, test „Rich Results” dla FAQPage/MobileApplication; (d) po premierze: dodać `<meta name="apple-itunes-app" content="app-id=...">` (Smart App Banner), link do App Store w JSON-LD (`downloadUrl`) i w `llms.txt`, a w tekstach zamienić „w grudniu 2026” na „w App Store”; (e) linki zwrotne (to one budują widoczność w Google i cytowania AI): wpis w katalogach aplikacji/zdrowia, wzmianki w społecznościach i mediach PL, profile IG/YT z linkiem do pauseo.app; (f) opcjonalnie podstrony treściowe (np. „Co robić, gdy chce Ci się zapalić”, oparte na kartach wsparcia ze źródłami WHO/NHS/NCI) po zgodzie na zakres.
+9b. **SEO (kod gotowy 2026-11-21, do zrobienia ręcznie po deployu):** (a) Google Search Console: dodać właściwość domeny `pauseo.app` (weryfikacja TXT w GoDaddy), wysłać `https://pauseo.app/sitemap.xml`, poprosić o indeksację `/`, `/en`, `/co-robic-gdy-chce-sie-zapalic` i `/en/what-to-do-when-you-want-to-smoke` (podstrony treściowe są na razie bez imienia autora, podpis „twórca Pauseo”, decyzja foundera 2026-11-21); (b) Bing Webmaster Tools (import z GSC), bo z Bingiem korzysta m.in. ChatGPT Search; (c) po deployu sprawdzić `https://pauseo.app/robots.txt`, `/sitemap.xml`, `/llms.txt`, test „Rich Results” dla FAQPage/MobileApplication; (d) po premierze: dodać `<meta name="apple-itunes-app" content="app-id=...">` (Smart App Banner), link do App Store w JSON-LD (`downloadUrl`) i w `llms.txt`, a w tekstach zamienić „w grudniu 2026” na „w App Store”; (e) linki zwrotne (to one budują widoczność w Google i cytowania AI): wpis w katalogach aplikacji/zdrowia, wzmianki w społecznościach i mediach PL, profile IG/YT z linkiem do pauseo.app; (f) ~~podstrony treściowe~~ zrobione 22.11; kolejne (np. „ile trwa głód nikotynowy”, „co robić po wpadce”) dopiero po sprawdzeniu w Search Console, czy pierwsze dwie się indeksują.
 
 Odłożone (bez mojej zgody nie robić przed premierą): widget/Action Button, przypomnienie w ryzykownej porze, lokalne podsumowanie triggerów, zakres „C”, podsumowanie do udostępnienia, zmiana zachowania „Kończę na teraz”.
 
@@ -67,6 +75,16 @@ Dla każdego punktu: zakwestionuj go względem kanonu produktu, oznacz [HIPOTEZA
 19. **Kanały zaufania w PL** (Telefoniczna Poradnia Pomocy Palącym, apteki, psychologowie uzależnień) dają rekomendację, której nie kupisz reklamą. Zacząć od jednej rozmowy z ekspertem o recenzji kart wsparcia (Q10 w briefie).
 20. **Premiera to proces, nie dzień**: szczyt styczniowy trwa ~2 tygodnie; plan wideo, PR i maili rozpisać na 15.12–15.01, a nie na jeden dzień.
 
-## Jak pracować w tej sesji
+## Jak pracować w tej sesji (prompt na nowy wątek)
 
-Zacznij od krótkiego podsumowania stanu i listy rzeczy, których nie da się sprawdzić w repo (zapytaj mnie o nie). Potem wykonuj zadania z sekcji „Do zrobienia” po kolei, od punktu 1. Do każdej zmiany: CURRENT STATE / SMALLEST SAFE CHANGE / ACCEPTANCE CRITERIA / TEST PLAN (jak w `CLAUDE.md`). Kwestionuj moje założenia, kiedy dane (ASC, rozmowy) mówią co innego. Raporty z liczbami zawsze z okresem, typem metryki (kompletna czy opt-in) i źródłem.
+ROLA: Head of Growth + agent prowadzący projekt Pauseo. Po polsku, konkretnie, bez przytakiwania.
+
+CEL: ustalić kompletny plan na 15.12–15.01 (wysyłka do App Review ~15.12, premiera przed 27.12.2026, okno noworoczne) i ruszyć z punktem 3 listy „Do zrobienia” (ASC).
+
+**KROK 1. Audyt kompletności** (czytaj, nie zmieniaj plików). Przeczytaj: `CLAUDE.md`, `docs/PAUSEO_GROWTH_BRIEF.md`, `docs/Launch_Plan_v0.1.md`, `docs/Current_State.md`, ADR-012–018, `docs/Privacy_Safety.md`, `git log -15`. Tabela: Źródło | Co już wdrożone | Czego brakuje lub jest sprzeczne. Sprawdź zwłaszcza, czy `Current_State.md` i `Launch_Plan_v0.1.md` odzwierciedlają stan z „Stan na 22.11.2026”; jeśli nie, zaproponuj poprawki.
+
+**KROK 2. Propozycja następnych kroków** (max 5 pozycji): cel | pierwszy krok | godziny (budżet 5–6 h/tydz.) | metryka (kompletna czy opt-in) | kryterium stop | czego potrzebujesz ode mnie. Kolejność od największego wpływu na premierę. Zasada z WowCow: 1 kanał + 1 eksperyment naraz, każdy z kryterium porzucenia; każdy automat z heartbeatem; test end-to-end po każdym wdrożeniu.
+
+**KROK 3. Emocje w copy (sugestia do akceptacji):** Pauseo nazywa emocję, którą człowiek już czuje (ulga, kontrola, brak wstydu po wpadce); nie kreuje potrzeby strachem ani poczuciem winy (kanon: spokojnie, dorośle, bez wstydu, bez fear appeals). Zaproponuj 3 warianty hooka do wideo/listingu zgodne z ADR-017 i claims policy; bez nazw konkurencji, bez liczb zdrowotnych w marketingu.
+
+ZASADY: plan → moja zgoda → zmiany → `git diff` → commit. Bez nowych funkcji w aplikacji. Nie commituj szumu z `Localizable.xcstrings`. Raporty z okresem, typem metryki i źródłem. Konflikt z kanonem zgłoś wprost i zaproponuj alternatywę. Po każdej zmianie DNS lub wdrożeniu weryfikuj wynik na żywo (autorytatywny serwer, `curl`), a nie tylko po moim „zrobione”.
