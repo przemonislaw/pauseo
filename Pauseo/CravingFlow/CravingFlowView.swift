@@ -442,6 +442,7 @@ private struct GuidedLoopStep: View {
     private let cardInterval: TimeInterval = 10
     private let cardSequence: [SupportCard]
 
+    @Environment(\.accessibilityReduceMotion) private var reduceMotion
     @State private var startDate = Date()
     @State private var hasFinished = false
 
@@ -460,15 +461,13 @@ private struct GuidedLoopStep: View {
             VStack(spacing: 0) {
                 Spacer()
 
-                Text(timeString(remaining))
-                    .font(.system(.title, design: .rounded))
-                    .foregroundStyle(.secondary)
-                    .padding(.bottom, 8)
-
-                ProgressView(value: elapsed, total: totalDuration)
-                    .tint(.pauseoPrimary)
-                    .padding(.horizontal, 48)
-                    .padding(.bottom, 32)
+                FillingCircle(progress: elapsed / totalDuration, animated: !reduceMotion) {
+                    Text(timeString(remaining))
+                        .font(.system(.largeTitle, design: .rounded))
+                        .foregroundStyle(Color.pauseoTextPrimary)
+                }
+                .frame(width: 168, height: 168)
+                .padding(.bottom, 32)
 
                 if let card {
                     Text(LocalizedStringKey(card.text))
@@ -510,6 +509,35 @@ private struct GuidedLoopStep: View {
     private func timeString(_ interval: TimeInterval) -> String {
         let total = Int(interval.rounded())
         return String(format: "%d:%02d", total / 60, total % 60)
+    }
+}
+
+/// A circle that fills from the bottom as the 2-minute round progresses.
+/// It only reflects elapsed time (no stored data, no claims). With Reduce
+/// Motion the fill still advances, but in plain 1-second steps.
+private struct FillingCircle<Content: View>: View {
+    let progress: Double
+    let animated: Bool
+    @ViewBuilder let content: () -> Content
+
+    var body: some View {
+        let clamped = min(max(progress, 0), 1)
+        ZStack {
+            Circle()
+                .fill(Color.pauseoPrimary.opacity(0.08))
+            GeometryReader { geo in
+                Rectangle()
+                    .fill(Color.pauseoPrimary.opacity(0.22))
+                    .frame(height: geo.size.height * clamped)
+                    .frame(maxHeight: .infinity, alignment: .bottom)
+                    .animation(animated ? .linear(duration: 1) : nil, value: clamped)
+            }
+            .clipShape(Circle())
+            Circle()
+                .stroke(Color.pauseoPrimary, lineWidth: 2)
+            content()
+        }
+        .accessibilityElement(children: .combine)
     }
 }
 
@@ -585,6 +613,7 @@ private struct CompletionStep: View {
 
     @Environment(\.requestReview) private var requestReview
     @AppStorage("reviewPromptShown") private var reviewPromptShown = false
+    @State private var successHaptic = false
 
     var body: some View {
         VStack(spacing: 0) {
@@ -612,6 +641,12 @@ private struct CompletionStep: View {
                 .buttonStyle(PauseoPrimaryButtonStyle())
                 .padding(.horizontal)
                 .padding(.bottom, 40)
+        }
+        // One light success haptic, only when the survived-cravings line is
+        // shown (didNotSmoke / postponed). Never after "smoked" or a decline.
+        .sensoryFeedback(.success, trigger: successHaptic)
+        .onAppear {
+            if survivedCount != nil { successHaptic = true }
         }
         .task {
             guard asksForReview, !reviewPromptShown else { return }
