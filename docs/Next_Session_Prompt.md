@@ -1,6 +1,32 @@
 # Prompt na następną sesję (wklej na start nowego wątku)
 
-> Wersja z 2026-11-22. Poprzedni wątek (SEO, poczta, strona) jest za długi. Ten plik zastępuje go jako punkt startu.
+> Wersja z 2026-11-26 (sekcja „Stan na 26.11 i plan do premiery” jest nadrzędna wobec listy „Do zrobienia” niżej). Poprzednia wersja: 2026-11-22.
+
+---
+
+## Stan na 26.11.2026 i plan do premiery (NADRZĘDNE)
+
+**Zrobione 26.11:**
+- **Wątek A (grafika w momencie cravingu) zamknięty.** Wypełniające się koło w rundzie 2 min (`4bc016b`), mocniejsza, rosnąca potrójna haptyka na zakończeniu (`09afe8d`), rysujący się pierścień i ✓ na ekranie końcowym tylko po dobrym wyniku (`60f1303`; Reduce Motion: bez animacji; VoiceOver pomija). Odrzucone: „płuco”, „minuty życia”, ikonki zaciągnięć (claims policy, obraz papierosa wywołuje craving). Na symulatorze build przechodzi, **na iPhonie jeszcze niesprawdzone.**
+- **Wątek B (badanie potrzeb) zrobiony:** `docs/Research_Potrzeb_2026-11.md`. Wniosek: żadnej zmiany w aplikacji. Wynik idzie do listingu, zrzutów i na stronę. Najmocniejszy komunikat: „Wpadka niczego nie zeruje”, potem „za darmo, bez reklam, bez konta, po polsku”. Okno noworoczne potwierdzone w Trends, a Wielki Post nie daje sygnału (Growth Brief poprawiony).
+- QA: dopisane sekcje 14b i 20b (build 2) w `docs/QA_Checklist_v0.1.md`.
+
+**Plan (kolejność obowiązuje):**
+
+| Kiedy | Co | Kto |
+|---|---|---|
+| 26–27.11 | Test na iPhonie (Debug z Xcode): QA 14b i 20b | founder |
+| po „OK” | Podbić `CURRENT_PROJECT_VERSION` do **2** (project.yml + `xcodegen`), commit | Claude |
+| 27–28.11 | Archive i upload buildu 1.0.0 (2). Po instalacji z TestFlight powtórzyć QA 15, 17 i 20 | founder |
+| 27–28.11 (równolegle) | **ASC:** wersja 1.0.0, URL-e (privacy/support/marketing), bez Chin kontynentalnych, „Data Not Collected”, odznaczone „Sign-in required” | founder |
+| do 30.11 | Zewnętrzny TestFlight: grupa, publiczny link, Test Information, **Beta App Review z buildem 2** | founder (+ Claude: tekst opisu bety) |
+| 01–07.12 | Beta 15–30 osób, 5–10 rozmów. Pytania z `Launch_Plan` sekcja D, plus: (1) jakim słowem nazywasz tę chwilę (głód, ssanie, chęć, craving)? (2) co robiłeś w aplikacjach po wpadce? (3) czy licznik dni coś dla Ciebie znaczy? | founder |
+| **06.12** | **Zamrożenie UI** | — |
+| 08–10.12 | Zrzuty z buildu 2 w kolejności: (1) moment cravingu i 2 min, (2) wpadka niczego nie zeruje, (3) wyzwalacze, (4) za darmo, bez konta, prywatnie. Listing PL i EN; słowa kluczowe: „rzucić e-papierosa”, „vape”, „saszetki”, bez gołego „e-papieros”. Podmiana makiet CSS na stronie | Claude + founder |
+| ~15.12 | Wysyłka do App Review | founder |
+| przed 27.12 | Premiera. Okno popytu 1–15.01 | — |
+
+**Wolne sloty (15–30 min, kiedy jest czas):** Google Search Console i Bing (pkt 9b), rezerwacja nazw kont social (pkt 8), wyłączenie Lambdy IG z WowCow (pkt 9).
 
 ---
 
