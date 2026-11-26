@@ -206,6 +206,18 @@ Build/commit tested: c0294a0 — docs: update product contract for 2-minute guid
 
 Pass
 
+### 14b. Build 2 additions (4bc016b, 09afe8d): filling circle and completion haptic
+
+- [ ] During the 2-minute round the circle fills smoothly and is full exactly when the round ends.
+- [ ] Background mid-round and return: the circle matches the real elapsed time (no jump back, no restart).
+- [ ] "Kończę na teraz" mid-round: no success haptic.
+- [ ] Reduce Motion: the circle still shows progress without a distracting animation.
+- [ ] Dark mode: circle contrast is readable.
+
+Tester:
+Date:
+Build/commit tested:
+
 ---
 
 ## 15. PL/EN localization
@@ -268,16 +280,19 @@ Verifies the 2026-11-20 change: onboarding cut from 5 screens to 1.
 - [x] Fresh install (or delete app first): exactly one onboarding screen is shown — title, body, privacy line, one button.
 - [x] No Back button, no progress indicator, no selection screens, no reminders screen.
 - [x] Privacy line reads "Bez konta. Twoje dane zostają w telefonie." (PL) / "No account. Your data stays on your phone." (EN).
-- [x] Tapping "Zacznij spokojnie" / "Let's begin" opens Home immediately; Home shows the three actions from section 1.
+- [x] Title reads "Pomoc, gdy chce Ci się zapalić." (PL) / "Support when a craving hits." (EN), with no clipping at largest Dynamic Type (2026-11-21 copy change).
+- [x] Tapping "Zaczynamy" / "Let's begin" opens Home immediately; Home shows the three actions from section 1.
 - [x] Relaunch after completing onboarding: app opens directly on Home (onboarding not shown again).
 - [x] Existing install that already completed onboarding: opens on Home, no change.
 - [x] Largest Dynamic Type and small-screen device: no clipped text, button reachable.
 - [x] VoiceOver reads title, body, privacy line and button in the active language.
 - [x] Light and dark mode: privacy line readable (secondary text contrast).
 
-Tester:
-Date:
-Build/commit tested:
+Tester: Przemek
+Date: 20.11.2026
+Build/commit tested: 1eb0d6a
+
+Pass (the two items from the 2026-11-21 copy change re-checked 2026-11-21 on the TestFlight build 1.0.0 (1), Archive of ba68051)
 
 ---
 
@@ -291,16 +306,18 @@ Verifies the 2026-11-20 change. Run in PL and EN, light and dark mode.
 - [x] Path B — full 2-minute loop → outcome "I didn't smoke": trigger question, then completion.
 - [x] Path C — exit loop early → outcome "I smoked": trigger question, then completion (copy stays neutral).
 - [x] Path D — outcome "I've put off the decision" → second round offered → after it, outcome → trigger question → completion. Trigger question appears exactly once per flow.
-- [x] Choose "Go outside for 2 minutes" or "Message someone": invitation reads "Go ahead, do it now. I'll be here." / "Śmiało, zrób to teraz. Będę tutaj." with the "When you're back…" body; switch to another app and back — the screen is still there.
+- [x] Choose "Change rooms for 2 minutes" or "Text someone: “how are you?”": invitation reads "Go ahead, do it now. I'll be here." / "Śmiało, zrób to teraz. Będę tutaj." with the "When you're back…" body; switch to another app and back — the screen is still there.
 - [x] Choose "Drink water", "Take 5 calm breaths", "Keep your hands busy", or no action: invitation still reads "Stay with me for 2 more minutes?".
-- [x] Micro-action list shows "Napisz komuś: „co u Ciebie?”" / "Text someone: “how are you?”" on one or two lines without clipping (largest Dynamic Type too); the slip flow still shows "Napisz do kogoś" / "Message someone".
+- [x] Micro-action list shows "Napisz komuś: „co u Ciebie?”" / "Text someone: “how are you?”" on one or two lines without clipping (largest Dynamic Type too); the slip flow shows the same label.
 - [x] Trigger can be skipped: "Next" with nothing selected goes to completion.
 - [x] Unselected trigger and action chips are visible in dark mode (fix 57b75db).
 - [x] Swipe the sheet away on the trigger question: no crash; relaunch, no duplicate event.
 
-Tester:
-Date:
-Build/commit tested:
+Tester: Przemek
+Date: 20.11.2026
+Build/commit tested: 1eb0d6a
+
+Pass
 
 ---
 
@@ -319,14 +336,18 @@ Verifies the 2026-11-20 copy changes and the guided breathing step. PL and EN, l
 - [x] Trigger question (craving) has the subtitle "Przyda się następnym razem. Możesz pominąć." / "Helps next time. You can skip this."; the slip flow keeps "Możesz pominąć."
 - [x] Trigger question reads "Co uruchomiło craving?"; options include "Kawa" / "Coffee".
 - [x] Completion reads "To wystarczy na teraz." with "Jedna mała akcja się liczy. Jeśli ochota wróci, po prostu tu wróć."; button "Wróć na start" (PL).
-- [x] Slip flow: "Co działo się tuż przed?" with "Kawa" option; recovery actions show "Schowaj nikotynę w innym pokoju" and "Następna godzina bez nikotyny" (EN "Next hour nicotine-free", no "Start again"); slip still shows "Napisz do kogoś".
+- [x] Slip flow: "Co działo się tuż przed?" with "Kawa" option; recovery actions show "Schowaj nikotynę w innym pokoju" and "Następna godzina bez nikotyny" (EN "Next hour nicotine-free", no "Start again"); slip also shows "Napisz komuś: „co u Ciebie?”".
 - [x] Largest Dynamic Type: longer action labels wrap without clipping.
+- [x] Copy pass 2: Home body ends "Jedno dotknięcie i przejdziemy przez najbliższe minuty."; grounding starts "Ta ochota zwykle trwa tylko kilka minut."; invitation (non-away actions) says "Co 10 sekund pokażę Ci krótką podpowiedź."; onboarding body (fresh install) is the new "Gdy przyjdzie ochota zapalić…" text; slip completion ends "Jeśli ochota wróci, wróć tu."
+- [x] Support cards in a guided round (PL and EN): the new cards appear ("Zauważ, gdzie w ciele…", "Oceń tę ochotę od 1 do 10…", "…w ciągu około 20 minut…", "Po około 2 dniach…", "Po około 8 godzinach…"); no old vague card texts; sources still shown for the three body cards.
 
-Note: guided breathing opening and auto-continue confirmed working on device by Przemek (20.11.2026); remaining items still to run.
+Note: guided breathing confirmed working on device earlier the same day; full section re-run below.
 
-Tester:
-Date:
-Build/commit tested:
+Tester: Przemek
+Date: 20.11.2026
+Build/commit tested: 1eb0d6a
+
+Pass
 
 ---
 
@@ -340,6 +361,21 @@ Build/commit tested:
 - [x] Delete all local data → next survived craving shows 1.
 - [x] Rating prompt (Debug build from Xcode on device; it never shows in TestFlight): appears ~1.5 s after the first "Nie zapaliłem/am" completion; not again on later ones.
 - [x] Home still shows no counts.
+
+Tester: Przemek
+Date: 20.11.2026
+Build/commit tested: 1eb0d6a
+
+Pass
+
+### 20b. Build 2 addition (60f1303): ring and checkmark on the completion screen
+
+- [ ] After "Nie zapaliłem/am" and "Odłożyłem/am": the ring draws (~0.6 s), then the ✓ (~0.35 s), above "To wystarczy na teraz.". The pace feels calm, and the ✓ is not skewed or too small.
+- [ ] The triple-tap haptic lands while the ✓ is drawing, not before it.
+- [ ] After "Zapaliłem/am" and after leaving the loop: no ring, no ✓, no haptic.
+- [ ] Reduce Motion: ring and ✓ appear at once, without animation.
+- [ ] VoiceOver skips the ring and ✓ (decorative).
+- [ ] Dark mode and PL/EN: quick check (no new strings).
 
 Tester:
 Date:
