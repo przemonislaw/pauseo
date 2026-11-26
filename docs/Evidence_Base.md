@@ -46,6 +46,14 @@ These sources should be used as starting references and periodically reviewed:
 - The Community Guide — Mobile phone text messaging cessation interventions:
   https://www.thecommunityguide.org/findings/tobacco-use-mobile-phone-text-messaging-cessation-interventions.html
 
+User-needs evidence (app reviews, interviews). Summary in `docs/Research_Potrzeb_2026-11.md`:
+
+- Rodberg et al. 2025, JMIR — content analysis of 310 reviews of 11 vaping cessation apps:
+  https://pmc.ncbi.nlm.nih.gov/articles/PMC12041815/
+
+- Fonteyne et al. 2026, JMIR — 17 interviews with youth (16–24) using vaping cessation apps; streak loss, non-judgment, privacy, relapse-responsive design:
+  https://doi.org/10.2196/85778
+
 ## Clinical positioning
 
 ### What the app is

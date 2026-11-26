@@ -32,7 +32,7 @@
 5. **Automatyzacja Instagrama: dużo inżynierii, zero dystrybucji, a od 8 maja 2026 nie działała wcale.** W kwietniu i maju średnio 9 wyświetleń na post, 0 kliknięć, 0 nowych followersów. Ostatni udany post (Reel) poszedł **7 maja 2026**. Od 8 maja każde uruchomienie Lambdy (3×/dzień z retry) kończy się `AccessDeniedException` na DynamoDB i nikt tego nie zauważył przez ~6,5 miesiąca. [FAKT: CloudWatch Logs `/aws/lambda/wowcow-social-post`, odczyt 2026-11-20] Automatyzowanie kanału bez widowni daje zero, a automatyzacja bez monitoringu po cichu umiera.
 6. **Główny błąd WowCow: najpierw produkt i infrastruktura, potem szukanie widowni.** Nie było walidacji popytu przed buildem, listy mailowej, mechaniki poleceń ani spójnego rynku (app EN, reklamy PL, strona EN+PL).
 7. **Pauseo jest przed publiczną premierą** (przygotowanie do Internal TestFlight). [FAKT: docs/Current_State.md] To najlepszy moment na marketing, bo można zrobić wszystko, czego WowCow nie zrobił: walidację, listę oczekujących, beta-testerów i gotowe ASO w dniu premiery.
-8. **Okno czasowe: 1 stycznia 2027 (postanowienia noworoczne) wypada za ~6 tygodni.** To największy sezonowy szczyt w kategorii rzucania palenia. [DO WERYFIKACJI: Apple Search Ads / Google Trends „rzucić palenie”] W Polsce drugim oknem jest **Wielki Post (od 10.02.2027)**, trzecim **Światowy Dzień bez Tytoniu (31.05)**.
+8. **Okno czasowe: 1 stycznia 2027 (postanowienia noworoczne) wypada za ~6 tygodni.** To największy sezonowy szczyt w kategorii rzucania palenia. [FAKT: Google Trends PL 2021–2026, styczeń co roku ok. +40–80% vs grudzień; `docs/Research_Potrzeb_2026-11.md`] **Korekta 2026-11-26:** Wielki Post (od 10.02.2027) i Światowy Dzień bez Tytoniu (31.05) **nie dają sygnału w Trends** (luty, marzec, maj na poziomie bazowym). Traktować je jako okazje do treści, nie jako okna popytu.
 9. **Pauseo ma lepszy „hook” marketingowy niż WowCow:** jasny ból (craving teraz), jasny moment użycia (2 minuty) i różnicę wobec liczników dni i odznak. Treść marketingowa może być demonstracją produktu.
 10. **Konflikt do rozstrzygnięcia:** zasada „No analytics” w Pauseo uniemożliwia mierzenie aktywacji i retencji poza ~25–30% danych opt-in w ASC. Bez decyzji (ADR) powtórzy się sytuacja z WowCow („retencja niemierzalna przy tej skali”).
 11. **Zakaz płatnych kampanii** do spełnienia bramki: ≥200 instalacji organicznych, mierzalna retencja D7 i kreacja z hook rate ≥25% sprawdzona organicznie.
@@ -311,7 +311,7 @@ Okres: ~wrzesień 2025 (premiera iOS) → listopad 2026. Kontekst produktu: jedn
 | Data | Okno | Co przygotować |
 |---|---|---|
 | **1–15.01.2027** | Postanowienia noworoczne, największy szczyt kategorii | app publicznie w App Store najpóźniej ~27.12; listing gotowy; 5–10 wideo na zapas; pitch PR wysłany przed świętami |
-| **10.02.2027** (Popielec) | Wielki Post. W Polsce popularne postanowienie „rzucam palenie na Post” | kampania treści „40 dni”, ewentualnie App Store In-App Event [DO WERYFIKACJI: wymogi In-App Events] |
+| **10.02.2027** (Popielec) | Wielki Post. W Polsce popularne postanowienie „rzucam palenie na Post” [HIPOTEZA: brak sygnału w Google Trends 2021–2026, patrz `docs/Research_Potrzeb_2026-11.md`] | kampania treści „40 dni”, ewentualnie App Store In-App Event [DO WERYFIKACJI: wymogi In-App Events] |
 | **31.05.2027** | Światowy Dzień bez Tytoniu (WHO) | PR, partnerstwa, treści |
 | X 2027 | Stoptober (UK), przy wersji EN | — |
 | ~3. czwartek listopada | Światowy Dzień Rzucania Palenia / Great American Smokeout | — (19.11.2026 już minął) |
