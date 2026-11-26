@@ -613,12 +613,19 @@ private struct CompletionStep: View {
     let onDismiss: () -> Void
 
     @Environment(\.requestReview) private var requestReview
+    @Environment(\.accessibilityReduceMotion) private var reduceMotion
     @AppStorage("reviewPromptShown") private var reviewPromptShown = false
 
     var body: some View {
         VStack(spacing: 0) {
             Spacer()
             VStack(spacing: 16) {
+                if survivedCount != nil {
+                    CompletionMark(animated: !reduceMotion)
+                        .frame(width: 72, height: 72)
+                        .padding(.bottom, 8)
+                        .accessibilityHidden(true)
+                }
                 Text("That's enough for now.")
                     .font(.largeTitle)
                     .fontWeight(.bold)
@@ -644,10 +651,10 @@ private struct CompletionStep: View {
         }
         // A short rising triple tap, only when the survived-cravings line is
         // shown (didNotSmoke / postponed). Never after "smoked" or a decline.
-        // Slight delay so it is not lost in the screen transition.
+        // Delayed to land with the checkmark being drawn, not lost in the transition.
         .task {
             guard survivedCount != nil else { return }
-            try? await Task.sleep(for: .seconds(0.35))
+            try? await Task.sleep(for: .seconds(0.5))
             let generator = UIImpactFeedbackGenerator(style: .medium)
             generator.prepare()
             for intensity in [0.5, 0.75, 1.0] {
@@ -663,6 +670,45 @@ private struct CompletionStep: View {
             reviewPromptShown = true
             requestReview()
         }
+    }
+}
+
+/// Calm closing mark: a ring draws itself, then a checkmark. Shown once, only
+/// together with the survived-cravings line. Static with Reduce Motion.
+private struct CompletionMark: View {
+    let animated: Bool
+    @State private var ring: CGFloat = 0
+    @State private var check: CGFloat = 0
+
+    var body: some View {
+        ZStack {
+            Circle()
+                .trim(from: 0, to: ring)
+                .stroke(Color.pauseoPrimary, style: StrokeStyle(lineWidth: 3, lineCap: .round))
+                .rotationEffect(.degrees(-90))
+            CheckmarkShape()
+                .trim(from: 0, to: check)
+                .stroke(Color.pauseoPrimary, style: StrokeStyle(lineWidth: 3, lineCap: .round, lineJoin: .round))
+        }
+        .onAppear {
+            guard animated else {
+                ring = 1
+                check = 1
+                return
+            }
+            withAnimation(.easeOut(duration: 0.6)) { ring = 1 }
+            withAnimation(.easeOut(duration: 0.35).delay(0.5)) { check = 1 }
+        }
+    }
+}
+
+private struct CheckmarkShape: Shape {
+    func path(in rect: CGRect) -> Path {
+        var path = Path()
+        path.move(to: CGPoint(x: rect.minX + rect.width * 0.30, y: rect.minY + rect.height * 0.52))
+        path.addLine(to: CGPoint(x: rect.minX + rect.width * 0.45, y: rect.minY + rect.height * 0.67))
+        path.addLine(to: CGPoint(x: rect.minX + rect.width * 0.72, y: rect.minY + rect.height * 0.36))
+        return path
     }
 }
 
