@@ -1,4 +1,5 @@
 import SwiftUI
+import UIKit
 import StoreKit
 
 struct CravingFlowView: View {
@@ -613,7 +614,6 @@ private struct CompletionStep: View {
 
     @Environment(\.requestReview) private var requestReview
     @AppStorage("reviewPromptShown") private var reviewPromptShown = false
-    @State private var successHaptic = false
 
     var body: some View {
         VStack(spacing: 0) {
@@ -642,11 +642,19 @@ private struct CompletionStep: View {
                 .padding(.horizontal)
                 .padding(.bottom, 40)
         }
-        // One light success haptic, only when the survived-cravings line is
+        // A short rising triple tap, only when the survived-cravings line is
         // shown (didNotSmoke / postponed). Never after "smoked" or a decline.
-        .sensoryFeedback(.success, trigger: successHaptic)
-        .onAppear {
-            if survivedCount != nil { successHaptic = true }
+        // Slight delay so it is not lost in the screen transition.
+        .task {
+            guard survivedCount != nil else { return }
+            try? await Task.sleep(for: .seconds(0.35))
+            let generator = UIImpactFeedbackGenerator(style: .medium)
+            generator.prepare()
+            for intensity in [0.5, 0.75, 1.0] {
+                guard !Task.isCancelled else { return }
+                generator.impactOccurred(intensity: intensity)
+                try? await Task.sleep(for: .seconds(0.14))
+            }
         }
         .task {
             guard asksForReview, !reviewPromptShown else { return }
